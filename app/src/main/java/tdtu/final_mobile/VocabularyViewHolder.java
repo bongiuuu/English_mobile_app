@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import org.w3c.dom.Text;
 
 public class VocabularyViewHolder extends RecyclerView.ViewHolder {
-    View vCircle;
+    ImageView ivCircle;
     TextView tvNumber;
     TextView tvVocabularyName;
     TextView tvVietnameseName;
@@ -19,7 +19,7 @@ public class VocabularyViewHolder extends RecyclerView.ViewHolder {
 
     public VocabularyViewHolder(@NonNull View itemView){
         super(itemView);
-        this.vCircle = itemView.findViewById(R.id.vCircle);
+        this.ivCircle = itemView.findViewById(R.id.ivCircle);
         this.tvNumber = itemView.findViewById(R.id.tvNumber);
         this.tvVocabularyName = itemView.findViewById(R.id.tvVocabularyName);
         this.tvVietnameseName = itemView.findViewById(R.id.tvVietnameseName);

@@ -36,7 +36,7 @@ public class VocabularyAdapter extends RecyclerView.Adapter<VocabularyViewHolder
     public void onBindViewHolder(@NonNull VocabularyViewHolder holder, int position) {
         holder.tvNumber.setText(vocabularies.get(position).getNumber() + "");
         holder.tvNumber.setTextColor(vocabularies.get(position).getNumberColor());
-        holder.vCircle.setBackgroundColor(vocabularies.get(position).getColor());
+//        holder.ivCircle.setBackgroundColor(vocabularies.get(position).getColor());
         holder.tvVocabularyName.setText(vocabularies.get(position).getVocabularyName());
         holder.tvVocabularyName.setTextColor(vocabularies.get(position).getColor());
         holder.tvVietnameseName.setText(vocabularies.get(position).getVietnameseName());

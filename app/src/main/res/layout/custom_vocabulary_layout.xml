@@ -23,13 +23,12 @@
             android:layout_height="85dp"
             android:orientation="vertical">
 
-            <View
-                android:id="@+id/vCircle"
+            <ImageView
+                android:id="@+id/ivCircle"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_marginStart="24dp"
                 android:background="@drawable/draw_circle"
-
                 card_view:layout_constraintBottom_toBottomOf="parent"
                 card_view:layout_constraintStart_toStartOf="parent"
                 card_view:layout_constraintTop_toTopOf="parent"
@@ -45,7 +44,7 @@
                 android:text="@string/vocabulary"
                 android:textColor="@color/white"
                 android:textSize="20sp"
-                card_view:layout_constraintStart_toEndOf="@+id/vCircle"
+                card_view:layout_constraintStart_toEndOf="@+id/ivCircle"
                 card_view:layout_constraintTop_toTopOf="parent" />
 
             <TextView
@@ -58,7 +57,7 @@
                 android:text="@string/vietnamese"
                 android:textColor="@color/white"
                 android:textSize="15sp"
-                card_view:layout_constraintStart_toEndOf="@+id/vCircle"
+                card_view:layout_constraintStart_toEndOf="@+id/ivCircle"
                 card_view:layout_constraintTop_toBottomOf="@+id/tvVocabularyName" />
 
             <TextView
@@ -69,10 +68,10 @@
                 android:fontFamily="@font/avenir"
                 android:textSize="30sp"
                 android:textStyle="bold"
-                card_view:layout_constraintBottom_toBottomOf="@+id/vCircle"
-                card_view:layout_constraintEnd_toEndOf="@+id/vCircle"
-                card_view:layout_constraintStart_toStartOf="@+id/vCircle"
-                card_view:layout_constraintTop_toTopOf="@+id/vCircle" />
+                card_view:layout_constraintBottom_toBottomOf="@+id/ivCircle"
+                card_view:layout_constraintEnd_toEndOf="@+id/ivCircle"
+                card_view:layout_constraintStart_toStartOf="@+id/ivCircle"
+                card_view:layout_constraintTop_toTopOf="@+id/ivCircle" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 
