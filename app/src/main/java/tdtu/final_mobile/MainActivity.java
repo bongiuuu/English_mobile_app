@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
     public void OnClick(View view){
         switch (view.getId()){
             case R.id.btnRegister:
-                Intent registerIntent = new Intent(view.getContext(), RegisterActivity.class);
+                Intent registerIntent = new Intent(view.getContext(), VocabularyActivity.class);
                 startActivity(registerIntent);
                 break;
             case R.id.btnLogin:

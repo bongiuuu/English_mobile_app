@@ -7,7 +7,7 @@
     android:layout_height="100dp" >
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/card_view"
+        android:id="@+id/cvVocabulary"
         android:layout_width="match_parent"
         android:layout_height="120dp"
         card_view:cardBackgroundColor="@color/dark_item"
@@ -23,30 +23,56 @@
             android:layout_height="85dp"
             android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/tvActivityName"
-                android:layout_width="280dp"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/avenir"
-                android:text="Activity"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                card_view:layout_constraintBottom_toBottomOf="parent"
-                card_view:layout_constraintEnd_toEndOf="parent"
-                card_view:layout_constraintHorizontal_bias="1.0"
-                card_view:layout_constraintStart_toStartOf="parent"
-                card_view:layout_constraintTop_toTopOf="parent"
-                card_view:layout_constraintVertical_bias="0.491" />
-
-            <ImageView
-                android:id="@+id/ivActivityIcon"
+            <View
+                android:id="@+id/vCircle"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_marginStart="24dp"
+                android:background="@drawable/draw_circle"
+
                 card_view:layout_constraintBottom_toBottomOf="parent"
                 card_view:layout_constraintStart_toStartOf="parent"
                 card_view:layout_constraintTop_toTopOf="parent"
-                card_view:srcCompat="@drawable/icon1" />
+                card_view:layout_constraintVertical_bias="0.571" />
+
+            <TextView
+                android:id="@+id/tvVocabularyName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/avenir"
+                android:text="@string/vocabulary"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                card_view:layout_constraintStart_toEndOf="@+id/vCircle"
+                card_view:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvVietnameseName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="3dp"
+                android:fontFamily="@font/avenir"
+                android:text="@string/vietnamese"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                card_view:layout_constraintStart_toEndOf="@+id/vCircle"
+                card_view:layout_constraintTop_toBottomOf="@+id/tvVocabularyName" />
+
+            <TextView
+                android:id="@+id/tvNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1"
+                android:fontFamily="@font/avenir"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                card_view:layout_constraintBottom_toBottomOf="@+id/vCircle"
+                card_view:layout_constraintEnd_toEndOf="@+id/vCircle"
+                card_view:layout_constraintStart_toStartOf="@+id/vCircle"
+                card_view:layout_constraintTop_toTopOf="@+id/vCircle" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 
