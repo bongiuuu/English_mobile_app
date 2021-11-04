@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Final - Mobile</string>
+    <string name="app_logo">App Logo</string>
+    <string name="username"><i>\t\tUsername</i></string>
+    <string name="password"><i>\t\tPassword</i></string>
+    <string name="re_enter_password"><i>\t\tRe-enter Password</i></string>
+    <string name="forgot_password"><i><u>Forgot Password?</u></i></string>
+    <string name="register">Register</string>
+    <string name="login">Login</string>
+    <string name="or"><i>or</i></string>
+    <string name="activities">Activities</string>
+    <string name="vocabulary">Vocabulary</string>
+    <string name="_12_topics">12 Topics</string>
+    <string name="checkin">Checkin</string>
+</resources>
