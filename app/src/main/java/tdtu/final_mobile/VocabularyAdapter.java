@@ -1,28 +1,23 @@
 package tdtu.final_mobile;
 
 import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.graphics.drawable.Drawable;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.core.graphics.drawable.RoundedBitmapDrawable;
-import androidx.core.graphics.drawable.RoundedBitmapDrawableFactory;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
+
+import tdtu.final_mobile.presentation.vocabulary.OnItemClickAction;
 
 public class VocabularyAdapter extends RecyclerView.Adapter<VocabularyViewHolder> {
     private final List<Vocabulary> vocabularies;
     private final Context context;
     private final LayoutInflater layoutInflater;
-
+    OnItemClickAction onClickAction;
     public VocabularyAdapter(List<Vocabulary> vocabularies, Context context){
         this.vocabularies = vocabularies;
         this.context = context;
@@ -34,7 +29,7 @@ public class VocabularyAdapter extends RecyclerView.Adapter<VocabularyViewHolder
         View recyclerViewItem = layoutInflater.inflate(R.layout.custom_vocabulary_layout, parent, false);
 
         recyclerViewItem.setOnClickListener(v -> handleRecyclerItemClick((RecyclerView)parent, v));
-        return new VocabularyViewHolder(recyclerViewItem);
+        return new VocabularyViewHolder(recyclerViewItem, onClickAction);
     }
 
     @Override
@@ -45,6 +40,9 @@ public class VocabularyAdapter extends RecyclerView.Adapter<VocabularyViewHolder
         holder.tvVocabularyName.setText(vocabularies.get(position).getVocabularyName());
         holder.tvVocabularyName.setTextColor(vocabularies.get(position).getNumberColor());
         holder.tvVietnameseName.setText(vocabularies.get(position).getVietnameseName());
+        holder.cvVocabulary.setOnClickListener(v -> {
+            onClickAction.onClick(position);
+        });
     }
 
     @Override
@@ -58,5 +56,9 @@ public class VocabularyAdapter extends RecyclerView.Adapter<VocabularyViewHolder
         Vocabulary vocabulary  = this.vocabularies.get(itemPosition);
 
         Toast.makeText(this.context, vocabulary.getVocabularyName(), Toast.LENGTH_SHORT).show();
+    }
+
+    void setOnClickAction(OnItemClickAction onClickAction){
+        this.onClickAction = onClickAction;
     }
 }

@@ -14,11 +14,13 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 
+import tdtu.final_mobile.presentation.vocabulary.OnItemClickAction;
+
 public class ActionAdapter extends RecyclerView.Adapter<ActionViewHolder> {
     private final List<Action> actions;
     private final Context context;
     private final LayoutInflater layoutInflater;
-
+    OnItemClickAction onClickAction;
     public ActionAdapter(List<Action> actions, Context context){
         this.actions = actions;
         this.context = context;
@@ -62,5 +64,10 @@ public class ActionAdapter extends RecyclerView.Adapter<ActionViewHolder> {
         int itemPosition = recyclerView.getChildLayoutPosition(itemView);
         Action action  = this.actions.get(itemPosition);
         Toast.makeText(this.context, action.getActionName(), Toast.LENGTH_SHORT).show();
+        onClickAction.onClick(itemPosition);
+    }
+
+    void setOnClickAction(OnItemClickAction onClickAction){
+        this.onClickAction = onClickAction;
     }
 }

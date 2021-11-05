@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.Window;
@@ -12,7 +13,9 @@ import android.view.WindowManager;
 import java.util.ArrayList;
 import java.util.List;
 
-public class HomeActivity extends AppCompatActivity {
+import tdtu.final_mobile.presentation.vocabulary.OnItemClickAction;
+
+public class HomeActivity extends AppCompatActivity implements OnItemClickAction {
     public static final String LOG_TAG = "icon1";
     public static final String LOG_TAG_1 = "action_pic_1";
     private RecyclerView recyclerView;
@@ -36,7 +39,9 @@ public class HomeActivity extends AppCompatActivity {
 
         List<Action> actions = getActions();
         this.actionRecyclerView = this.findViewById(R.id.rvActions);
-        actionRecyclerView.setAdapter(new ActionAdapter(actions, this));
+        ActionAdapter actionAdapter = new ActionAdapter(actions, this);
+        actionAdapter.setOnClickAction(this);
+        actionRecyclerView.setAdapter(actionAdapter);
 
         LinearLayoutManager linearLayoutManager1 = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
         actionRecyclerView.setLayoutManager(linearLayoutManager1);
@@ -57,5 +62,11 @@ public class HomeActivity extends AppCompatActivity {
         actions.add(new Action( "Vocabulary", "action_pic_1", colors[0]));
         actions.add(new Action( "Checkin", "action_pic_2", colors[1]));
         return actions;
+    }
+
+    @Override
+    public void onClick(int position) {
+        Intent vocabularyIntent = new Intent(HomeActivity.this, VocabularyActivity.class);
+        startActivity(vocabularyIntent);
     }
 }

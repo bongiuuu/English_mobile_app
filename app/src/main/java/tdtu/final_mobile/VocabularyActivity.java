@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.service.autofill.OnClickAction;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ImageButton;
@@ -15,7 +16,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class VocabularyActivity extends AppCompatActivity {
+import tdtu.final_mobile.presentation.vocabulary.OnItemClickAction;
+
+public class VocabularyActivity extends AppCompatActivity implements OnItemClickAction {
     private ImageButton iBtnBack;
 
     @Override
@@ -35,7 +38,9 @@ public class VocabularyActivity extends AppCompatActivity {
 
         List<Vocabulary> vocabularies = getVocabulary();
         RecyclerView recyclerView = this.findViewById(R.id.rvVocabulary);
-        recyclerView.setAdapter(new VocabularyAdapter(vocabularies, this));
+        VocabularyAdapter vocabularyAdapter = new VocabularyAdapter(vocabularies, this);
+        vocabularyAdapter.setOnClickAction(this);
+        recyclerView.setAdapter(vocabularyAdapter);
 
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
         recyclerView.setLayoutManager(linearLayoutManager);
@@ -73,5 +78,10 @@ public class VocabularyActivity extends AppCompatActivity {
         }
 
         return vocabularies;
+    }
+
+    @Override
+    public void onClick(int position) {
+
     }
 }
