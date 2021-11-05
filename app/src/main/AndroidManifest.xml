@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FinalMobile">
         <activity
+            android:name=".presentation.PracticeActivity"
+            android:exported="false" />
+        <activity
             android:name=".VocabularyActivity"
             android:exported="true" />
         <activity
