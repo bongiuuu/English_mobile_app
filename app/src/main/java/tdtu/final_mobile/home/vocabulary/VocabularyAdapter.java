@@ -1,4 +1,4 @@
-package tdtu.final_mobile;
+package tdtu.final_mobile.home.vocabulary;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 
+import tdtu.final_mobile.R;
 import tdtu.final_mobile.presentation.vocabulary.OnItemClickAction;
 
 public class VocabularyAdapter extends RecyclerView.Adapter<VocabularyViewHolder> {
@@ -18,6 +19,7 @@ public class VocabularyAdapter extends RecyclerView.Adapter<VocabularyViewHolder
     private final Context context;
     private final LayoutInflater layoutInflater;
     OnItemClickAction onClickAction;
+
     public VocabularyAdapter(List<Vocabulary> vocabularies, Context context){
         this.vocabularies = vocabularies;
         this.context = context;
@@ -35,10 +37,10 @@ public class VocabularyAdapter extends RecyclerView.Adapter<VocabularyViewHolder
     @Override
     public void onBindViewHolder(@NonNull VocabularyViewHolder holder, int position) {
         holder.tvNumber.setText(vocabularies.get(position).getNumber() + "");
-        holder.tvNumber.setTextColor(vocabularies.get(position).getNumberColor());
-        holder.ivCircle.setBackgroundColor(vocabularies.get(position).getColor());
+        holder.tvNumber.setTextColor(vocabularies.get(position).getLetterColor());
+        holder.ivCircle.setBackgroundColor(vocabularies.get(position).getCircleColor());
         holder.tvVocabularyName.setText(vocabularies.get(position).getVocabularyName());
-        holder.tvVocabularyName.setTextColor(vocabularies.get(position).getNumberColor());
+        holder.tvVocabularyName.setTextColor(vocabularies.get(position).getLetterColor());
         holder.tvVietnameseName.setText(vocabularies.get(position).getVietnameseName());
         holder.cvVocabulary.setOnClickListener(v -> {
             onClickAction.onClick(position);
@@ -58,7 +60,7 @@ public class VocabularyAdapter extends RecyclerView.Adapter<VocabularyViewHolder
         Toast.makeText(this.context, vocabulary.getVocabularyName(), Toast.LENGTH_SHORT).show();
     }
 
-    void setOnClickAction(OnItemClickAction onClickAction){
+    void setOnVocabularyClickAction(OnItemClickAction onClickAction){
         this.onClickAction = onClickAction;
     }
 }

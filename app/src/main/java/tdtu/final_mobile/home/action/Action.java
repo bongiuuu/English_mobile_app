@@ -1,4 +1,4 @@
-package tdtu.final_mobile;
+package tdtu.final_mobile.home.action;
 
 public class Action {
     String actionName;

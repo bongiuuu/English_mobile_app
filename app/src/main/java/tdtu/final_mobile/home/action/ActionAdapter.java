@@ -1,7 +1,6 @@
-package tdtu.final_mobile;
+package tdtu.final_mobile.home.action;
 
 import android.content.Context;
-import android.content.Intent;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,18 +8,19 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 
+import tdtu.final_mobile.R;
+import tdtu.final_mobile.home.HomeActivity;
 import tdtu.final_mobile.presentation.vocabulary.OnItemClickAction;
 
 public class ActionAdapter extends RecyclerView.Adapter<ActionViewHolder> {
     private final List<Action> actions;
     private final Context context;
     private final LayoutInflater layoutInflater;
-    OnItemClickAction onClickAction;
+    public OnItemClickAction onClickAction;
     public ActionAdapter(List<Action> actions, Context context){
         this.actions = actions;
         this.context = context;
@@ -67,7 +67,7 @@ public class ActionAdapter extends RecyclerView.Adapter<ActionViewHolder> {
         onClickAction.onClick(itemPosition);
     }
 
-    void setOnClickAction(OnItemClickAction onClickAction){
+    public void setOnClickAction(OnItemClickAction onClickAction){
         this.onClickAction = onClickAction;
     }
 }

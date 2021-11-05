@@ -1,4 +1,4 @@
-package tdtu.final_mobile;
+package tdtu.final_mobile.home.action;
 
 import android.view.View;
 import android.widget.ImageView;
@@ -7,6 +7,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
+
+import tdtu.final_mobile.R;
 
 public class ActionViewHolder extends RecyclerView.ViewHolder {
     ImageView ivActionPic;

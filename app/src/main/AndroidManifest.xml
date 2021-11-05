@@ -10,19 +10,28 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FinalMobile">
         <activity
+            android:name=".home.checkin.CheckinActivity"
+            android:exported="true" />
+        <activity
+            android:name=".home.progress.ProgressActivity"
+            android:exported="true" />
+        <activity
+            android:name=".home.quiz.QuizActivity"
+            android:exported="true" />
+        <activity
             android:name=".presentation.PracticeActivity"
             android:exported="false" />
         <activity
-            android:name=".VocabularyActivity"
+            android:name=".home.vocabulary.VocabularyActivity"
             android:exported="true" />
         <activity
-            android:name=".HomeActivity"
+            android:name=".home.HomeActivity"
             android:exported="true" />
         <activity
-            android:name=".RegisterActivity"
+            android:name=".login_register.RegisterActivity"
             android:exported="true" />
         <activity
-            android:name=".MainActivity"
+            android:name=".login_register.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

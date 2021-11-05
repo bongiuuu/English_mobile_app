@@ -1,4 +1,4 @@
-package tdtu.final_mobile;
+package tdtu.final_mobile.home.activity;
 
 import android.content.res.ColorStateList;
 

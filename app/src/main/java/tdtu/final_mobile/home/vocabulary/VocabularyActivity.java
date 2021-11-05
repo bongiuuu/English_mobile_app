@@ -1,4 +1,4 @@
-package tdtu.final_mobile;
+package tdtu.final_mobile.home.vocabulary;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -7,15 +7,15 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.service.autofill.OnClickAction;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ImageButton;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
+import tdtu.final_mobile.R;
+import tdtu.final_mobile.home.HomeActivity;
 import tdtu.final_mobile.presentation.vocabulary.OnItemClickAction;
 
 public class VocabularyActivity extends AppCompatActivity implements OnItemClickAction {
@@ -32,14 +32,14 @@ public class VocabularyActivity extends AppCompatActivity implements OnItemClick
 
         iBtnBack = findViewById(R.id.iBtnBack);
         iBtnBack.setOnClickListener(view -> {
-            Intent backIntent = new Intent(view.getContext(), MainActivity.class);
+            Intent backIntent = new Intent(view.getContext(), HomeActivity.class);
             startActivity(backIntent);
         });
 
         List<Vocabulary> vocabularies = getVocabulary();
         RecyclerView recyclerView = this.findViewById(R.id.rvVocabulary);
         VocabularyAdapter vocabularyAdapter = new VocabularyAdapter(vocabularies, this);
-        vocabularyAdapter.setOnClickAction(this);
+        vocabularyAdapter.setOnVocabularyClickAction(this);
         recyclerView.setAdapter(vocabularyAdapter);
 
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
@@ -76,7 +76,6 @@ public class VocabularyActivity extends AppCompatActivity implements OnItemClick
                 vocabularies.add(new Vocabulary(vocabularyList[i], vietnameseList[i], i + 1, letterColors[i - 5*loop], circleColors[i - 5*loop]));
             }
         }
-
         return vocabularies;
     }
 

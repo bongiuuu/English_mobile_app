@@ -1,26 +1,26 @@
-package tdtu.final_mobile;
+package tdtu.final_mobile.home.vocabulary;
 
 public class Vocabulary {
     String vocabularyName;
     String vietnameseName;
     int number;
-    int numberColor;
-    int color;
+    int letterColor;
+    int circleColor;
 
     public Vocabulary(String vocabularyName, String vietnameseName, int number, int numberColor, int color) {
         this.vocabularyName = vocabularyName;
         this.vietnameseName = vietnameseName;
         this.number = number;
-        this.numberColor = numberColor;
-        this.color = color;
+        this.letterColor = numberColor;
+        this.circleColor = color;
     }
 
-    public int getNumberColor() {
-        return numberColor;
+    public int getLetterColor() {
+        return letterColor;
     }
 
-    public void setNumberColor(int numberColor) {
-        this.numberColor = numberColor;
+    public void setLetterColor(int letterColor) {
+        this.letterColor = letterColor;
     }
 
     public int getNumber() {
@@ -47,11 +47,11 @@ public class Vocabulary {
         this.vietnameseName = vietnameseName;
     }
 
-    public int getColor() {
-        return color;
+    public int getCircleColor() {
+        return circleColor;
     }
 
-    public void setColor(int color) {
-        this.color = color;
+    public void setCircleColor(int circleColor) {
+        this.circleColor = circleColor;
     }
 }

@@ -1,4 +1,4 @@
-package tdtu.final_mobile;
+package tdtu.final_mobile.home;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -13,6 +13,13 @@ import android.view.WindowManager;
 import java.util.ArrayList;
 import java.util.List;
 
+import tdtu.final_mobile.home.action.Action;
+import tdtu.final_mobile.home.action.ActionAdapter;
+import tdtu.final_mobile.home.activity.Activity;
+import tdtu.final_mobile.home.activity.ActivityAdapter;
+import tdtu.final_mobile.R;
+import tdtu.final_mobile.home.checkin.CheckinActivity;
+import tdtu.final_mobile.home.vocabulary.VocabularyActivity;
 import tdtu.final_mobile.presentation.vocabulary.OnItemClickAction;
 
 public class HomeActivity extends AppCompatActivity implements OnItemClickAction {
@@ -66,7 +73,13 @@ public class HomeActivity extends AppCompatActivity implements OnItemClickAction
 
     @Override
     public void onClick(int position) {
-        Intent vocabularyIntent = new Intent(HomeActivity.this, VocabularyActivity.class);
-        startActivity(vocabularyIntent);
+        if (position == 0){
+            Intent vocabularyIntent = new Intent(HomeActivity.this, VocabularyActivity.class);
+            startActivity(vocabularyIntent);
+        } else {
+            Intent checkinIntent = new Intent(HomeActivity.this, CheckinActivity.class);
+            startActivity(checkinIntent);
+        }
+
     }
 }

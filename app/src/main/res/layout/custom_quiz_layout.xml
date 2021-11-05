@@ -2,12 +2,12 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/custom_vocabulary_layout"
+    android:id="@+id/custom_quiz_layout"
     android:layout_width="match_parent"
     android:layout_height="100dp" >
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/cvVocabulary"
+        android:id="@+id/cvQuiz"
         android:layout_width="match_parent"
         android:layout_height="120dp"
         android:onClick="OnClick"
@@ -45,7 +45,7 @@
                 card_view:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/tvVocabularyName"
+                android:id="@+id/tvQuizTopic"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
@@ -68,7 +68,7 @@
                 android:textColor="@color/white"
                 android:textSize="15sp"
                 card_view:layout_constraintStart_toEndOf="@+id/ivCircle"
-                card_view:layout_constraintTop_toBottomOf="@+id/tvVocabularyName" />
+                card_view:layout_constraintTop_toBottomOf="@+id/tvQuizTopic" />
 
             <TextView
                 android:id="@+id/tvNumber"

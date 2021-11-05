@@ -1,4 +1,4 @@
-package tdtu.final_mobile;
+package tdtu.final_mobile.home.activity;
 
 import android.content.Context;
 import android.util.Log;
@@ -7,10 +7,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
-import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
+
+import tdtu.final_mobile.R;
+import tdtu.final_mobile.home.HomeActivity;
 
 public class ActivityAdapter extends RecyclerView.Adapter<ActivityViewHolder> {
     private final List<Activity> activities;

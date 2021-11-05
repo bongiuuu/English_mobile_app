@@ -1,4 +1,4 @@
-package tdtu.final_mobile;
+package tdtu.final_mobile.home.vocabulary;
 
 import android.view.View;
 import android.widget.ImageView;
@@ -8,6 +8,7 @@ import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
+import tdtu.final_mobile.R;
 import tdtu.final_mobile.presentation.vocabulary.OnItemClickAction;
 
 public class VocabularyViewHolder extends RecyclerView.ViewHolder {
@@ -24,11 +25,5 @@ public class VocabularyViewHolder extends RecyclerView.ViewHolder {
         this.tvVocabularyName = itemView.findViewById(R.id.tvVocabularyName);
         this.tvVietnameseName = itemView.findViewById(R.id.tvVietnameseName);
         this.cvVocabulary = itemView.findViewById(R.id.cvVocabulary);
-
-//        cvVocabulary.setOnClickListener(view -> {
-//            onClickAction.onClick();
-//            Intent vocabularyIntent = new Intent(view.getContext(), VocabularyActivity.class);
-//            startActivity(vocabularyIntent);
-//        });
     }
 }

@@ -1,4 +1,4 @@
-package tdtu.final_mobile;
+package tdtu.final_mobile.home.activity;
 
 import android.view.View;
 import android.widget.ImageView;
@@ -6,6 +6,8 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import tdtu.final_mobile.R;
 
 public class ActivityViewHolder extends RecyclerView.ViewHolder {
     ImageView ivActivityIcon;

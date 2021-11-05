@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:id="@+id/activity_home"
     android:background="@color/background_color"
-    tools:context=".HomeActivity">
+    tools:context=".home.HomeActivity">
 
     <ImageButton
         android:id="@+id/iBtnExtra"

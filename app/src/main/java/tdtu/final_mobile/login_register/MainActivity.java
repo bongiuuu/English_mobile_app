@@ -1,4 +1,4 @@
-package tdtu.final_mobile;
+package tdtu.final_mobile.login_register;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -11,6 +11,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
+
+import tdtu.final_mobile.home.HomeActivity;
+import tdtu.final_mobile.home.quiz.QuizActivity;
+import tdtu.final_mobile.R;
 
 public class MainActivity extends AppCompatActivity {
     private ImageButton iBtnGoogleLogin, iBtnFacebookLogin;
@@ -42,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
     public void OnClick(View view){
         switch (view.getId()){
             case R.id.btnRegister:
-                Intent registerIntent = new Intent(view.getContext(), VocabularyActivity.class);
+                Intent registerIntent = new Intent(view.getContext(), RegisterActivity.class);
                 startActivity(registerIntent);
                 break;
             case R.id.btnLogin:

@@ -1,16 +1,16 @@
-package tdtu.final_mobile;
+package tdtu.final_mobile.login_register;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.media.Image;
 import android.os.Bundle;
-import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+
+import tdtu.final_mobile.R;
 
 public class RegisterActivity extends AppCompatActivity {
     private ImageButton iBtnBack, iBtnGoogleLogin, iBtnFacebookLogin;
