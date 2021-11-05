@@ -1,5 +1,6 @@
 package tdtu.final_mobile;
 
+import android.content.Intent;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -24,5 +25,13 @@ public class VocabularyViewHolder extends RecyclerView.ViewHolder {
         this.tvVocabularyName = itemView.findViewById(R.id.tvVocabularyName);
         this.tvVietnameseName = itemView.findViewById(R.id.tvVietnameseName);
         this.cvVocabulary = itemView.findViewById(R.id.cvVocabulary);
+
+//        cvVocabulary.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent vocabularyIntent = new Intent(view.getContext(), VocabularyActivity.class);
+//                startActivity(vocabularyIntent);
+//            }
+//        });
     }
 }

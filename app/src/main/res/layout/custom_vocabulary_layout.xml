@@ -10,6 +10,7 @@
         android:id="@+id/cvVocabulary"
         android:layout_width="match_parent"
         android:layout_height="120dp"
+        android:onClick="OnClick"
         card_view:cardBackgroundColor="@color/dark_item"
         card_view:cardCornerRadius="10dp"
         card_view:cardElevation="10dp"
@@ -28,11 +29,20 @@
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_marginStart="24dp"
-                android:background="@drawable/draw_circle"
+                android:background="@color/white"
                 card_view:layout_constraintBottom_toBottomOf="parent"
                 card_view:layout_constraintStart_toStartOf="parent"
-                card_view:layout_constraintTop_toTopOf="parent"
-                card_view:layout_constraintVertical_bias="0.571" />
+                card_view:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/ivCircleFrame"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="24dp"
+                android:background="@drawable/circle_frame"
+                card_view:layout_constraintBottom_toBottomOf="parent"
+                card_view:layout_constraintStart_toStartOf="parent"
+                card_view:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/tvVocabularyName"

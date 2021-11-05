@@ -8,17 +8,17 @@
     tools:context=".VocabularyActivity">
 
     <ImageButton
-        android:id="@+id/iBtnExtra"
+        android:id="@+id/iBtnBack"
         android:layout_width="20dp"
         android:layout_height="20dp"
-        android:layout_marginStart="30dp"
+        android:layout_marginStart="20dp"
         android:layout_marginTop="30dp"
         android:background="@android:color/transparent"
         android:scaleType="fitCenter"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/extra"
-        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+        app:srcCompat="@drawable/back"
+        tools:ignore="SpeakableTextPresentCheck" />
 
     <ImageButton
         android:id="@+id/iBtnNotification"
@@ -48,9 +48,9 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvVocabulary"
-        android:layout_width="408dp"
-        android:layout_height="498dp"
-        android:layout_marginTop="128dp"
+        android:layout_width="match_parent"
+        android:layout_height="550dp"
+        android:layout_marginTop="110dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

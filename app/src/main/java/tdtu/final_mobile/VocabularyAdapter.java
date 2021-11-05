@@ -1,13 +1,19 @@
 package tdtu.final_mobile;
 
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.drawable.Drawable;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.core.graphics.drawable.RoundedBitmapDrawable;
+import androidx.core.graphics.drawable.RoundedBitmapDrawableFactory;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
@@ -25,7 +31,6 @@ public class VocabularyAdapter extends RecyclerView.Adapter<VocabularyViewHolder
 
     @Override
     public VocabularyViewHolder onCreateViewHolder(final ViewGroup parent, int viewType) {
-        // Inflate view from recyclerview_item_layout.xml
         View recyclerViewItem = layoutInflater.inflate(R.layout.custom_vocabulary_layout, parent, false);
 
         recyclerViewItem.setOnClickListener(v -> handleRecyclerItemClick((RecyclerView)parent, v));
@@ -36,9 +41,9 @@ public class VocabularyAdapter extends RecyclerView.Adapter<VocabularyViewHolder
     public void onBindViewHolder(@NonNull VocabularyViewHolder holder, int position) {
         holder.tvNumber.setText(vocabularies.get(position).getNumber() + "");
         holder.tvNumber.setTextColor(vocabularies.get(position).getNumberColor());
-//        holder.ivCircle.setBackgroundColor(vocabularies.get(position).getColor());
+        holder.ivCircle.setBackgroundColor(vocabularies.get(position).getColor());
         holder.tvVocabularyName.setText(vocabularies.get(position).getVocabularyName());
-        holder.tvVocabularyName.setTextColor(vocabularies.get(position).getColor());
+        holder.tvVocabularyName.setTextColor(vocabularies.get(position).getNumberColor());
         holder.tvVietnameseName.setText(vocabularies.get(position).getVietnameseName());
     }
 

@@ -4,16 +4,19 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.ImageButton;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class VocabularyActivity extends AppCompatActivity {
-    private RecyclerView recyclerView;
+    private ImageButton iBtnBack;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,8 +27,14 @@ public class VocabularyActivity extends AppCompatActivity {
                 WindowManager.LayoutParams.FLAG_FULLSCREEN); //enable full screen
         setContentView(R.layout.activity_vocabulary);
 
+        iBtnBack = findViewById(R.id.iBtnBack);
+        iBtnBack.setOnClickListener(view -> {
+            Intent backIntent = new Intent(view.getContext(), MainActivity.class);
+            startActivity(backIntent);
+        });
+
         List<Vocabulary> vocabularies = getVocabulary();
-        this.recyclerView = this.findViewById(R.id.rvVocabulary);
+        RecyclerView recyclerView = this.findViewById(R.id.rvVocabulary);
         recyclerView.setAdapter(new VocabularyAdapter(vocabularies, this));
 
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
@@ -33,20 +42,36 @@ public class VocabularyActivity extends AppCompatActivity {
     }
 
     private List<Vocabulary> getVocabulary(){
+        int greenLetter = Color.rgb(0, 135, 73);
+        int greenCircle = Color.rgb(35, 254, 163);
+        int orangeLetter = Color.rgb(225, 84, 35);
+        int orangeCircle = Color.rgb(255, 226, 149);
+        int pinkLetter = Color.rgb(146, 116, 237);
+        int pinkCircle = Color.rgb(236, 183, 233);
+        int blueLetter = Color.rgb(72, 169, 226);
+        int blueCircle = Color.rgb(164, 194, 227);
+        int yellowLetter = Color.rgb(185, 145, 48);
+        int yellowCircle = Color.rgb(255, 253, 84);
+
         List<Vocabulary> vocabularies = new ArrayList<>();
-        int[] colors = {Color.rgb(35, 254, 163),
-                        Color.rgb(255, 226, 149)};
-        int[] numColors = {Color.rgb(0, 135, 73),
-                            Color.rgb(225, 84, 35)};
-        vocabularies.add(new Vocabulary( "School", "Trường học", 1, numColors[0], colors[0]));
-        vocabularies.add(new Vocabulary( "Examination", "Kỳ thi", 2, numColors[1], colors[1]));
-        vocabularies.add(new Vocabulary( "Extracurricular Activities", "Hoạt động ngoại khoá", 3, numColors[1], colors[1]));
-        vocabularies.add(new Vocabulary( "School Stationary", "Dụng cụ học tập", 4, numColors[1], colors[1]));
-        vocabularies.add(new Vocabulary( "School Subjects", "Các môn học", 5, numColors[1], colors[1]));
-        vocabularies.add(new Vocabulary( "Classroom", "Lớp học", 6, numColors[1], colors[1]));
-        vocabularies.add(new Vocabulary( "Music", "Âm nhạc", 7, numColors[1], colors[1]));
-        vocabularies.add(new Vocabulary( "Clothes", "Quần áo", 8, numColors[1], colors[1]));
-        vocabularies.add(new Vocabulary( "Family", "Gia đình", 9, numColors[1], colors[1]));
+
+        String[] vocabularyList = {"School", "Examination", "Extracurricular Activities", "School Stationary", "School Subjects", "Classroom", "Music", "Clothes", "Family", "School", "Examination", "Extracurricular Activities", "School Stationary", "School Subjects"};
+        String[] vietnameseList = {"Trường học", "Kỳ thi", "Hoạt động ngoại khoá", "Dụng cụ học tập", "Các môn học", "Lớp học", "Âm nhạc", "Quần áo", "Gia đình", "Trường học", "Kỳ thi", "Hoạt động ngoại khoá", "Dụng cụ học tập", "Các môn học"};
+        int[] letterColors = {greenLetter, orangeLetter, pinkLetter, blueLetter, yellowLetter};
+        int[] circleColors = {greenCircle, orangeCircle, pinkCircle, blueCircle, yellowCircle};
+        int loop = 0;
+
+        for (int i = 0; i < vocabularyList.length; i++){
+            if (i < 5){
+                vocabularies.add(new Vocabulary(vocabularyList[i], vietnameseList[i], i + 1, letterColors[i], circleColors[i]));
+            } else {
+                if (i % 5 == 0){
+                    loop++;
+                }
+                vocabularies.add(new Vocabulary(vocabularyList[i], vietnameseList[i], i + 1, letterColors[i - 5*loop], circleColors[i - 5*loop]));
+            }
+        }
+
         return vocabularies;
     }
 }
