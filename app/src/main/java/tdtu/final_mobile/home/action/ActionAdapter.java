@@ -21,6 +21,7 @@ public class ActionAdapter extends RecyclerView.Adapter<ActionViewHolder> {
     private final Context context;
     private final LayoutInflater layoutInflater;
     public OnItemClickAction onClickAction;
+
     public ActionAdapter(List<Action> actions, Context context){
         this.actions = actions;
         this.context = context;

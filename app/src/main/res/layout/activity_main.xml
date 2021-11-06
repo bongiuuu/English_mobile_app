@@ -19,34 +19,81 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/app_logo" />
 
-    <EditText
-        android:id="@+id/edtUsername"
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cvUsername"
         android:layout_width="360dp"
         android:layout_height="50dp"
         android:layout_marginTop="50dp"
-        android:background="@drawable/round_edittext"
-        android:hint="@string/username"
-        android:textColorHint="@color/gray_hint_color"
-        android:textColor="@color/gray_hint_color"
+        android:backgroundTint="@android:color/transparent"
+        app:cardCornerRadius="30dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ivLogo"
-        tools:ignore="TextContrastCheck" />
+        app:strokeColor="@color/orange_line"
+        app:strokeWidth="1dp">
 
-    <EditText
-        android:id="@+id/edtPassword"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="360dp"
+            android:layout_height="50dp"
+            android:background="@color/background_color"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/edtUsername"
+                android:layout_width="330dp"
+                android:layout_height="30dp"
+                android:layout_marginBottom="4dp"
+                android:background="@android:color/transparent"
+                android:fontFamily="@font/avenir"
+                android:gravity="left"
+                android:hint="@string/username"
+                android:textColor="@color/white"
+                android:textColorHint="@color/gray_hint_color"
+                android:textSize="@dimen/answer_text_size_1"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cvPassword"
         android:layout_width="360dp"
         android:layout_height="50dp"
+        android:backgroundTint="@android:color/transparent"
+        app:cardCornerRadius="30dp"
         android:layout_marginTop="15dp"
-        android:background="@drawable/round_edittext"
-        android:hint="@string/password"
-        android:textColorHint="@color/gray_hint_color"
-        android:textColor="@color/gray_hint_color"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edtUsername" />
+        app:layout_constraintTop_toBottomOf="@+id/cvUsername"
+        app:strokeColor="@color/orange_line"
+        app:strokeWidth="1dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="360dp"
+            android:layout_height="50dp"
+            android:background="@color/background_color"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/edtPassword"
+                android:layout_width="330dp"
+                android:layout_height="30dp"
+                android:layout_marginBottom="4dp"
+                android:background="@android:color/transparent"
+                android:fontFamily="@font/avenir"
+                android:gravity="left"
+                android:hint="@string/password"
+                android:textColor="@color/white"
+                android:textColorHint="@color/gray_hint_color"
+                android:textSize="@dimen/answer_text_size_1"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
 
     <TextView
         android:id="@+id/tvForgotPassword"
@@ -58,33 +105,36 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.228"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edtPassword" />
+        app:layout_constraintTop_toBottomOf="@+id/cvPassword" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnRegister"
         android:layout_width="120dp"
         android:layout_height="40dp"
         android:layout_marginTop="50dp"
         android:background="@drawable/round_button"
+        android:backgroundTint="@null"
         android:text="@string/register"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toStartOf="@+id/btnLogin"
         app:layout_constraintHorizontal_bias="0.819"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edtPassword"
+        app:layout_constraintTop_toBottomOf="@+id/cvPassword"
         tools:ignore="TouchTargetSizeCheck" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnLogin"
         android:layout_width="120dp"
         android:layout_height="40dp"
         android:layout_marginTop="50dp"
         android:background="@drawable/round_button"
         android:text="@string/login"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.735"
         app:layout_constraintStart_toEndOf="@+id/btnRegister"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edtPassword"
+        app:layout_constraintTop_toBottomOf="@+id/cvPassword"
         tools:ignore="TouchTargetSizeCheck" />
 
     <View
@@ -95,7 +145,7 @@
         android:layout_marginTop="200dp"
         android:background="@color/orange_line"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edtPassword" />
+        app:layout_constraintTop_toBottomOf="@+id/cvPassword" />
 
     <View
         android:id="@+id/horizontalLine2"
@@ -105,7 +155,7 @@
         android:layout_marginEnd="56dp"
         android:background="@color/orange_line"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edtPassword" />
+        app:layout_constraintTop_toBottomOf="@+id/cvPassword" />
 
     <TextView
         android:id="@+id/tvOr"
@@ -116,7 +166,7 @@
         android:textColor="@color/orange_line"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edtPassword" />
+        app:layout_constraintTop_toBottomOf="@+id/cvPassword" />
 
     <ImageButton
         android:id="@+id/iBtnGoogleLogin"

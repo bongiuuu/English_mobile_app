@@ -34,9 +34,9 @@ public class RegisterActivity extends AppCompatActivity {
         edtReEnterPassword = findViewById(R.id.edtReEnterPassword);
         btnRegister = findViewById(R.id.btnRegister);
 
+        iBtnBack = findViewById(R.id.iBtnBack);
         iBtnBack.setOnClickListener(view -> {
-            Intent backIntent = new Intent(view.getContext(), MainActivity.class);
-            startActivity(backIntent);
+            onBackPressed();
         });
 
     }

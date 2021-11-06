@@ -15,9 +15,9 @@ import tdtu.final_mobile.R;
 import tdtu.final_mobile.presentation.vocabulary.OnItemClickAction;
 
 public class VocabularyAdapter extends RecyclerView.Adapter<VocabularyViewHolder> {
-    private final List<Vocabulary> vocabularies;
-    private final Context context;
-    private final LayoutInflater layoutInflater;
+    final List<Vocabulary> vocabularies;
+    final Context context;
+    final LayoutInflater layoutInflater;
     OnItemClickAction onClickAction;
 
     public VocabularyAdapter(List<Vocabulary> vocabularies, Context context){
@@ -53,9 +53,9 @@ public class VocabularyAdapter extends RecyclerView.Adapter<VocabularyViewHolder
     }
 
     // Click on RecyclerView Item.
-    private void handleRecyclerItemClick(RecyclerView recyclerView, View itemView) {
+    public void handleRecyclerItemClick(RecyclerView recyclerView, View itemView) {
         int itemPosition = recyclerView.getChildLayoutPosition(itemView);
-        Vocabulary vocabulary  = this.vocabularies.get(itemPosition);
+        Vocabulary vocabulary = this.vocabularies.get(itemPosition);
 
         Toast.makeText(this.context, vocabulary.getVocabularyName(), Toast.LENGTH_SHORT).show();
     }

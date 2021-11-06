@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background_color"
-    tools:context=".home.vocabulary.VocabularyActivity">
+    tools:context=".home.contribute.ChooseTopicActivity">
 
     <ImageButton
         android:id="@+id/iBtnBack"
@@ -34,11 +34,12 @@
         tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
     <TextView
-        android:id="@+id/tvVocabulary"
-        android:layout_width="wrap_content"
+        android:id="@+id/tvContribute"
+        android:layout_width="280dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
-        android:text="@string/vocabulary"
+        android:text="@string/contribute_multiple_choices_q_a"
+        android:gravity="center"
         android:fontFamily="@font/avenir"
         android:textColor="@color/white"
         android:textSize="30sp"
@@ -47,13 +48,12 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvVocabulary"
+        android:id="@+id/rvTopicList"
         android:layout_width="match_parent"
-        android:layout_height="600dp"
-        android:layout_marginTop="70dp"
+        android:layout_height="560dp"
+        android:layout_marginTop="25dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
+        app:layout_constraintTop_toBottomOf="@id/tvContribute" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

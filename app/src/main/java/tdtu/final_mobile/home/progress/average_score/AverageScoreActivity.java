@@ -1,4 +1,4 @@
-package tdtu.final_mobile.home.vocabulary;
+package tdtu.final_mobile.home.progress.average_score;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -15,10 +15,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import tdtu.final_mobile.R;
-import tdtu.final_mobile.home.HomeActivity;
-import tdtu.final_mobile.presentation.vocabulary.OnItemClickAction;
+import tdtu.final_mobile.home.progress.ProgressActivity;
 
-public class VocabularyActivity extends AppCompatActivity implements OnItemClickAction {
+public class AverageScoreActivity extends AppCompatActivity {
     private ImageButton iBtnBack;
 
     @Override
@@ -28,24 +27,23 @@ public class VocabularyActivity extends AppCompatActivity implements OnItemClick
         getSupportActionBar().hide(); // hide the title bar
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN); //enable full screen
-        setContentView(R.layout.activity_vocabulary);
+        setContentView(R.layout.activity_average_score);
 
         iBtnBack = findViewById(R.id.iBtnBack);
         iBtnBack.setOnClickListener(view -> {
             onBackPressed();
         });
 
-        List<Vocabulary> vocabularies = getVocabulary();
-        RecyclerView recyclerView = this.findViewById(R.id.rvVocabulary);
-        VocabularyAdapter vocabularyAdapter = new VocabularyAdapter(vocabularies, this);
-        vocabularyAdapter.setOnVocabularyClickAction(this);
-        recyclerView.setAdapter(vocabularyAdapter);
+        List<ScoredTopic> scoredTopics = getScoredTopic();
+        RecyclerView recyclerView = this.findViewById(R.id.rvScoredTopics);
+        ScoredTopicAdapter scoredTopicAdapter = new ScoredTopicAdapter(scoredTopics, this);
+        recyclerView.setAdapter(scoredTopicAdapter);
 
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
         recyclerView.setLayoutManager(linearLayoutManager);
     }
 
-    public List<Vocabulary> getVocabulary(){
+    private List<ScoredTopic> getScoredTopic() {
         int greenLetter = Color.rgb(0, 135, 73);
         int greenCircle = Color.rgb(35, 254, 163);
         int orangeLetter = Color.rgb(225, 84, 35);
@@ -57,29 +55,25 @@ public class VocabularyActivity extends AppCompatActivity implements OnItemClick
         int yellowLetter = Color.rgb(185, 145, 48);
         int yellowCircle = Color.rgb(255, 253, 84);
 
-        List<Vocabulary> vocabularies = new ArrayList<>();
+        List<ScoredTopic> scoredTopics = new ArrayList<>();
 
-        String[] vocabularyList = {"School", "Examination", "Extracurricular Activities", "School Stationary", "School Subjects", "Classroom", "Music", "Clothes", "Family", "School", "Examination", "Extracurricular Activities", "School Stationary", "School Subjects"};
-        String[] vietnameseList = {"Trường học", "Kỳ thi", "Hoạt động ngoại khoá", "Dụng cụ học tập", "Các môn học", "Lớp học", "Âm nhạc", "Quần áo", "Gia đình", "Trường học", "Kỳ thi", "Hoạt động ngoại khoá", "Dụng cụ học tập", "Các môn học"};
+        String[] topicList = {"School", "Examination", "Extracurricular Activities", "School Stationary", "School Subjects", "Classroom", "School"};
+        String[] vietnameseList = {"Trường học", "Kỳ thi", "Hoạt động ngoại khoá", "Dụng cụ học tập", "Các môn học", "Lớp học", "Trường học"};
+        int[] scores = {98, 100, 100, 80, 90, 75, 82};
         int[] letterColors = {greenLetter, orangeLetter, pinkLetter, blueLetter, yellowLetter};
         int[] circleColors = {greenCircle, orangeCircle, pinkCircle, blueCircle, yellowCircle};
         int loop = 0;
 
-        for (int i = 0; i < vocabularyList.length; i++){
-            if (i < 5){
-                vocabularies.add(new Vocabulary(vocabularyList[i], vietnameseList[i], i + 1, letterColors[i], circleColors[i]));
+        for (int i = 0; i < topicList.length; i++) {
+            if (i < 5) {
+                scoredTopics.add(new ScoredTopic(topicList[i], vietnameseList[i], scores[i], i + 1, letterColors[i], circleColors[i]));
             } else {
-                if (i % 5 == 0){
+                if (i % 5 == 0) {
                     loop++;
                 }
-                vocabularies.add(new Vocabulary(vocabularyList[i], vietnameseList[i], i + 1, letterColors[i - 5*loop], circleColors[i - 5*loop]));
+                scoredTopics.add(new ScoredTopic(topicList[i], vietnameseList[i], scores[i], i + 1, letterColors[i - 5 * loop], circleColors[i - 5 * loop]));
             }
         }
-        return vocabularies;
-    }
-
-    @Override
-    public void onClick(int position) {
-
+        return scoredTopics;
     }
 }

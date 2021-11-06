@@ -13,8 +13,15 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 
 import tdtu.final_mobile.home.HomeActivity;
+import tdtu.final_mobile.home.contribute.ChooseTopicActivity;
+import tdtu.final_mobile.home.contribute.ContributeActivity;
+import tdtu.final_mobile.home.progress.ProgressActivity;
+import tdtu.final_mobile.home.progress.already_known.AlreadyKnownActivity;
+import tdtu.final_mobile.home.progress.average_score.AverageScoreActivity;
 import tdtu.final_mobile.home.quiz.QuizActivity;
 import tdtu.final_mobile.R;
+import tdtu.final_mobile.home.quiz.QuizzesActivity;
+import tdtu.final_mobile.home.vocabulary.VocabulariesActivity;
 
 public class MainActivity extends AppCompatActivity {
     private ImageButton iBtnGoogleLogin, iBtnFacebookLogin;

@@ -7,11 +7,11 @@
     android:layout_height="100dp" >
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/cvVocabulary"
+        android:id="@+id/cvTopic"
         android:layout_width="400dp"
         android:layout_height="80dp"
-        android:layout_marginTop="5dp"
         android:onClick="OnClick"
+        android:layout_marginTop="5dp"
         card_view:cardBackgroundColor="@color/dark_item"
         card_view:cardCornerRadius="10dp"
         card_view:layout_constraintEnd_toEndOf="parent"
@@ -44,7 +44,7 @@
                 card_view:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/tvVocabularyName"
+                android:id="@+id/tvTopicName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
@@ -54,6 +54,19 @@
                 android:textColor="@color/white"
                 android:textSize="20sp"
                 card_view:layout_constraintStart_toEndOf="@+id/ivCircle"
+                card_view:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvScored"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="28dp"
+                android:fontFamily="@font/avenir"
+                android:text="@string/_93"
+                android:textColor="@color/white"
+                android:textSize="25sp"
+                card_view:layout_constraintBottom_toBottomOf="parent"
+                card_view:layout_constraintEnd_toEndOf="parent"
                 card_view:layout_constraintTop_toTopOf="parent" />
 
             <TextView
@@ -67,7 +80,7 @@
                 android:textColor="@color/white"
                 android:textSize="15sp"
                 card_view:layout_constraintStart_toEndOf="@+id/ivCircle"
-                card_view:layout_constraintTop_toBottomOf="@+id/tvVocabularyName" />
+                card_view:layout_constraintTop_toBottomOf="@+id/tvTopicName" />
 
             <TextView
                 android:id="@+id/tvNumber"

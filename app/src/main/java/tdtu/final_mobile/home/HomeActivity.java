@@ -25,7 +25,7 @@ import tdtu.final_mobile.presentation.vocabulary.OnItemClickAction;
 public class HomeActivity extends AppCompatActivity implements OnItemClickAction {
     public static final String LOG_TAG = "icon1";
     public static final String LOG_TAG_1 = "action_pic_1";
-    private RecyclerView recyclerView;
+    private RecyclerView activityRecyclerView;
     private RecyclerView actionRecyclerView;
 
     @Override
@@ -38,11 +38,11 @@ public class HomeActivity extends AppCompatActivity implements OnItemClickAction
         setContentView(R.layout.activity_home);
 
         List<Activity> activities = getListData();
-        this.recyclerView = this.findViewById(R.id.rvActivities);
-        recyclerView.setAdapter(new ActivityAdapter(activities, this));
+        this.activityRecyclerView = this.findViewById(R.id.rvActivities);
+        activityRecyclerView.setAdapter(new ActivityAdapter(activities, this));
 
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
-        recyclerView.setLayoutManager(linearLayoutManager);
+        activityRecyclerView.setLayoutManager(linearLayoutManager);
 
         List<Action> actions = getActions();
         this.actionRecyclerView = this.findViewById(R.id.rvActions);
@@ -62,7 +62,6 @@ public class HomeActivity extends AppCompatActivity implements OnItemClickAction
         activities.add(new Activity("Contribute Multiple choices Q&A", "icon3", colors[2]));
         return activities;
     }
-
     private List<Action> getActions(){
         List<Action> actions = new ArrayList<>();
         int[] colors = {Color.rgb(18, 88, 241), Color.rgb(36, 39, 52)};
@@ -70,6 +69,7 @@ public class HomeActivity extends AppCompatActivity implements OnItemClickAction
         actions.add(new Action( "Checkin", "action_pic_2", colors[1]));
         return actions;
     }
+
 
     @Override
     public void onClick(int position) {
@@ -80,6 +80,5 @@ public class HomeActivity extends AppCompatActivity implements OnItemClickAction
             Intent checkinIntent = new Intent(HomeActivity.this, CheckinActivity.class);
             startActivity(checkinIntent);
         }
-
     }
 }

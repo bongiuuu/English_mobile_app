@@ -16,4 +16,7 @@
     <color name="activity_3">#ffb0f1</color>
     <color name="action_1">#1259f1</color>
     <color name="action_2">#212c35</color>
+    <color name="yellow">#f6c042</color>
+    <color name="pink">#ffadff</color>
+    <color name="blue">#00a6e8</color>
 </resources>

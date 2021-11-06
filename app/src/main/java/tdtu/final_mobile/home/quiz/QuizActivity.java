@@ -32,8 +32,7 @@ public class QuizActivity extends AppCompatActivity implements OnItemClickAction
 
         iBtnBack = findViewById(R.id.iBtnBack);
         iBtnBack.setOnClickListener(view -> {
-            Intent backIntent = new Intent(view.getContext(), HomeActivity.class);
-            startActivity(backIntent);
+            onBackPressed();
         });
 
         List<Quiz> quizzes = getQuiz();
