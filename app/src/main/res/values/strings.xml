@@ -33,4 +33,6 @@
     <string name="enter_your_question">Enter your Question</string>
     <string name="question">Question</string>
     <string name="approve">Approve</string>
+    <string name="notification">Notification</string>
+    <string name="notification_title">Notification Title</string>
 </resources>

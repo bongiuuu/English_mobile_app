@@ -16,6 +16,7 @@
         <entry key="app/src/main/res/layout/activity_contribute.xml" value="0.32864583333333336" />
         <entry key="app/src/main/res/layout/activity_home.xml" value="0.245018115942029" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/activity_main_notification.xml" value="0.17604166666666668" />
         <entry key="app/src/main/res/layout/activity_practice.xml" value="0.14479166666666668" />
         <entry key="app/src/main/res/layout/activity_progress.xml" value="0.335" />
         <entry key="app/src/main/res/layout/activity_quiz.xml" value="0.12228260869565218" />
@@ -26,6 +27,7 @@
         <entry key="app/src/main/res/layout/activity_vocabulary.xml" value="0.18958333333333333" />
         <entry key="app/src/main/res/layout/custom_action_layout.xml" value="0.25" />
         <entry key="app/src/main/res/layout/custom_activity_layout.xml" value="0.12708333333333333" />
+        <entry key="app/src/main/res/layout/custom_notification_layout.xml" value="0.33" />
         <entry key="app/src/main/res/layout/custom_quiz_layout.xml" value="0.12708333333333333" />
         <entry key="app/src/main/res/layout/custom_scored_topic_layout.xml" value="0.30978260869565216" />
         <entry key="app/src/main/res/layout/custom_vocabulary_layout.xml" value="0.25" />
@@ -38,5 +40,12 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.17604166666666668" />
+      </ProjectState>
+    </option>
   </component>
 </project>
