@@ -1,4 +1,4 @@
-package tdtu.final_mobile.home.quiz;
+package tdtu.final_mobile.home.contribute;
 
 import android.view.View;
 import android.widget.ImageView;
@@ -9,21 +9,21 @@ import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import tdtu.final_mobile.R;
-import tdtu.final_mobile.presentation.click_control.OnClickQuiz;
+import tdtu.final_mobile.presentation.click_control.OnClickContribute;
 
-public class QuizViewHolder extends RecyclerView.ViewHolder {
+public class TopicViewHolder extends RecyclerView.ViewHolder {
     ImageView ivCircle;
     TextView tvNumber;
-    TextView tvQuizTopic;
+    TextView tvTopicName;
     TextView tvVietnameseName;
-    CardView cvQuiz;
+    CardView cvTopic;
 
-    public QuizViewHolder(@NonNull View itemView, OnClickQuiz onClickQuiz) {
+    public TopicViewHolder(@NonNull View itemView, OnClickContribute onClickContribute){
         super(itemView);
         this.ivCircle = itemView.findViewById(R.id.ivCircle);
         this.tvNumber = itemView.findViewById(R.id.tvNumber);
-        this.tvQuizTopic = itemView.findViewById(R.id.tvQuizTopic);
+        this.tvTopicName = itemView.findViewById(R.id.tvTopicName);
         this.tvVietnameseName = itemView.findViewById(R.id.tvVietnameseName);
-        this.cvQuiz = itemView.findViewById(R.id.cvQuiz);
+        this.cvTopic = itemView.findViewById(R.id.cvTopic);
     }
 }

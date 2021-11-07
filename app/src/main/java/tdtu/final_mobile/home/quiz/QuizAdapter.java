@@ -12,13 +12,13 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 
 import tdtu.final_mobile.R;
-import tdtu.final_mobile.presentation.quiz.OnItemClickAction;
+import tdtu.final_mobile.presentation.click_control.OnClickQuiz;
 
 public class QuizAdapter extends RecyclerView.Adapter<QuizViewHolder> {
     private final List<Quiz> quizzes;
     private final Context context;
     private final LayoutInflater layoutInflater;
-    OnItemClickAction onClickAction;
+    OnClickQuiz onClickQuiz;
 
     public QuizAdapter(List<Quiz> quizzes, Context context) {
         this.quizzes = quizzes;
@@ -32,7 +32,7 @@ public class QuizAdapter extends RecyclerView.Adapter<QuizViewHolder> {
         View recyclerViewItem = layoutInflater.inflate(R.layout.custom_quiz_layout, parent, false);
 
         recyclerViewItem.setOnClickListener(v -> handleRecyclerItemClick((RecyclerView)parent, v));
-        return new QuizViewHolder(recyclerViewItem, onClickAction);
+        return new QuizViewHolder(recyclerViewItem, onClickQuiz);
     }
 
     @Override
@@ -44,7 +44,7 @@ public class QuizAdapter extends RecyclerView.Adapter<QuizViewHolder> {
         holder.tvQuizTopic.setTextColor(quizzes.get(position).getLetterColor());
         holder.tvVietnameseName.setText(quizzes.get(position).getVietnameseName());
         holder.cvQuiz.setOnClickListener(v -> {
-            onClickAction.onClick(position);
+            onClickQuiz.OnQuizTopicClick(position);
         });
     }
 
@@ -60,7 +60,7 @@ public class QuizAdapter extends RecyclerView.Adapter<QuizViewHolder> {
         Toast.makeText(this.context, quiz.getQuizTopic(), Toast.LENGTH_SHORT).show();
     }
 
-    void setOnQuizClickAction(OnItemClickAction onClickAction){
-        this.onClickAction = onClickAction;
+    void setOnQuizTopicClickAction(OnClickQuiz onClickQuiz){
+        this.onClickQuiz = onClickQuiz;
     }
 }

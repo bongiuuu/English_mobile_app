@@ -19,14 +19,17 @@ import tdtu.final_mobile.home.activity.Activity;
 import tdtu.final_mobile.home.activity.ActivityAdapter;
 import tdtu.final_mobile.R;
 import tdtu.final_mobile.home.checkin.CheckinActivity;
+import tdtu.final_mobile.home.contribute.ChooseTopicActivity;
+import tdtu.final_mobile.home.contribute.ContributeActivity;
+import tdtu.final_mobile.home.progress.ProgressActivity;
+import tdtu.final_mobile.home.quiz.QuizActivity;
 import tdtu.final_mobile.home.vocabulary.VocabularyActivity;
-import tdtu.final_mobile.presentation.vocabulary.OnItemClickAction;
+import tdtu.final_mobile.presentation.click_control.OnClickActivity;
+import tdtu.final_mobile.presentation.click_control.OnClickAction;
 
-public class HomeActivity extends AppCompatActivity implements OnItemClickAction {
+public class HomeActivity extends AppCompatActivity implements OnClickAction, OnClickActivity {
     public static final String LOG_TAG = "icon1";
     public static final String LOG_TAG_1 = "action_pic_1";
-    private RecyclerView activityRecyclerView;
-    private RecyclerView actionRecyclerView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,18 +41,18 @@ public class HomeActivity extends AppCompatActivity implements OnItemClickAction
         setContentView(R.layout.activity_home);
 
         List<Activity> activities = getListData();
-        this.activityRecyclerView = this.findViewById(R.id.rvActivities);
-        activityRecyclerView.setAdapter(new ActivityAdapter(activities, this));
-
+        RecyclerView activityRecyclerView = this.findViewById(R.id.rvActivities);
+        ActivityAdapter activityAdapter = new ActivityAdapter(activities, this);
+        activityAdapter.setActivityAction(this);
+        activityRecyclerView.setAdapter(activityAdapter);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
         activityRecyclerView.setLayoutManager(linearLayoutManager);
 
         List<Action> actions = getActions();
-        this.actionRecyclerView = this.findViewById(R.id.rvActions);
+        RecyclerView actionRecyclerView = this.findViewById(R.id.rvActions);
         ActionAdapter actionAdapter = new ActionAdapter(actions, this);
         actionAdapter.setOnClickAction(this);
         actionRecyclerView.setAdapter(actionAdapter);
-
         LinearLayoutManager linearLayoutManager1 = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
         actionRecyclerView.setLayoutManager(linearLayoutManager1);
     }
@@ -72,13 +75,27 @@ public class HomeActivity extends AppCompatActivity implements OnItemClickAction
 
 
     @Override
-    public void onClick(int position) {
+    public void OnActionClick(int position) {
         if (position == 0){
             Intent vocabularyIntent = new Intent(HomeActivity.this, VocabularyActivity.class);
             startActivity(vocabularyIntent);
         } else {
             Intent checkinIntent = new Intent(HomeActivity.this, CheckinActivity.class);
             startActivity(checkinIntent);
+        }
+    }
+
+    @Override
+    public void onActivityClick(int position) {
+        if (position == 0){
+            Intent quizIntent = new Intent(HomeActivity.this, QuizActivity.class);
+            startActivity(quizIntent);
+        } else if (position == 1){
+            Intent progressIntent = new Intent(HomeActivity.this, ProgressActivity.class);
+            startActivity(progressIntent);
+        } else {
+            Intent contributeIntent = new Intent(HomeActivity.this, ChooseTopicActivity.class);
+            startActivity(contributeIntent);
         }
     }
 }

@@ -21,7 +21,6 @@
     <string name="find_a_word"><i>Find a word</i></string>
     <string name="english">English</string>
     <string name="_93">93</string>
-    <string name="topic">Topic</string>
     <string name="this_is_an_example_question_for_demo">This is an example question for Demo</string>
     <string name="answer_a">Answer A</string>
     <string name="answer_b">Answer B</string>
@@ -35,4 +34,10 @@
     <string name="approve">Approve</string>
     <string name="notification">Notification</string>
     <string name="notification_title">Notification Title</string>
+    <string name="notification_content_demo">This is an example of Noti content for Demo ^^~</string>
+    <string name="my_profile">My Profile</string>
+    <string name="upload_your_image">Upload your image</string>
+    <string name="gender">Gender</string>
+    <string name="save">Save</string>
+    <string name="topic">Topic</string>
 </resources>

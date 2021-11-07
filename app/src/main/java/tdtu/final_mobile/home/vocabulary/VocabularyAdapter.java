@@ -12,13 +12,13 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 
 import tdtu.final_mobile.R;
-import tdtu.final_mobile.presentation.vocabulary.OnItemClickAction;
+import tdtu.final_mobile.presentation.click_control.OnClickVocabulary;
 
 public class VocabularyAdapter extends RecyclerView.Adapter<VocabularyViewHolder> {
     final List<Vocabulary> vocabularies;
     final Context context;
     final LayoutInflater layoutInflater;
-    OnItemClickAction onClickAction;
+    OnClickVocabulary onClickVocabulary;
 
     public VocabularyAdapter(List<Vocabulary> vocabularies, Context context){
         this.vocabularies = vocabularies;
@@ -26,12 +26,13 @@ public class VocabularyAdapter extends RecyclerView.Adapter<VocabularyViewHolder
         this.layoutInflater = LayoutInflater.from(context);
     }
 
+    @NonNull
     @Override
     public VocabularyViewHolder onCreateViewHolder(final ViewGroup parent, int viewType) {
         View recyclerViewItem = layoutInflater.inflate(R.layout.custom_vocabulary_layout, parent, false);
 
         recyclerViewItem.setOnClickListener(v -> handleRecyclerItemClick((RecyclerView)parent, v));
-        return new VocabularyViewHolder(recyclerViewItem, onClickAction);
+        return new VocabularyViewHolder(recyclerViewItem, onClickVocabulary);
     }
 
     @Override
@@ -43,7 +44,7 @@ public class VocabularyAdapter extends RecyclerView.Adapter<VocabularyViewHolder
         holder.tvVocabularyName.setTextColor(vocabularies.get(position).getLetterColor());
         holder.tvVietnameseName.setText(vocabularies.get(position).getVietnameseName());
         holder.cvVocabulary.setOnClickListener(v -> {
-            onClickAction.onClick(position);
+            onClickVocabulary.OnVocabularyTopicClick(position);
         });
     }
 
@@ -60,7 +61,7 @@ public class VocabularyAdapter extends RecyclerView.Adapter<VocabularyViewHolder
         Toast.makeText(this.context, vocabulary.getVocabularyName(), Toast.LENGTH_SHORT).show();
     }
 
-    void setOnVocabularyClickAction(OnItemClickAction onClickAction){
-        this.onClickAction = onClickAction;
+    void setTopicVocabularyClickAction(OnClickVocabulary onClickVocabulary){
+        this.onClickVocabulary = onClickVocabulary;
     }
 }

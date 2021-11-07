@@ -1,4 +1,4 @@
-package tdtu.final_mobile.home.contribute;
+package tdtu.final_mobile.home.notification;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -9,7 +9,7 @@ import android.widget.ImageButton;
 
 import tdtu.final_mobile.R;
 
-public class ContributeActivity extends AppCompatActivity {
+public class NotificationDetailActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,7 +18,7 @@ public class ContributeActivity extends AppCompatActivity {
         getSupportActionBar().hide(); // hide the title bar
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN); //enable full screen
-        setContentView(R.layout.activity_contribute);
+        setContentView(R.layout.activity_notification_detail);
 
         ImageButton iBtnBack = findViewById(R.id.iBtnBack);
         iBtnBack.setOnClickListener(view -> {

@@ -9,7 +9,8 @@ import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import tdtu.final_mobile.R;
-import tdtu.final_mobile.presentation.vocabulary.OnItemClickAction;
+import tdtu.final_mobile.presentation.click_control.OnClickAction;
+import tdtu.final_mobile.presentation.click_control.OnClickVocabulary;
 
 public class VocabularyViewHolder extends RecyclerView.ViewHolder {
     ImageView ivCircle;
@@ -18,7 +19,7 @@ public class VocabularyViewHolder extends RecyclerView.ViewHolder {
     TextView tvVietnameseName;
     CardView cvVocabulary;
 
-    public VocabularyViewHolder(@NonNull View itemView, OnItemClickAction onClickAction){
+    public VocabularyViewHolder(@NonNull View itemView, OnClickVocabulary onClickVocabulary){
         super(itemView);
         this.ivCircle = itemView.findViewById(R.id.ivCircle);
         this.tvNumber = itemView.findViewById(R.id.tvNumber);

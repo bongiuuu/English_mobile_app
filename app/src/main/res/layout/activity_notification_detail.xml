@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background_color"
-    tools:context=".home.progress.average_score.AverageScoreActivity">
+    tools:context=".home.notification.NotificationDetailActivity">
 
     <ImageButton
         android:id="@+id/iBtnBack"
@@ -21,11 +21,11 @@
         tools:ignore="SpeakableTextPresentCheck" />
 
     <TextView
-        android:id="@+id/tvAverageScore"
+        android:id="@+id/tvNotification"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
-        android:text="@string/average_score"
+        android:text="@string/notification"
         android:fontFamily="@font/avenir"
         android:textColor="@color/white"
         android:textSize="30sp"
@@ -33,62 +33,64 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvScoredTopics"
-        android:layout_width="match_parent"
-        android:layout_height="450dp"
-        android:layout_marginTop="70dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <androidx.cardview.widget.CardView
         android:id="@+id/cvAverageScore"
-        android:layout_width="match_parent"
-        android:layout_height="280dp"
-        android:layout_marginTop="20dp"
+        android:layout_width="380dp"
+        android:layout_height="380dp"
+        app:cardCornerRadius="10dp"
         app:cardBackgroundColor="@color/dark_item"
-        app:cardCornerRadius="30dp"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="20dp"
+        app:layout_constraintTop_toBottomOf="@+id/tvNotification"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rvScoredTopics">
+        app:layout_constraintEnd_toEndOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="240dp"
+            android:layout_height="380dp"
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/tvSmallAverageScore"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:id="@+id/tvNotificationContent"
+                android:layout_width="330dp"
+                android:layout_height="280dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginStart="25dp"
+                android:layout_marginEnd="25dp"
                 android:fontFamily="@font/avenir"
-                android:text="@string/average_score"
-                android:textColor="@color/yellow"
-                android:textSize="20sp"
-                app:layout_constraintBottom_toBottomOf="parent"
+                android:lineSpacingExtra="10dp"
+                android:text="@string/notification_content_demo"
+                android:textColor="@color/white"
+                android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.12" />
+                app:layout_constraintTop_toBottomOf="@+id/tvNotificationDetailTitle" />
 
             <TextView
-                android:id="@+id/tvScore"
+                android:id="@+id/tvNotificationDetailTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="3dp"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="25dp"
                 android:fontFamily="@font/avenir"
-                android:text="@string/_93"
-                android:textColor="@color/white"
-                android:textSize="45sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
+                android:text="@string/notification_title"
+                android:textColor="@color/yellow"
+                android:textStyle="italic"
+                android:textSize="20sp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@id/tvSmallAverageScore"
-                app:layout_constraintVertical_bias="0.272" />
+                app:layout_constraintTop_toTopOf="parent" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
+
     </androidx.cardview.widget.CardView>
 
+    <ImageView
+        android:layout_width="400dp"
+        android:layout_height="250dp"
+        android:layout_marginTop="80dp"
+        android:src="@drawable/notification_pic"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.454"
+        app:layout_constraintStart_toStartOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

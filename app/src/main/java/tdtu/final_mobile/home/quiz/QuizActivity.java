@@ -15,11 +15,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import tdtu.final_mobile.R;
-import tdtu.final_mobile.home.HomeActivity;
-import tdtu.final_mobile.presentation.quiz.OnItemClickAction;
+import tdtu.final_mobile.presentation.click_control.OnClickQuiz;
 
-public class QuizActivity extends AppCompatActivity implements OnItemClickAction {
-    private ImageButton iBtnBack;
+public class QuizActivity extends AppCompatActivity implements OnClickQuiz {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,7 +28,7 @@ public class QuizActivity extends AppCompatActivity implements OnItemClickAction
                 WindowManager.LayoutParams.FLAG_FULLSCREEN); //enable full screen
         setContentView(R.layout.activity_quiz);
 
-        iBtnBack = findViewById(R.id.iBtnBack);
+        ImageButton iBtnBack = findViewById(R.id.iBtnBack);
         iBtnBack.setOnClickListener(view -> {
             onBackPressed();
         });
@@ -38,7 +36,7 @@ public class QuizActivity extends AppCompatActivity implements OnItemClickAction
         List<Quiz> quizzes = getQuiz();
         RecyclerView recyclerView = this.findViewById(R.id.rvQuiz);
         QuizAdapter quizAdapter = new QuizAdapter(quizzes,this);
-        quizAdapter.setOnQuizClickAction(this);
+        quizAdapter.setOnQuizTopicClickAction(this);
         recyclerView.setAdapter(quizAdapter);
 
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
@@ -79,7 +77,8 @@ public class QuizActivity extends AppCompatActivity implements OnItemClickAction
     }
 
     @Override
-    public void onClick(int position) {
-
+    public void OnQuizTopicClick(int position) {
+        Intent doQuizIntent = new Intent(QuizActivity.this, QuizzesActivity.class);
+        startActivity(doQuizIntent);
     }
 }

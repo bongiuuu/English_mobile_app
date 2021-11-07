@@ -12,10 +12,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 
 import tdtu.final_mobile.R;
-import tdtu.final_mobile.home.progress.already_known.Word;
-import tdtu.final_mobile.home.progress.average_score.ScoredTopic;
-import tdtu.final_mobile.home.progress.average_score.ScoreTopicViewHolder;
-import tdtu.final_mobile.presentation.vocabulary.OnItemClickAction;
 
 public class ScoredTopicAdapter extends RecyclerView.Adapter<ScoreTopicViewHolder> {
     private final List<ScoredTopic> scoredTopics;

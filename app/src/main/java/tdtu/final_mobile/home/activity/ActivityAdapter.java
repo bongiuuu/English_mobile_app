@@ -13,13 +13,13 @@ import java.util.List;
 
 import tdtu.final_mobile.R;
 import tdtu.final_mobile.home.HomeActivity;
-import tdtu.final_mobile.presentation.quiz.OnItemClickAction;
+import tdtu.final_mobile.presentation.click_control.OnClickActivity;
 
 public class ActivityAdapter extends RecyclerView.Adapter<ActivityViewHolder> {
     private final List<Activity> activities;
     private final Context context;
     private final LayoutInflater layoutInflater;
-    public OnItemClickAction onClickAction;
+    public OnClickActivity onClickActivity;
 
     public ActivityAdapter(List<Activity> activities, Context context){
         this.activities = activities;
@@ -66,10 +66,10 @@ public class ActivityAdapter extends RecyclerView.Adapter<ActivityViewHolder> {
         Activity activity  = this.activities.get(itemPosition);
 
         Toast.makeText(this.context, activity.getActivityName(), Toast.LENGTH_SHORT).show();
-        onClickAction.onClick(itemPosition);
+        onClickActivity.onActivityClick(itemPosition);
     }
 
-    public void setOnClickAction(OnItemClickAction onClickAction){
-        this.onClickAction = onClickAction;
+    public void setActivityAction(OnClickActivity onClickActivity){
+        this.onClickActivity = onClickActivity;
     }
 }

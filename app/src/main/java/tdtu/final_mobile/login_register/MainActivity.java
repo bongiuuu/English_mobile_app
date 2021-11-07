@@ -16,7 +16,9 @@ import android.widget.TextView;
 import tdtu.final_mobile.home.HomeActivity;
 import tdtu.final_mobile.home.contribute.ChooseTopicActivity;
 import tdtu.final_mobile.home.contribute.ContributeActivity;
+import tdtu.final_mobile.home.extra.MeActivity;
 import tdtu.final_mobile.home.notification.MainNotificationActivity;
+import tdtu.final_mobile.home.notification.NotificationDetailActivity;
 import tdtu.final_mobile.home.progress.ProgressActivity;
 import tdtu.final_mobile.home.progress.already_known.AlreadyKnownActivity;
 import tdtu.final_mobile.home.progress.average_score.AverageScoreActivity;
@@ -55,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
     public void OnClick(View view){
         switch (view.getId()){
             case R.id.btnRegister:
-                Intent registerIntent = new Intent(view.getContext(), VocabulariesActivity.class);
+                Intent registerIntent = new Intent(view.getContext(), RegisterActivity.class);
                 startActivity(registerIntent);
                 break;
             case R.id.btnLogin:

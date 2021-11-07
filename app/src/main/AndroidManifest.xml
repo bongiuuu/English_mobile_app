@@ -10,6 +10,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FinalMobile">
         <activity
+            android:name=".home.extra.AboutUsActivity"
+            android:exported="true" />
+        <activity
+            android:name=".home.extra.SettingActivity"
+            android:exported="true" />
+        <activity
+            android:name=".home.extra.MeActivity"
+            android:exported="true" />
+        <activity
+            android:name=".home.notification.NotificationDetailActivity"
+            android:exported="true" />
+        <activity
             android:name=".home.notification.MainNotificationActivity"
             android:exported="true" />
         <activity

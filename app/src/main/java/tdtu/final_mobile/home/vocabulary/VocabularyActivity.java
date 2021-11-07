@@ -15,11 +15,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import tdtu.final_mobile.R;
-import tdtu.final_mobile.home.HomeActivity;
-import tdtu.final_mobile.presentation.vocabulary.OnItemClickAction;
+import tdtu.final_mobile.presentation.click_control.OnClickVocabulary;
 
-public class VocabularyActivity extends AppCompatActivity implements OnItemClickAction {
-    private ImageButton iBtnBack;
+public class VocabularyActivity extends AppCompatActivity implements OnClickVocabulary {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,7 +28,7 @@ public class VocabularyActivity extends AppCompatActivity implements OnItemClick
                 WindowManager.LayoutParams.FLAG_FULLSCREEN); //enable full screen
         setContentView(R.layout.activity_vocabulary);
 
-        iBtnBack = findViewById(R.id.iBtnBack);
+        ImageButton iBtnBack = findViewById(R.id.iBtnBack);
         iBtnBack.setOnClickListener(view -> {
             onBackPressed();
         });
@@ -38,9 +36,8 @@ public class VocabularyActivity extends AppCompatActivity implements OnItemClick
         List<Vocabulary> vocabularies = getVocabulary();
         RecyclerView recyclerView = this.findViewById(R.id.rvVocabulary);
         VocabularyAdapter vocabularyAdapter = new VocabularyAdapter(vocabularies, this);
-        vocabularyAdapter.setOnVocabularyClickAction(this);
+        vocabularyAdapter.setTopicVocabularyClickAction(this);
         recyclerView.setAdapter(vocabularyAdapter);
-
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
         recyclerView.setLayoutManager(linearLayoutManager);
     }
@@ -79,7 +76,8 @@ public class VocabularyActivity extends AppCompatActivity implements OnItemClick
     }
 
     @Override
-    public void onClick(int position) {
-
+    public void OnVocabularyTopicClick(int position) {
+        Intent learnVocabularyIntent = new Intent(VocabularyActivity.this, VocabulariesActivity.class);
+        startActivity(learnVocabularyIntent);
     }
 }

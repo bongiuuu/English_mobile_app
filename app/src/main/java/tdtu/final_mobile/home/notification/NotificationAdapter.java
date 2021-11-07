@@ -12,13 +12,13 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 
 import tdtu.final_mobile.R;
-import tdtu.final_mobile.presentation.quiz.OnItemClickAction;
+import tdtu.final_mobile.presentation.click_control.OnClickAction;
 
 public class NotificationAdapter extends RecyclerView.Adapter<NotificationViewHolder> {
     final List<Notification> notifications;
     final Context context;
     final LayoutInflater layoutInflater;
-    OnItemClickAction onClickAction;
+    OnClickAction onClickAction;
 
     public NotificationAdapter(List<Notification> notifications, Context context) {
         this.notifications = notifications;
@@ -31,16 +31,16 @@ public class NotificationAdapter extends RecyclerView.Adapter<NotificationViewHo
     public NotificationViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View recyclerViewItem = layoutInflater.inflate(R.layout.custom_notification_layout, parent, false);
 
-        recyclerViewItem.setOnClickListener(v -> handleRecyclerItemClick((RecyclerView)parent, v));
+        recyclerViewItem.setOnClickListener(view -> handleRecyclerItemClick((RecyclerView) parent, view));
         return new NotificationViewHolder(recyclerViewItem);
     }
 
     @Override
     public void onBindViewHolder(@NonNull NotificationViewHolder holder, int position) {
         holder.tvNotificationTitle.setText(notifications.get(position).getNotificationTitle());
-        holder.cvNotification.setOnClickListener(v -> {
-            onClickAction.onClick(position);
-        });
+//        holder.cvNotification.setOnClickListener(v -> {
+//            onClickAction.onClick(position);
+//        });
     }
 
     @Override
