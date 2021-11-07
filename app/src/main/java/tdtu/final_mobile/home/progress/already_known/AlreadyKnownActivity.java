@@ -15,7 +15,6 @@ import java.util.List;
 import tdtu.final_mobile.R;
 
 public class AlreadyKnownActivity extends AppCompatActivity {
-    private ImageButton iBtnBack;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,7 +25,7 @@ public class AlreadyKnownActivity extends AppCompatActivity {
                 WindowManager.LayoutParams.FLAG_FULLSCREEN); //enable full screen
         setContentView(R.layout.activity_already_known);
 
-        iBtnBack = findViewById(R.id.iBtnBack);
+        ImageButton iBtnBack = findViewById(R.id.iBtnBack);
         iBtnBack.setOnClickListener(view -> {
             onBackPressed();
         });

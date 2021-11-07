@@ -13,7 +13,7 @@
         <entry key="app/src/main/res/layout/activity_about_us.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_already_known.xml" value="0.335" />
         <entry key="app/src/main/res/layout/activity_average_score.xml" value="0.30978260869565216" />
-        <entry key="app/src/main/res/layout/activity_checkin.xml" value="0.21197916666666666" />
+        <entry key="app/src/main/res/layout/activity_checkin.xml" value="0.335" />
         <entry key="app/src/main/res/layout/activity_choose_topic.xml" value="0.19010416666666666" />
         <entry key="app/src/main/res/layout/activity_choose_topic_to_contribute.xml" value="0.17604166666666668" />
         <entry key="app/src/main/res/layout/activity_contribute.xml" value="0.32864583333333336" />

@@ -2,10 +2,13 @@ package tdtu.final_mobile.home.contribute;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.res.ColorStateList;
 import android.os.Bundle;
+import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ImageButton;
+import android.widget.RadioButton;
 
 import tdtu.final_mobile.R;
 

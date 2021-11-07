@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 
 import tdtu.final_mobile.R;
+import tdtu.final_mobile.presentation.click_control.OnClickAction;
 import tdtu.final_mobile.presentation.click_control.OnClickQuiz;
 
 public class QuizAdapter extends RecyclerView.Adapter<QuizViewHolder> {
@@ -57,7 +58,7 @@ public class QuizAdapter extends RecyclerView.Adapter<QuizViewHolder> {
         int itemPosition = recyclerView.getChildLayoutPosition(itemView);
         Quiz quiz  = this.quizzes.get(itemPosition);
 
-        Toast.makeText(this.context, quiz.getQuizTopic(), Toast.LENGTH_SHORT).show();
+//        Toast.makeText(this.context, quiz.getQuizTopic(), Toast.LENGTH_SHORT).show();
     }
 
     void setOnQuizTopicClickAction(OnClickQuiz onClickQuiz){

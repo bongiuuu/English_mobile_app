@@ -47,4 +47,10 @@
     <string name="male">Male</string>
     <string name="female">Female</string>
     <string name="introduce">This application is developed by group 7 (Mobile Development)</string>
+    <string name="activity">Activity</string>
+    <string name="monday">M</string>
+    <string name="tuesday">T</string>
+    <string name="wednesday">W</string>
+    <string name="friday">F</string>
+    <string name="saturday">S</string>
 </resources>

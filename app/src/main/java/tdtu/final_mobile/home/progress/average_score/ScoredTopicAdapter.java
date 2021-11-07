@@ -55,6 +55,6 @@ public class ScoredTopicAdapter extends RecyclerView.Adapter<ScoreTopicViewHolde
         int itemPosition = recyclerView.getChildLayoutPosition(itemView);
         ScoredTopic scoredTopic  = this.scoredTopics.get(itemPosition);
 
-        Toast.makeText(this.context, scoredTopic.getTopicName(), Toast.LENGTH_SHORT).show();
+//        Toast.makeText(this.context, scoredTopic.getTopicName(), Toast.LENGTH_SHORT).show();
     }
 }
