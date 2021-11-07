@@ -50,7 +50,7 @@ public class TopicAdapter extends RecyclerView.Adapter<TopicViewHolder> {
 
     @Override
     public int getItemCount() {
-        return 0;
+        return topics.size();
     }
 
     public void handleRecyclerItemClick(RecyclerView recyclerView, View itemView) {

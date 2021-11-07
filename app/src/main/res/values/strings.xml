@@ -40,4 +40,11 @@
     <string name="gender">Gender</string>
     <string name="save">Save</string>
     <string name="topic">Topic</string>
+    <string name="me">Me</string>
+    <string name="settings">Settings</string>
+    <string name="about_us">About Us</string>
+    <string name="logout">Logout</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="introduce">This application is developed by group 7 (Mobile Development)</string>
 </resources>

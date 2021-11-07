@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Window;
 import android.view.WindowManager;
@@ -13,8 +14,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 import tdtu.final_mobile.R;
+import tdtu.final_mobile.home.vocabulary.VocabularyAdapter;
+import tdtu.final_mobile.presentation.click_control.OnClickNotification;
 
-public class MainNotificationActivity extends AppCompatActivity {
+public class MainNotificationActivity extends AppCompatActivity implements OnClickNotification {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,8 +34,10 @@ public class MainNotificationActivity extends AppCompatActivity {
         });
 
         List<Notification> notifications = getNotificationList();
-        RecyclerView recyclerView = this.findViewById(R.id.rvNotification);
-        recyclerView.setAdapter(new NotificationAdapter(notifications, this));
+        RecyclerView recyclerView = findViewById(R.id.rvNotification);
+        NotificationAdapter notificationAdapter = new NotificationAdapter(notifications, this);
+        notificationAdapter.setNotificationClickAction(this);
+        recyclerView.setAdapter(notificationAdapter);
 
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
         recyclerView.setLayoutManager(linearLayoutManager);
@@ -47,5 +52,11 @@ public class MainNotificationActivity extends AppCompatActivity {
             notifications.add(new Notification(notificationTitleList[i], notificationContentList[i]));
         }
         return notifications;
+    }
+
+    @Override
+    public void OnNotificationClick(int position) {
+        Intent notificationIntent = new Intent(MainNotificationActivity.this, NotificationDetailActivity.class);
+        startActivity(notificationIntent);
     }
 }

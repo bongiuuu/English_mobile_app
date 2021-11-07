@@ -3,18 +3,21 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/drawable/blue_circle.xml" value="0.26153846153846155" />
         <entry key="app/src/main/res/drawable/draw_circle.xml" value="0.15925925925925927" />
         <entry key="app/src/main/res/drawable/green_circle.xml" value="0.20364583333333333" />
+        <entry key="app/src/main/res/drawable/pink_circle.xml" value="0.26153846153846155" />
         <entry key="app/src/main/res/drawable/round_button.xml" value="0.14322916666666666" />
         <entry key="app/src/main/res/drawable/round_card_view.xml" value="0.14322916666666666" />
         <entry key="app/src/main/res/drawable/yellow_circle.xml" value="0.14322916666666666" />
-        <entry key="app/src/main/res/layout/activity_about_us.xml" value="0.19010416666666666" />
+        <entry key="app/src/main/res/layout/activity_about_us.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_already_known.xml" value="0.335" />
         <entry key="app/src/main/res/layout/activity_average_score.xml" value="0.30978260869565216" />
         <entry key="app/src/main/res/layout/activity_checkin.xml" value="0.21197916666666666" />
         <entry key="app/src/main/res/layout/activity_choose_topic.xml" value="0.19010416666666666" />
         <entry key="app/src/main/res/layout/activity_choose_topic_to_contribute.xml" value="0.17604166666666668" />
         <entry key="app/src/main/res/layout/activity_contribute.xml" value="0.32864583333333336" />
+        <entry key="app/src/main/res/layout/activity_extra.xml" value="0.18478260869565216" />
         <entry key="app/src/main/res/layout/activity_home.xml" value="0.245018115942029" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.33" />
         <entry key="app/src/main/res/layout/activity_main_notification.xml" value="0.17604166666666668" />

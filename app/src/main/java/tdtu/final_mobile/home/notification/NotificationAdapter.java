@@ -12,13 +12,14 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 
 import tdtu.final_mobile.R;
-import tdtu.final_mobile.presentation.click_control.OnClickAction;
+import tdtu.final_mobile.presentation.click_control.OnClickNotification;
+import tdtu.final_mobile.presentation.click_control.OnClickVocabulary;
 
 public class NotificationAdapter extends RecyclerView.Adapter<NotificationViewHolder> {
     final List<Notification> notifications;
     final Context context;
     final LayoutInflater layoutInflater;
-    OnClickAction onClickAction;
+    OnClickNotification onClickNotification;
 
     public NotificationAdapter(List<Notification> notifications, Context context) {
         this.notifications = notifications;
@@ -38,9 +39,9 @@ public class NotificationAdapter extends RecyclerView.Adapter<NotificationViewHo
     @Override
     public void onBindViewHolder(@NonNull NotificationViewHolder holder, int position) {
         holder.tvNotificationTitle.setText(notifications.get(position).getNotificationTitle());
-//        holder.cvNotification.setOnClickListener(v -> {
-//            onClickAction.onClick(position);
-//        });
+        holder.cvNotification.setOnClickListener(v -> {
+            onClickNotification.OnNotificationClick(position);
+        });
     }
 
     @Override
@@ -53,5 +54,9 @@ public class NotificationAdapter extends RecyclerView.Adapter<NotificationViewHo
         Notification notification = this.notifications.get(itemPosition);
 
         Toast.makeText(this.context, notification.getNotificationTitle(), Toast.LENGTH_SHORT).show();
+    }
+
+    void setNotificationClickAction(OnClickNotification onClickNotification){
+        this.onClickNotification = onClickNotification;
     }
 }

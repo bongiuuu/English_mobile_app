@@ -7,8 +7,10 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.ImageButton;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,9 +23,12 @@ import tdtu.final_mobile.R;
 import tdtu.final_mobile.home.checkin.CheckinActivity;
 import tdtu.final_mobile.home.contribute.ChooseTopicActivity;
 import tdtu.final_mobile.home.contribute.ContributeActivity;
+import tdtu.final_mobile.home.extra.ExtraActivity;
+import tdtu.final_mobile.home.notification.MainNotificationActivity;
 import tdtu.final_mobile.home.progress.ProgressActivity;
 import tdtu.final_mobile.home.quiz.QuizActivity;
 import tdtu.final_mobile.home.vocabulary.VocabularyActivity;
+import tdtu.final_mobile.login_register.RegisterActivity;
 import tdtu.final_mobile.presentation.click_control.OnClickActivity;
 import tdtu.final_mobile.presentation.click_control.OnClickAction;
 
@@ -39,6 +44,12 @@ public class HomeActivity extends AppCompatActivity implements OnClickAction, On
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN); //enable full screen
         setContentView(R.layout.activity_home);
+
+        ImageButton iBtnExtra = findViewById(R.id.iBtnExtra);
+        ImageButton iBtnNotification = findViewById(R.id.iBtnNotification);
+
+        iBtnExtra.setOnClickListener(this::OnClick);
+        iBtnNotification.setOnClickListener(this::OnClick);
 
         List<Activity> activities = getListData();
         RecyclerView activityRecyclerView = this.findViewById(R.id.rvActivities);
@@ -96,6 +107,19 @@ public class HomeActivity extends AppCompatActivity implements OnClickAction, On
         } else {
             Intent contributeIntent = new Intent(HomeActivity.this, ChooseTopicActivity.class);
             startActivity(contributeIntent);
+        }
+    }
+
+    public void OnClick(View view){
+        switch (view.getId()){
+            case R.id.iBtnExtra:
+                Intent extraIntent = new Intent(view.getContext(), ExtraActivity.class);
+                startActivity(extraIntent);
+                break;
+            case R.id.iBtnNotification:
+                Intent notificationIntent = new Intent(view.getContext(), MainNotificationActivity.class);
+                startActivity(notificationIntent);
+                break;
         }
     }
 }

@@ -15,9 +15,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import tdtu.final_mobile.R;
-import tdtu.final_mobile.home.vocabulary.Vocabulary;
-import tdtu.final_mobile.home.vocabulary.VocabularyActivity;
-import tdtu.final_mobile.home.vocabulary.VocabularyAdapter;
 import tdtu.final_mobile.presentation.click_control.OnClickContribute;
 
 public class ChooseTopicActivity extends AppCompatActivity implements OnClickContribute {

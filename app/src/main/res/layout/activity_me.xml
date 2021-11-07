@@ -33,82 +33,128 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <com.mikhaellopez.circularimageview.CircularImageView
-        android:id="@+id/ivGirl"
-        android:layout_width="@dimen/profile_pic_size"
-        android:layout_height="@dimen/profile_pic_size"
-        android:layout_marginTop="60dp"
-        android:layout_marginEnd="40dp"
-        android:src="@drawable/girl"
-        app:civ_border="false"
-        app:civ_shadow="false"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/ivUserProfilePicture" />
-
-    <com.mikhaellopez.circularimageview.CircularImageView
-        android:id="@+id/ivBoy"
-        android:layout_width="@dimen/profile_pic_size"
-        android:layout_height="@dimen/profile_pic_size"
-        android:layout_marginTop="60dp"
-        android:layout_marginEnd="150dp"
-        android:src="@drawable/boy"
-        app:civ_border="false"
-        app:civ_shadow="false"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/ivUserProfilePicture" />
-
-    <com.mikhaellopez.circularimageview.CircularImageView
-        android:id="@+id/ivUserProfilePicture"
-        android:layout_width="@dimen/profile_pic_size"
-        android:layout_height="@dimen/profile_pic_size"
-        android:layout_marginTop="144dp"
-        android:layout_marginEnd="40dp"
-        android:src="@drawable/user"
-        app:civ_border="false"
-        app:civ_shadow="false"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/tvUploadImage"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="116dp"
-        android:text="@string/upload_your_image"
-        android:textColor="@color/white"
-        android:textStyle="bold"
-        android:textSize="22sp"
-        android:fontFamily="@font/avenir"
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvMe"
+        android:layout_width="380dp"
+        android:layout_height="500dp"
+        app:cardCornerRadius="10dp"
+        app:cardBackgroundColor="@color/dark_item"
+        android:layout_marginTop="20dp"
+        app:layout_constraintTop_toBottomOf="@+id/tvMe"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvMe" />
+        app:layout_constraintEnd_toEndOf="parent">
 
-    <TextView
-        android:id="@+id/tvGender"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="108dp"
-        android:fontFamily="@font/avenir"
-        android:text="@string/gender"
-        android:textColor="@color/white"
-        android:textSize="22sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvUploadImage" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="500dp"
+            android:orientation="vertical">
+
+            <com.mikhaellopez.circularimageview.CircularImageView
+                android:id="@+id/ivGirl"
+                android:layout_width="@dimen/profile_pic_size"
+                android:layout_height="@dimen/profile_pic_size"
+                android:layout_marginTop="60dp"
+                android:layout_marginEnd="40dp"
+                android:src="@drawable/girl"
+                app:civ_border="false"
+                app:civ_shadow="false"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ivUserProfilePicture" />
+
+            <com.mikhaellopez.circularimageview.CircularImageView
+                android:id="@+id/ivBoy"
+                android:layout_width="@dimen/profile_pic_size"
+                android:layout_height="@dimen/profile_pic_size"
+                android:layout_marginTop="60dp"
+                android:layout_marginEnd="150dp"
+                android:src="@drawable/boy"
+                app:civ_border="false"
+                app:civ_shadow="false"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ivUserProfilePicture" />
+
+            <com.mikhaellopez.circularimageview.CircularImageView
+                android:id="@+id/ivUserProfilePicture"
+                android:layout_width="@dimen/profile_pic_size"
+                android:layout_height="@dimen/profile_pic_size"
+                android:layout_marginTop="50dp"
+                android:layout_marginEnd="40dp"
+                android:src="@drawable/user"
+                app:civ_border="false"
+                app:civ_shadow="false"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnMale"
+                android:layout_width="80dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="28dp"
+                android:background="@drawable/round_button"
+                android:backgroundTint="@null"
+                android:text="@string/male"
+                android:textColor="@color/white"
+                app:layout_constraintEnd_toStartOf="@+id/btnFemale"
+                app:layout_constraintTop_toBottomOf="@+id/ivBoy" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnFemale"
+                android:layout_width="80dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="40dp"
+                android:background="@drawable/round_button"
+                android:backgroundTint="@null"
+                android:text="@string/female"
+                android:textColor="@color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ivGirl" />
+
+            <TextView
+                android:id="@+id/tvGender"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="36dp"
+                android:layout_marginTop="130dp"
+                android:fontFamily="@font/avenir"
+                android:text="@string/gender"
+                android:textColor="@color/white"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvUploadImage" />
+
+            <TextView
+                android:id="@+id/tvUploadImage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="70dp"
+                android:fontFamily="@font/avenir"
+                android:text="@string/upload_your_image"
+                android:textColor="@color/white"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnRegister"
         android:layout_width="120dp"
         android:layout_height="40dp"
-        android:layout_marginBottom="80dp"
+        android:layout_marginTop="30dp"
         android:background="@drawable/round_button"
         android:backgroundTint="@null"
         android:text="@string/save"
         android:textColor="@color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cvMe" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
