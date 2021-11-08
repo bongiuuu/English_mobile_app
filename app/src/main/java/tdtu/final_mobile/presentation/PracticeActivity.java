@@ -10,6 +10,18 @@
 //
 //public class PracticeActivity extends BaseActivity {
 //    private ActivityPracticeBinding binding;
+//
+//    @Override
+//    public void doBusiness() {
+//
+//    }
+//
+//    @Override
+//    public View layoutId() {
+//        binding = ActivityPracticeBinding.inflate(getLayoutInflater());
+//        return binding.getRoot();
+//    }
+
 //    @Override
 //    protected void onCreate(Bundle savedInstanceState) {
 //        super.onCreate(savedInstanceState);
