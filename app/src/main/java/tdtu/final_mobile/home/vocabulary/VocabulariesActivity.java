@@ -13,6 +13,7 @@ import tdtu.final_mobile.data.FakeDataVocab;
 import tdtu.final_mobile.data.Vocab;
 import tdtu.final_mobile.databinding.ActivityVocabulariesBinding;
 import tdtu.final_mobile.presentation.BaseActivity;
+import tdtu.final_mobile.utils.ViewAnimation;
 
 public class VocabulariesActivity extends BaseActivity {
     private ActivityVocabulariesBinding binding;
@@ -40,7 +41,7 @@ public class VocabulariesActivity extends BaseActivity {
             }
 
             checkVisibleBackAndNextButton(currentPosition);
-            doAnimation();
+            ViewAnimation.doViewAnimation(binding.cvVocab);
         });
 
         binding.btnNext.setOnClickListener(view -> {
@@ -50,7 +51,7 @@ public class VocabulariesActivity extends BaseActivity {
                 binding.tvVietnameseWord.setText(vocabs.get(currentPosition).getVietnamese());
             }
             checkVisibleBackAndNextButton(currentPosition);
-            doAnimation();
+            ViewAnimation.doViewAnimation(binding.cvVocab);
         });
 
         binding.tvEnglishWord.setText(vocabs.get(0).getEnglish());
@@ -71,23 +72,5 @@ public class VocabulariesActivity extends BaseActivity {
         }
 
         binding.pbVocabulary.setProgress(currentPosition*5);
-    }
-
-    private void doAnimation() {
-        final ObjectAnimator oa1 = ObjectAnimator.ofFloat(binding.cvVocab, "scaleX", 1f, 0f);
-        final ObjectAnimator oa2 = ObjectAnimator.ofFloat(binding.cvVocab, "scaleX", 0f, 1f);
-        oa1.setInterpolator(new DecelerateInterpolator());
-        oa2.setInterpolator(new AccelerateDecelerateInterpolator());
-        long durationAnimation = 170;
-        oa1.setDuration(durationAnimation);
-        oa2.setDuration(durationAnimation);
-        oa1.addListener(new AnimatorListenerAdapter() {
-            @Override
-            public void onAnimationEnd(Animator animation) {
-                super.onAnimationEnd(animation);
-                oa2.start();
-            }
-        });
-        oa1.start();
     }
 }
