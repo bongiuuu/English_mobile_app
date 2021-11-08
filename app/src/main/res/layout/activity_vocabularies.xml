@@ -86,17 +86,22 @@
     </androidx.cardview.widget.CardView>
 
     <ProgressBar
+        android:progress="0"
+        android:layout_marginEnd="20dp"
+        android:layout_marginStart="20dp"
+        android:indeterminate="false"
+        android:indeterminateOnly="false"
         android:id="@+id/pbVocabulary"
         style="?android:attr/progressBarStyleHorizontal"
-        android:layout_width="300dp"
+        android:layout_width="match_parent"
         android:layout_height="10dp"
         android:layout_marginTop="44dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvTopic" />
 
     <ImageButton
+        android:visibility="invisible"
         android:id="@+id/btnPrevious"
         android:layout_width="40dp"
         android:layout_height="20dp"

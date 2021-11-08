@@ -61,5 +61,7 @@ public class VocabulariesActivity extends BaseActivity {
         } else {
             binding.btnNext.setVisibility(View.VISIBLE);
         }
+
+        binding.pbVocabulary.setProgress(currentPosition*5);
     }
 }
