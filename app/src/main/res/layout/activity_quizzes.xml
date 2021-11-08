@@ -24,9 +24,9 @@
         android:id="@+id/tvTopic"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="30dp"
         android:fontFamily="@font/avenir"
-        android:text="@string/vocabulary"
+        android:text="@string/topic"
         android:textColor="@color/white"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -207,17 +207,22 @@
 
     <ProgressBar
         android:id="@+id/pbQuiz"
+        android:progress="0"
+        android:layout_marginEnd="20dp"
+        android:layout_marginStart="20dp"
+        android:indeterminate="false"
+        android:indeterminateOnly="false"
         style="?android:attr/progressBarStyleHorizontal"
-        android:layout_width="300dp"
+        android:layout_width="match_parent"
         android:layout_height="10dp"
-        android:layout_marginTop="28dp"
+        android:theme="@style/progressWhite"
+        android:layout_marginTop="20dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvTopic" />
 
     <ImageButton
-        android:id="@+id/iBtnBack_1"
+        android:id="@+id/iBtnPrevious"
         android:layout_width="40dp"
         android:layout_height="20dp"
         android:layout_marginStart="150dp"
@@ -230,7 +235,7 @@
         tools:ignore="SpeakableTextPresentCheck" />
 
     <ImageButton
-        android:id="@+id/iBtnNext_1"
+        android:id="@+id/iBtnNext"
         android:layout_width="40dp"
         android:layout_height="20dp"
         android:layout_marginTop="20dp"
