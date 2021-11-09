@@ -1,28 +1,50 @@
 package tdtu.final_mobile.home.extra;
 
-import androidx.appcompat.app.AppCompatActivity;
+import static com.sangcomz.fishbun.define.Define.INTENT_PATH;
 
-import android.os.Bundle;
-import android.view.Window;
-import android.view.WindowManager;
-import android.widget.ImageButton;
+import android.content.Intent;
+import android.net.Uri;
+import android.view.View;
 
-import tdtu.final_mobile.R;
+import com.sangcomz.fishbun.FishBun;
+import com.sangcomz.fishbun.adapter.image.impl.GlideAdapter;
 
-public class MeActivity extends AppCompatActivity {
+import java.util.ArrayList;
+
+import tdtu.final_mobile.databinding.ActivityMeBinding;
+import tdtu.final_mobile.presentation.BaseActivity;
+
+public class MeActivity extends BaseActivity {
+
+
+    private ActivityMeBinding binding;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        requestWindowFeature(Window.FEATURE_NO_TITLE); //will hide the title
-        getSupportActionBar().hide(); // hide the title bar
-        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
-                WindowManager.LayoutParams.FLAG_FULLSCREEN); //enable full screen
-        setContentView(R.layout.activity_me);
+    protected View layoutId() {
+        binding = ActivityMeBinding.inflate(getLayoutInflater());
+        return binding.getRoot();
+    }
 
-        ImageButton iBtnBack = findViewById(R.id.iBtnBack);
-        iBtnBack.setOnClickListener(view -> {
+    @Override
+    protected void doBusiness() {
+        binding.iBtnBack.setOnClickListener(view -> {
             onBackPressed();
         });
+
+        binding.ivUserProfilePicture.setOnClickListener(view -> {
+            FishBun.with(MeActivity.this)
+                    .setImageAdapter(new GlideAdapter())
+                    .setMaxCount(1).setCamera(true)
+                    .startAlbum();
+        });
+    }
+
+    protected void onActivityResult(int requestCode, int resultCode,
+                                    Intent imageData) {
+        super.onActivityResult(requestCode, resultCode, imageData);
+        if (resultCode == RESULT_OK) {
+            ArrayList<Uri> path = imageData.getParcelableArrayListExtra(INTENT_PATH);
+            binding.ivUserProfilePicture.setImageURI(path.get(0));
+        }
     }
 }
