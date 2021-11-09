@@ -10,7 +10,6 @@
         android:id="@+id/cvTopic"
         android:layout_width="400dp"
         android:layout_height="80dp"
-        android:onClick="OnClick"
         android:layout_marginTop="5dp"
         card_view:cardBackgroundColor="@color/dark_item"
         card_view:cardCornerRadius="10dp"

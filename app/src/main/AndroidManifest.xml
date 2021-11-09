@@ -34,9 +34,6 @@
             android:name=".home.contribute.ChooseTopicActivity"
             android:exported="true" />
         <activity
-            android:name=".home.contribute.ChooseTopicToContributeActivity"
-            android:exported="true" />
-        <activity
             android:name=".home.vocabulary.VocabulariesActivity"
             android:exported="true" />
         <activity
