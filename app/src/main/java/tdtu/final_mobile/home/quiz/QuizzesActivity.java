@@ -45,11 +45,11 @@ public class QuizzesActivity extends BaseActivity {
             }
 
             checkVisibleBackAndNextButton(currentPosition);
-            ViewAnimation.doViewAnimation(binding.cvQuestion);
-            ViewAnimation.doViewAnimation(binding.cvAnswerA);
-            ViewAnimation.doViewAnimation(binding.cvAnswerB);
-            ViewAnimation.doViewAnimation(binding.cvAnswerC);
-            ViewAnimation.doViewAnimation(binding.cvAnswerD);
+//            ViewAnimation.doViewAnimation(binding.cvQuestion);
+//            ViewAnimation.doViewAnimation(binding.cvAnswerA);
+//            ViewAnimation.doViewAnimation(binding.cvAnswerB);
+//            ViewAnimation.doViewAnimation(binding.cvAnswerC);
+//            ViewAnimation.doViewAnimation(binding.cvAnswerD);
         });
 
         binding.iBtnNext.setOnClickListener(view -> {
@@ -63,11 +63,11 @@ public class QuizzesActivity extends BaseActivity {
             }
 
             checkVisibleBackAndNextButton(currentPosition);
-            ViewAnimation.doViewAnimation(binding.cvQuestion);
-            ViewAnimation.doViewAnimation(binding.cvAnswerA);
-            ViewAnimation.doViewAnimation(binding.cvAnswerB);
-            ViewAnimation.doViewAnimation(binding.cvAnswerC);
-            ViewAnimation.doViewAnimation(binding.cvAnswerD);
+//            ViewAnimation.doViewAnimation(binding.cvQuestion);
+//            ViewAnimation.doViewAnimation(binding.cvAnswerA);
+//            ViewAnimation.doViewAnimation(binding.cvAnswerB);
+//            ViewAnimation.doViewAnimation(binding.cvAnswerC);
+//            ViewAnimation.doViewAnimation(binding.cvAnswerD);
         });
 
         binding.tvQuestion.setText(quizzes.get(0).getQuestion());
