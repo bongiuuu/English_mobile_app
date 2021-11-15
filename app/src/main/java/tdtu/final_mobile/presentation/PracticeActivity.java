@@ -3,6 +3,10 @@ package tdtu.final_mobile.presentation;
 import android.util.Log;
 import android.view.View;
 
+import com.google.firebase.FirebaseApp;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 import java.util.List;
 
 import retrofit2.Call;
@@ -18,6 +22,7 @@ public class PracticeActivity extends BaseActivity {
     APIService apiInterface;
     @Override
     public void doBusiness() {
+        FirebaseApp.initializeApp(this);
         apiInterface = APIClient.getClient().create(APIService.class);
         Call<MultipleResource> call = apiInterface.doGetListResources();
         call.enqueue(new Callback<MultipleResource>() {
@@ -39,7 +44,7 @@ public class PracticeActivity extends BaseActivity {
                     displayResponse += datum.id + " " + datum.name + " " + datum.pantoneValue + " " + datum.year + "\n";
                 }
 
-                binding.tvName.setText(displayResponse);
+//                binding.tvName.setText(displayResponse);
 
             }
 
@@ -49,6 +54,8 @@ public class PracticeActivity extends BaseActivity {
             }
         });
 
+        binding.tvName.setOnClickListener(v -> testFireBase());
+
     }
 
     @Override
@@ -57,13 +64,9 @@ public class PracticeActivity extends BaseActivity {
         return binding.getRoot();
     }
 
-//    @Override
-//    protected void onCreate(Bundle savedInstanceState) {
-//        super.onCreate(savedInstanceState);
-//        binding = ActivityPracticeBinding.inflate(getLayoutInflater());
-//        View view = binding.getRoot();
-//        setContentView(view);
-//
-//        binding.tvName.setText("Using Binding");
-//    }
+    public void testFireBase() {
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference testRef = database.getReference("message");
+        testRef.setValue("Bong Test");
+    }
 }
