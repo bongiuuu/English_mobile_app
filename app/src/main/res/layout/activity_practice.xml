@@ -7,6 +7,8 @@
     tools:context=".presentation.PracticeActivity">
 
     <TextView
+        android:textSize="40sp"
+        android:text="1111"
         app:layout_constraintTop_toTopOf="parent"
         android:id="@+id/tvName"
         android:layout_width="wrap_content"
