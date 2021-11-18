@@ -6,17 +6,14 @@ public class User {
 
     @SerializedName("name")
     public String name;
-    @SerializedName("job")
-    public String job;
-    @SerializedName("id")
-    public String id;
-    @SerializedName("createdAt")
-    public String createdAt;
+    @SerializedName("email")
+    public String email;
+    @SerializedName("password")
+    public String password;
 
-    public User(String name, String job) {
+    public User(String name, String email, String password) {
         this.name = name;
-        this.job = job;
+        this.email = email;
+        this.password = password;
     }
-
-
 }

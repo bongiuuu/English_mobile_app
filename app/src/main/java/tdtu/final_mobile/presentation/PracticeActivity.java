@@ -22,11 +22,9 @@ import tdtu.final_mobile.network.APIService;
 
 public class PracticeActivity extends BaseActivity {
     private ActivityPracticeBinding binding;
-    APIService apiInterface;
     @Override
     public void doBusiness() {
         FirebaseApp.initializeApp(this);
-        apiInterface = APIClient.getClient().create(APIService.class);
         Call<MultipleResource> call = apiInterface.doGetListResources();
         call.enqueue(new Callback<MultipleResource>() {
             @Override
