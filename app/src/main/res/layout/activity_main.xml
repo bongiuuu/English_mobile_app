@@ -39,6 +39,7 @@
             android:orientation="vertical">
 
             <EditText
+                android:text="admin"
                 android:id="@+id/edtUsername"
                 android:layout_width="330dp"
                 android:layout_height="30dp"
@@ -77,6 +78,8 @@
             android:orientation="vertical">
 
             <EditText
+                android:inputType="textPassword"
+                android:text="123456"
                 android:id="@+id/edtPassword"
                 android:layout_width="330dp"
                 android:layout_height="30dp"

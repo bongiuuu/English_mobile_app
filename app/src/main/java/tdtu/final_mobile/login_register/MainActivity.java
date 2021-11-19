@@ -85,13 +85,7 @@ public class MainActivity extends BaseActivity {
                         startActivity(loginIntent);
                     }
                 } else {
-                    try {
-                        assert response.errorBody() != null;
-                        JSONObject jObjError = new JSONObject(response.errorBody().string());
-                        Toast.makeText(MainActivity.this, jObjError.getString("message"), Toast.LENGTH_LONG).show();
-                    } catch (Exception e) {
-                        Toast.makeText(MainActivity.this, e.getMessage(), Toast.LENGTH_LONG).show();
-                    }
+                    Toast.makeText(MainActivity.this, getString(R.string.response_fail), Toast.LENGTH_LONG).show();
                 }
             }
 

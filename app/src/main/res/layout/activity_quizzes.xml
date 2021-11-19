@@ -34,6 +34,19 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <TextView
+        android:layout_marginEnd="10dp"
+        android:id="@+id/tvScore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:fontFamily="@font/avenir"
+        tools:text="0"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <androidx.cardview.widget.CardView
         android:id="@+id/cvQuestion"
         android:layout_width="380dp"
@@ -56,7 +69,7 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/avenir"
                 android:gravity="left"
-                android:text="@string/this_is_an_example_question_for_demo"
+                tools:text="@string/this_is_an_example_question_for_demo"
                 android:textColor="@color/white"
                 android:textSize="25sp"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -91,7 +104,7 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/avenir"
                 android:gravity="left"
-                android:text="@string/answer_a"
+                tools:text="@string/answer_a"
                 android:textColor="@color/activity_1"
                 android:textSize="@dimen/answer_text_size"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -125,7 +138,7 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/avenir"
                 android:gravity="left"
-                android:text="@string/answer_b"
+                tools:text="@string/answer_b"
                 android:textColor="@color/orange_line"
                 android:textSize="@dimen/answer_text_size"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -159,7 +172,7 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/avenir"
                 android:gravity="left"
-                android:text="@string/answer_c"
+                tools:text="@string/answer_c"
                 android:textColor="@color/blue"
                 android:textSize="@dimen/answer_text_size"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -193,7 +206,7 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/avenir"
                 android:gravity="left"
-                android:text="@string/answer_d"
+                tools:text="@string/answer_d"
                 android:textColor="@color/pink"
                 android:textSize="@dimen/answer_text_size"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -236,6 +249,7 @@
         tools:ignore="SpeakableTextPresentCheck" />
 
     <ImageButton
+        android:visibility="invisible"
         android:id="@+id/iBtnNext"
         android:layout_width="40dp"
         android:layout_height="20dp"

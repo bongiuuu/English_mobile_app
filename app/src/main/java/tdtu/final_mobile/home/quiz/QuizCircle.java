@@ -1,13 +1,13 @@
 package tdtu.final_mobile.home.quiz;
 
-public class Quiz {
+public class QuizCircle {
     String quizTopic;
     String vietnameseName;
     int number;
     int letterColor;
     int circleColor;
 
-    public Quiz(String quizTopic, String vietnameseName, int number, int letterColor, int circleColor) {
+    public QuizCircle(String quizTopic, String vietnameseName, int number, int letterColor, int circleColor) {
         this.quizTopic = quizTopic;
         this.vietnameseName = vietnameseName;
         this.number = number;
