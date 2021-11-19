@@ -35,7 +35,7 @@ public class ChooseTopicActivity extends BaseActivity implements OnClickQuiz {
     ActivityChooseTopicBinding binding;
     @Override
     protected void doBusiness() {
-        Call<ArrayList<QuizCate>> call = apiInterface.getQuizCates();
+        Call<ArrayList<QuizCate>> call = apiInterface.getQuizCates(1);
         call.enqueue(new Callback<ArrayList<QuizCate>>() {
             @Override
             public void onResponse(Call<ArrayList<QuizCate>> call, Response<ArrayList<QuizCate>> response) {

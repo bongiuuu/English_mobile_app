@@ -28,9 +28,9 @@ public interface APIService {
     @POST("users/login")
     Call<BaseResponse<User>> login(@Body User user);
 
-    @GET("quizs/{id}")
-    Call<ArrayList<Quiz>> getQuizs(@Path("id") int id);
+    @GET("cates/quizs/{cateId}")
+    Call<ArrayList<Quiz>> getQuizs(@Path("cateId") int id);
 
-    @GET("quizs/cates")
-    Call<ArrayList<QuizCate>> getQuizCates();
+    @GET("users/cates/{userId}")
+    Call<ArrayList<QuizCate>> getQuizCates(@Path("userId") int id);
 }
