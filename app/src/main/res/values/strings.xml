@@ -57,4 +57,5 @@
     <string name="plus">+</string>
     <string name="you_have_finished">You have finished</string>
     <string name="yes">Yes</string>
+    <string name="not_enough_infor">Thiếu thing tin</string>
 </resources>

@@ -69,7 +69,8 @@ public class ChooseTopicActivity extends BaseActivity implements OnClickQuiz {
 
     @Override
     public void OnQuizTopicClick(int position) {
-        Intent doQuizIntent = new Intent(ChooseTopicActivity.this, QuizzesActivity.class);
+        Intent doQuizIntent = new Intent(ChooseTopicActivity.this, ContributeActivity.class);
+        doQuizIntent.putExtra("id",position);
         startActivity(doQuizIntent);
     }
 }

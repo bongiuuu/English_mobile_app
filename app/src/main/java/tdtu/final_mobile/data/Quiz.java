@@ -23,6 +23,9 @@ public class Quiz {
     @SerializedName("correct_answer")
     @Expose
     int correctAnswer;
+    @SerializedName("quiz_cates_id")
+    @Expose
+    int quizCatesId;
 
     public Quiz(String question, String answerA, String answerB, String answerC, String answerD, int correctAnswer) {
         this.question = question;
@@ -31,6 +34,10 @@ public class Quiz {
         this.answerC = answerC;
         this.answerD = answerD;
         this.correctAnswer = correctAnswer;
+    }
+
+    public Quiz() {
+
     }
 
     public int getCorrectAnswer() {
@@ -79,5 +86,13 @@ public class Quiz {
 
     public void setAnswerD(String answerD) {
         this.answerD = answerD;
+    }
+
+    public int getQuizCatesId() {
+        return quizCatesId;
+    }
+
+    public void setQuizCatesId(int quizCatesId) {
+        this.quizCatesId = quizCatesId;
     }
 }

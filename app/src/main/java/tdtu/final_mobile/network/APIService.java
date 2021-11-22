@@ -33,4 +33,7 @@ public interface APIService {
 
     @GET("users/cates/{userId}")
     Call<ArrayList<QuizCate>> getQuizCates(@Path("userId") int id);
+
+    @POST("quizs/create")
+    Call<Quiz> createQuiz(@Body Quiz user);
 }

@@ -73,6 +73,7 @@ public class QuizzesActivity extends BaseActivity {
                     binding.tvAnswerC.setText(quizzes.get(0).getAnswerC());
                     binding.tvAnswerD.setText(quizzes.get(0).getAnswerD());
                     binding.tvCurrentScore.setText(1 +"/" + quizzes.size());
+                    correctAnswerPosition = quizzes.get(0).getCorrectAnswer();
                 }
                 Log.d("TAG", response.code() + "");
             }
