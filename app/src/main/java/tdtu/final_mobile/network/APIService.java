@@ -13,6 +13,7 @@ import retrofit2.http.Path;
 import retrofit2.http.Query;
 import tdtu.final_mobile.data.Quiz;
 import tdtu.final_mobile.data.QuizCate;
+import tdtu.final_mobile.data.request.CheckIn;
 import tdtu.final_mobile.data.response.BaseResponse;
 import tdtu.final_mobile.data.response.MultipleResource;
 import tdtu.final_mobile.data.response.User;
@@ -28,6 +29,9 @@ public interface APIService {
     @POST("users/login")
     Call<BaseResponse<User>> login(@Body User user);
 
+    @POST("users/google/login")
+    Call<User> loginWithGoogle(@Body User user);
+
     @GET("cates/quizs/{cateId}")
     Call<ArrayList<Quiz>> getQuizs(@Path("cateId") int id);
 
@@ -36,4 +40,7 @@ public interface APIService {
 
     @POST("quizs/create")
     Call<Quiz> createQuiz(@Body Quiz user);
+
+    @POST("users/checkin")
+    Call<CheckIn> checkIn(@Body CheckIn checkIn);
 }

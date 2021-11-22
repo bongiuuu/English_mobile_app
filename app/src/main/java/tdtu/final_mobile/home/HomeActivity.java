@@ -20,15 +20,13 @@ import tdtu.final_mobile.home.action.ActionAdapter;
 import tdtu.final_mobile.home.activity.Activity;
 import tdtu.final_mobile.home.activity.ActivityAdapter;
 import tdtu.final_mobile.R;
-import tdtu.final_mobile.home.checkin.CheckinActivity;
+import tdtu.final_mobile.home.checkin.CheckInActivity;
 import tdtu.final_mobile.home.contribute.ChooseTopicActivity;
-import tdtu.final_mobile.home.contribute.ContributeActivity;
 import tdtu.final_mobile.home.extra.ExtraActivity;
 import tdtu.final_mobile.home.notification.MainNotificationActivity;
 import tdtu.final_mobile.home.progress.ProgressActivity;
 import tdtu.final_mobile.home.quiz.QuizActivity;
 import tdtu.final_mobile.home.vocabulary.VocabularyActivity;
-import tdtu.final_mobile.login_register.RegisterActivity;
 import tdtu.final_mobile.presentation.click_control.OnClickActivity;
 import tdtu.final_mobile.presentation.click_control.OnClickAction;
 
@@ -91,7 +89,7 @@ public class HomeActivity extends AppCompatActivity implements OnClickAction, On
             Intent vocabularyIntent = new Intent(HomeActivity.this, VocabularyActivity.class);
             startActivity(vocabularyIntent);
         } else {
-            Intent checkinIntent = new Intent(HomeActivity.this, CheckinActivity.class);
+            Intent checkinIntent = new Intent(HomeActivity.this, CheckInActivity.class);
             startActivity(checkinIntent);
         }
     }

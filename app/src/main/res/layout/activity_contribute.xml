@@ -90,6 +90,8 @@
             android:orientation="vertical">
 
             <EditText
+                android:singleLine="true"
+                android:imeOptions="actionNext"
                 android:id="@+id/edtAnswerA"
                 android:layout_width="@dimen/answer_width_1"
                 android:layout_height="wrap_content"
@@ -126,6 +128,8 @@
             android:orientation="vertical">
 
             <EditText
+                android:singleLine="true"
+                android:imeOptions="actionNext"
                 android:id="@+id/edtAnswerB"
                 android:layout_width="@dimen/answer_width_1"
                 android:layout_height="wrap_content"
@@ -162,6 +166,8 @@
             android:orientation="vertical">
 
             <EditText
+                android:singleLine="true"
+                android:imeOptions="actionNext"
                 android:id="@+id/edtAnswerC"
                 android:layout_width="@dimen/answer_width_1"
                 android:layout_height="wrap_content"
@@ -198,6 +204,8 @@
             android:orientation="vertical">
 
             <EditText
+                android:singleLine="true"
+                android:imeOptions="actionDone"
                 android:id="@+id/edtAnswerD"
                 android:layout_width="@dimen/answer_width_1"
                 android:layout_height="wrap_content"

@@ -1,5 +1,7 @@
 package tdtu.final_mobile.home.extra;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
@@ -10,11 +12,24 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ImageButton;
 
+import com.google.android.gms.auth.api.Auth;
+import com.google.android.gms.auth.api.signin.GoogleSignInClient;
+import com.google.android.gms.common.ConnectionResult;
+import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.common.api.ResultCallback;
+import com.google.android.gms.common.api.Status;
+import com.google.android.gms.common.api.internal.ConnectionCallbacks;
+import com.google.android.gms.common.api.internal.OnConnectionFailedListener;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+
 import tdtu.final_mobile.R;
 import tdtu.final_mobile.home.notification.MainNotificationActivity;
 
-public class ExtraActivity extends AppCompatActivity {
-
+public class ExtraActivity extends AppCompatActivity  {
+    private GoogleSignInClient mGoogleSignInClient;
+    GoogleApiClient mGoogleApiClient;
+    boolean mSignInClicked;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,6 +52,19 @@ public class ExtraActivity extends AppCompatActivity {
         cvMe.setOnClickListener(this::onClick);
         cvSetting.setOnClickListener(this::onClick);
         cvAboutUs.setOnClickListener(this::onClick);
+
+        cvAboutUs.setOnClickListener(v -> {
+
+        });
+
+
+    }
+
+    private void signOut() {
+        Auth.GoogleSignInApi.signOut(mGoogleApiClient).setResultCallback(
+                status -> {
+
+                });
     }
 
     public void onClick(View view){
@@ -52,6 +80,9 @@ public class ExtraActivity extends AppCompatActivity {
             case R.id.cvAboutUs:
                 Intent aboutUsIntent = new Intent(view.getContext(), AboutUsActivity.class);
                 startActivity(aboutUsIntent);
+                break;
+            case R.id.cvLogout:
+
                 break;
         }
     }

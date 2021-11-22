@@ -52,7 +52,7 @@
             android:name=".home.progress.already_known.AlreadyKnownActivity"
             android:exported="true" />
         <activity
-            android:name=".home.checkin.CheckinActivity"
+            android:name=".home.checkin.CheckInActivity"
             android:exported="true" />
         <activity
             android:name=".home.progress.ProgressActivity"
