@@ -1,17 +1,7 @@
 package tdtu.final_mobile.login_register;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.app.Notification;
 import android.content.Intent;
-import android.os.Bundle;
 import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.ImageButton;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import org.json.JSONObject;
@@ -22,20 +12,7 @@ import retrofit2.Response;
 import tdtu.final_mobile.data.response.BaseResponse;
 import tdtu.final_mobile.data.response.User;
 import tdtu.final_mobile.databinding.ActivityMainBinding;
-import tdtu.final_mobile.databinding.ActivityRegisterBinding;
 import tdtu.final_mobile.home.HomeActivity;
-import tdtu.final_mobile.home.contribute.ChooseTopicActivity;
-import tdtu.final_mobile.home.contribute.ContributeActivity;
-import tdtu.final_mobile.home.extra.MeActivity;
-import tdtu.final_mobile.home.notification.MainNotificationActivity;
-import tdtu.final_mobile.home.notification.NotificationDetailActivity;
-import tdtu.final_mobile.home.progress.ProgressActivity;
-import tdtu.final_mobile.home.progress.already_known.AlreadyKnownActivity;
-import tdtu.final_mobile.home.progress.average_score.AverageScoreActivity;
-import tdtu.final_mobile.home.quiz.QuizActivity;
-import tdtu.final_mobile.R;
-import tdtu.final_mobile.home.quiz.QuizzesActivity;
-import tdtu.final_mobile.home.vocabulary.VocabulariesActivity;
 import tdtu.final_mobile.presentation.BaseActivity;
 
 public class MainActivity extends BaseActivity {
