@@ -73,8 +73,6 @@ public class CheckInActivity extends BaseActivity {
                 break;
         }
         Constants.CURRENT_DAY = currentDay;
-        // Call the api to update check in
-        // If Today is monday, remove all CheckIn and Create a new one
         CheckIn checkIn = new CheckIn();
         checkIn.setDay(currentDay);
         checkIn.setUserId(userId);
