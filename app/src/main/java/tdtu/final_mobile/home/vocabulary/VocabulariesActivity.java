@@ -1,11 +1,6 @@
 package tdtu.final_mobile.home.vocabulary;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.animation.ObjectAnimator;
 import android.view.View;
-import android.view.animation.AccelerateDecelerateInterpolator;
-import android.view.animation.DecelerateInterpolator;
 
 import java.util.ArrayList;
 
@@ -41,7 +36,7 @@ public class VocabulariesActivity extends BaseActivity {
             }
 
             checkVisibleBackAndNextButton(currentPosition);
-            ViewAnimation.doViewAnimation(binding.cvVocab);
+            ViewAnimation.doFlipAnimation(binding.cvVocab);
         });
 
         binding.btnNext.setOnClickListener(view -> {
@@ -51,7 +46,7 @@ public class VocabulariesActivity extends BaseActivity {
                 binding.tvVietnameseWord.setText(vocabs.get(currentPosition).getVietnamese());
             }
             checkVisibleBackAndNextButton(currentPosition);
-            ViewAnimation.doViewAnimation(binding.cvVocab);
+            ViewAnimation.doFlipAnimation(binding.cvVocab);
         });
 
         binding.tvEnglishWord.setText(vocabs.get(0).getEnglish());

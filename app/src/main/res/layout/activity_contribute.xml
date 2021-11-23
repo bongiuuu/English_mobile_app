@@ -90,6 +90,8 @@
             android:orientation="vertical">
 
             <EditText
+                android:singleLine="true"
+                android:imeOptions="actionNext"
                 android:id="@+id/edtAnswerA"
                 android:layout_width="@dimen/answer_width_1"
                 android:layout_height="wrap_content"
@@ -126,6 +128,8 @@
             android:orientation="vertical">
 
             <EditText
+                android:singleLine="true"
+                android:imeOptions="actionNext"
                 android:id="@+id/edtAnswerB"
                 android:layout_width="@dimen/answer_width_1"
                 android:layout_height="wrap_content"
@@ -162,6 +166,8 @@
             android:orientation="vertical">
 
             <EditText
+                android:singleLine="true"
+                android:imeOptions="actionNext"
                 android:id="@+id/edtAnswerC"
                 android:layout_width="@dimen/answer_width_1"
                 android:layout_height="wrap_content"
@@ -198,6 +204,8 @@
             android:orientation="vertical">
 
             <EditText
+                android:singleLine="true"
+                android:imeOptions="actionDone"
                 android:id="@+id/edtAnswerD"
                 android:layout_width="@dimen/answer_width_1"
                 android:layout_height="wrap_content"
@@ -246,6 +254,7 @@
         app:layout_constraintTop_toBottomOf="@+id/tvContribute" />
 
     <RadioGroup
+        android:id="@+id/rdAnswer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
@@ -253,6 +262,7 @@
         app:layout_constraintTop_toBottomOf="@+id/tvAnswerAndTick" >
 
         <RadioButton
+            android:checked="true"
             android:id="@+id/radioButtonA"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -302,7 +312,7 @@
     </RadioGroup>
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/button"
+        android:id="@+id/btnApprove"
         android:layout_width="100dp"
         android:layout_height="40dp"
         android:layout_marginTop="20dp"

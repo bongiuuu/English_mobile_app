@@ -53,4 +53,9 @@
     <string name="wednesday">W</string>
     <string name="friday">F</string>
     <string name="saturday">S</string>
+    <string name="response_fail">Không thành công!</string>
+    <string name="plus">+</string>
+    <string name="you_have_finished">You have finished</string>
+    <string name="yes">Yes</string>
+    <string name="not_enough_infor">Thiếu thing tin</string>
 </resources>

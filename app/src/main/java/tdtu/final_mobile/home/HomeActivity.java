@@ -13,6 +13,7 @@ import android.view.WindowManager;
 import android.widget.ImageButton;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
 import tdtu.final_mobile.home.action.Action;
@@ -20,17 +21,16 @@ import tdtu.final_mobile.home.action.ActionAdapter;
 import tdtu.final_mobile.home.activity.Activity;
 import tdtu.final_mobile.home.activity.ActivityAdapter;
 import tdtu.final_mobile.R;
-import tdtu.final_mobile.home.checkin.CheckinActivity;
+import tdtu.final_mobile.home.checkin.CheckInActivity;
 import tdtu.final_mobile.home.contribute.ChooseTopicActivity;
-import tdtu.final_mobile.home.contribute.ContributeActivity;
 import tdtu.final_mobile.home.extra.ExtraActivity;
 import tdtu.final_mobile.home.notification.MainNotificationActivity;
 import tdtu.final_mobile.home.progress.ProgressActivity;
 import tdtu.final_mobile.home.quiz.QuizActivity;
 import tdtu.final_mobile.home.vocabulary.VocabularyActivity;
-import tdtu.final_mobile.login_register.RegisterActivity;
 import tdtu.final_mobile.presentation.click_control.OnClickActivity;
 import tdtu.final_mobile.presentation.click_control.OnClickAction;
+import tdtu.final_mobile.utils.Constants;
 
 public class HomeActivity extends AppCompatActivity implements OnClickAction, OnClickActivity {
     public static final String LOG_TAG = "icon1";
@@ -66,6 +66,7 @@ public class HomeActivity extends AppCompatActivity implements OnClickAction, On
         actionRecyclerView.setAdapter(actionAdapter);
         LinearLayoutManager linearLayoutManager1 = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
         actionRecyclerView.setLayoutManager(linearLayoutManager1);
+
     }
 
     private List<Activity> getListData(){
@@ -91,7 +92,7 @@ public class HomeActivity extends AppCompatActivity implements OnClickAction, On
             Intent vocabularyIntent = new Intent(HomeActivity.this, VocabularyActivity.class);
             startActivity(vocabularyIntent);
         } else {
-            Intent checkinIntent = new Intent(HomeActivity.this, CheckinActivity.class);
+            Intent checkinIntent = new Intent(HomeActivity.this, CheckInActivity.class);
             startActivity(checkinIntent);
         }
     }
