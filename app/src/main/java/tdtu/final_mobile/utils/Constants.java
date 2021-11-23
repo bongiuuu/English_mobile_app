@@ -12,4 +12,5 @@ public class Constants {
     public static String KEY_USER_NAME = "KEY_USER_NAME";
     public static String KEY_USER_ID = "KEY_USER_ID";
     public static String DEFAULT_PASSWORD = "123456";
+
 }
