@@ -68,7 +68,6 @@ public class MainActivity extends BaseActivity {
     @Override
     protected void doBusiness() {
 
-
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestEmail()
                 .build();
@@ -141,11 +140,11 @@ public class MainActivity extends BaseActivity {
     @Override
     public void onStart() {
         super.onStart();
-        GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(this);
-        if (account != null) {
-            Intent loginIntent = new Intent(MainActivity.this, HomeActivity.class);
-            startActivity(loginIntent);
-        }
+//        GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(this);
+//        if (account != null) {
+//            Intent loginIntent = new Intent(MainActivity.this, HomeActivity.class);
+//            startActivity(loginIntent);
+//        }
     }
 
     ActivityResultLauncher<Intent> someActivityResultLauncher = registerForActivityResult(

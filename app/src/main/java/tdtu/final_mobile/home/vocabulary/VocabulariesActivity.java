@@ -49,7 +49,7 @@ public class VocabulariesActivity extends BaseActivity {
             binding.btnNext.setVisibility(View.VISIBLE);
         }
 
-        binding.pbVocabulary.setProgress(currentPosition * (100 / (vocabs.size() - 1)));
+//        binding.pbVocabulary.setProgress(currentPosition * (100 / (vocabs.size() - 1)));
     }
 
     private void fetchData() {

@@ -5,6 +5,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
@@ -28,14 +29,18 @@ import tdtu.final_mobile.home.quiz.QuizzesActivity;
 import tdtu.final_mobile.presentation.BaseActivity;
 import tdtu.final_mobile.presentation.click_control.OnClickContribute;
 import tdtu.final_mobile.presentation.click_control.OnClickQuiz;
+import tdtu.final_mobile.utils.Constants;
 
 public class ChooseTopicActivity extends BaseActivity implements OnClickQuiz {
 
 
     ActivityChooseTopicBinding binding;
+    private int userId = 1;
     @Override
     protected void doBusiness() {
-        Call<ArrayList<QuizCate>> call = apiInterface.getQuizCates(1);
+        SharedPreferences prefs = getSharedPreferences(Constants.KEY_USER_NAME, MODE_PRIVATE);
+        userId = prefs.getInt(Constants.KEY_USER_ID, 1);
+        Call<ArrayList<QuizCate>> call = apiInterface.getQuizCates(userId);
         call.enqueue(new Callback<ArrayList<QuizCate>>() {
             @Override
             public void onResponse(Call<ArrayList<QuizCate>> call, Response<ArrayList<QuizCate>> response) {
