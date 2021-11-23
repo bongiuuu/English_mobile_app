@@ -13,6 +13,7 @@ import retrofit2.http.Path;
 import retrofit2.http.Query;
 import tdtu.final_mobile.data.Quiz;
 import tdtu.final_mobile.data.QuizCate;
+import tdtu.final_mobile.data.Vocab;
 import tdtu.final_mobile.data.request.CheckIn;
 import tdtu.final_mobile.data.response.BaseResponse;
 import tdtu.final_mobile.data.response.MultipleResource;
@@ -46,4 +47,10 @@ public interface APIService {
 
     @GET("users/checkin/{userId}")
     Call<CheckIn> getCheckIn(@Path("userId") int id);
+
+    @GET("vocabulary/cates")
+    Call<ArrayList<QuizCate>> getAllVocabularyCates();
+
+    @GET("vocabulary/cates/{cateId}")
+    Call<ArrayList<Vocab>> getVocabularyFromCateId(@Path("cateId") int id);
 }

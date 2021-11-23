@@ -24,7 +24,7 @@
         android:id="@+id/tvTopic"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="70dp"
+        android:layout_marginTop="30dp"
         android:fontFamily="@font/avenir"
         android:text="@string/vocabulary"
         android:textColor="@color/white"
@@ -38,7 +38,7 @@
         android:id="@+id/cvVocab"
         android:layout_width="380dp"
         android:layout_height="380dp"
-        android:layout_marginTop="200dp"
+        android:layout_marginTop="150dp"
         app:cardBackgroundColor="@color/dark_item"
         app:cardCornerRadius="50dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -86,6 +86,7 @@
     </androidx.cardview.widget.CardView>
 
     <ProgressBar
+        android:visibility="gone"
         android:progress="0"
         android:layout_marginEnd="20dp"
         android:layout_marginStart="20dp"
