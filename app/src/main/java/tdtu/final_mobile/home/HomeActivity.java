@@ -13,6 +13,7 @@ import android.view.WindowManager;
 import android.widget.ImageButton;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
 import tdtu.final_mobile.home.action.Action;
@@ -29,6 +30,7 @@ import tdtu.final_mobile.home.quiz.QuizActivity;
 import tdtu.final_mobile.home.vocabulary.VocabularyActivity;
 import tdtu.final_mobile.presentation.click_control.OnClickActivity;
 import tdtu.final_mobile.presentation.click_control.OnClickAction;
+import tdtu.final_mobile.utils.Constants;
 
 public class HomeActivity extends AppCompatActivity implements OnClickAction, OnClickActivity {
     public static final String LOG_TAG = "icon1";
@@ -64,6 +66,7 @@ public class HomeActivity extends AppCompatActivity implements OnClickAction, On
         actionRecyclerView.setAdapter(actionAdapter);
         LinearLayoutManager linearLayoutManager1 = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
         actionRecyclerView.setLayoutManager(linearLayoutManager1);
+
     }
 
     private List<Activity> getListData(){

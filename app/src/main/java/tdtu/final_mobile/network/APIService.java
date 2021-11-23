@@ -43,4 +43,7 @@ public interface APIService {
 
     @POST("users/checkin")
     Call<CheckIn> checkIn(@Body CheckIn checkIn);
+
+    @GET("users/checkin/{userId}")
+    Call<CheckIn> getCheckIn(@Path("userId") int id);
 }

@@ -64,7 +64,7 @@
         android:layout_marginEnd="25dp"
         app:layout_constraintEnd_toStartOf="@+id/ivTuesday"
         app:layout_constraintTop_toBottomOf="@+id/ivThisWeek"
-        app:srcCompat="@drawable/date_checked" />
+        app:srcCompat="@drawable/date_miss" />
 
     <TextView
         android:id="@+id/tvTuesday"
@@ -87,7 +87,7 @@
         android:layout_marginEnd="25dp"
         app:layout_constraintEnd_toStartOf="@+id/ivWednesday"
         app:layout_constraintTop_toBottomOf="@+id/ivThisWeek"
-        app:srcCompat="@drawable/date_checked" />
+        app:srcCompat="@drawable/date_miss" />
 
     <TextView
         android:id="@+id/tvWednesday"
@@ -133,7 +133,7 @@
         android:layout_marginTop="40dp"
         app:layout_constraintStart_toEndOf="@+id/tvWednesday"
         app:layout_constraintTop_toBottomOf="@+id/ivThisWeek"
-        app:srcCompat="@drawable/date_checked" />
+        app:srcCompat="@drawable/date_miss" />
 
     <TextView
         android:id="@+id/tvFriday"
@@ -156,7 +156,7 @@
         android:layout_marginTop="40dp"
         app:layout_constraintStart_toEndOf="@+id/ivThursday"
         app:layout_constraintTop_toBottomOf="@+id/ivThisWeek"
-        app:srcCompat="@drawable/date_checked" />
+        app:srcCompat="@drawable/date_miss" />
 
     <TextView
         android:id="@+id/tvSaturday"
@@ -179,7 +179,7 @@
         android:layout_marginTop="40dp"
         app:layout_constraintStart_toEndOf="@+id/ivFriday"
         app:layout_constraintTop_toBottomOf="@+id/ivThisWeek"
-        app:srcCompat="@drawable/date_unchecked" />
+        app:srcCompat="@drawable/date_miss" />
 
     <TextView
         android:id="@+id/tvSunday"
@@ -204,6 +204,6 @@
         android:layout_marginTop="40dp"
         app:layout_constraintStart_toEndOf="@+id/ivSaturday"
         app:layout_constraintTop_toBottomOf="@+id/ivThisWeek"
-        app:srcCompat="@drawable/date_unchecked" />
+        app:srcCompat="@drawable/date_miss" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

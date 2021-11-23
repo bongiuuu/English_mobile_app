@@ -4,6 +4,7 @@ import com.google.gson.annotations.SerializedName;
 
 public class CheckIn {
 
+    @SerializedName("checkin")
     private String day;
 
     @SerializedName("user_id")

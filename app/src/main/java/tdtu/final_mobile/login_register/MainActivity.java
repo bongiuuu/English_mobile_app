@@ -11,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.Activity;
 import android.app.Notification;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -56,6 +57,7 @@ import tdtu.final_mobile.R;
 import tdtu.final_mobile.home.quiz.QuizzesActivity;
 import tdtu.final_mobile.home.vocabulary.VocabulariesActivity;
 import tdtu.final_mobile.presentation.BaseActivity;
+import tdtu.final_mobile.utils.Constants;
 
 public class MainActivity extends BaseActivity {
 
@@ -89,7 +91,8 @@ public class MainActivity extends BaseActivity {
                 return;
             }
 
-            login();
+            User user = new User(binding.edtUsername.getText().toString(), binding.edtUsername.getText().toString(), binding.edtPassword.getText().toString());
+            login(user);
 
         });
 
@@ -110,8 +113,7 @@ public class MainActivity extends BaseActivity {
         return binding.getRoot();
     }
 
-    private void login() {
-        User user = new User(binding.edtUsername.getText().toString(), binding.edtUsername.getText().toString(), binding.edtPassword.getText().toString());
+    private void login(User user) {
         Call<BaseResponse<User>> call = apiInterface.login(user);
         call.enqueue(new Callback<BaseResponse<User>>() {
             @Override
@@ -120,6 +122,7 @@ public class MainActivity extends BaseActivity {
                 if (response.isSuccessful()) {
                     BaseResponse<User> res = response.body();
                     if (res != null && res.getStatus() == 200) {
+                        saveUserId(res.getData().getId());
                         Intent loginIntent = new Intent(MainActivity.this, HomeActivity.class);
                         startActivity(loginIntent);
                     }
@@ -164,9 +167,8 @@ public class MainActivity extends BaseActivity {
     private void handleSignInResult(Task<GoogleSignInAccount> completedTask) {
         try {
             GoogleSignInAccount account = completedTask.getResult(ApiException.class);
-            Log.d("hai", account.getDisplayName());
-            Log.d("hai", account.getEmail());
             User user = new User(account.getDisplayName(), account.getEmail());
+            user.setPassword(Constants.DEFAULT_PASSWORD);
             loginWithGoogle(user);
         } catch (ApiException e) {
             Log.w(TAG, "signInResult:failed code=" + e.getStatusCode());
@@ -178,11 +180,8 @@ public class MainActivity extends BaseActivity {
         call.enqueue(new Callback<User>() {
             @Override
             public void onResponse(Call<User> call, Response<User> response) {
-
                 if (response.isSuccessful()) {
-                    User res = response.body();
-                    Intent loginIntent = new Intent(MainActivity.this, HomeActivity.class);
-                    startActivity(loginIntent);
+                    login(user);
                 } else {
                     Toast.makeText(MainActivity.this, getString(R.string.response_fail), Toast.LENGTH_LONG).show();
                 }
@@ -195,52 +194,11 @@ public class MainActivity extends BaseActivity {
         });
     }
 
-    public void doCheckIn() {
-
-        Calendar calendar = Calendar.getInstance();
-        int day = calendar.get(Calendar.DAY_OF_WEEK);
-        String currentDay = "";
-        switch (day) {
-            case Calendar.SUNDAY:
-                currentDay = "Sun";
-                break;
-            case Calendar.MONDAY:
-                currentDay = "Mon";
-                break;
-            case Calendar.TUESDAY:
-                currentDay = "Tue";
-                break;
-            case Calendar.WEDNESDAY:
-                currentDay = "Wed";
-                break;
-            case Calendar.THURSDAY:
-                currentDay = "Thur";
-                break;
-            case Calendar.FRIDAY:
-                currentDay = "Fri";
-                break;
-            case Calendar.SATURDAY:
-                currentDay = "Sat";
-                break;
-        }
-
-        // Call the api to update check in
-        // If Today is monday, remove all CheckIn and Create a new one
-        CheckIn checkIn = new CheckIn();
-        checkIn.setDay(currentDay);
-        checkIn.setUserId(1);
-        Call<CheckIn> call = apiInterface.checkIn(checkIn);
-        call.enqueue(new Callback<CheckIn>() {
-            @Override
-            public void onResponse(Call<CheckIn> call, Response<CheckIn> response) {
-
-            }
-
-            @Override
-            public void onFailure(Call<CheckIn> call, Throwable t) {
-                call.cancel();
-            }
-        });
+    public void saveUserId(int userId) {
+        SharedPreferences.Editor editor = getSharedPreferences(Constants.KEY_USER_NAME, MODE_PRIVATE).edit();
+        editor.putInt(Constants.KEY_USER_ID, userId);
+        editor.apply();
     }
+
 }
 
