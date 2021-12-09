@@ -11,17 +11,16 @@ import com.sangcomz.fishbun.adapter.image.impl.GlideAdapter;
 
 import java.util.ArrayList;
 
-import tdtu.final_mobile.databinding.ActivityMeBinding;
+import tdtu.final_mobile.databinding.ActivityHomeExtraMeBinding;
 import tdtu.final_mobile.presentation.BaseActivity;
 
 public class MeActivity extends BaseActivity {
 
-
-    private ActivityMeBinding binding;
+    private ActivityHomeExtraMeBinding binding;
 
     @Override
     protected View layoutId() {
-        binding = ActivityMeBinding.inflate(getLayoutInflater());
+        binding = ActivityHomeExtraMeBinding.inflate(getLayoutInflater());
         return binding.getRoot();
     }
 

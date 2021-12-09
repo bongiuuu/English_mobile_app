@@ -6,7 +6,6 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Window;
 import android.view.WindowManager;
-import android.widget.CompoundButton;
 import android.widget.ImageButton;
 import android.widget.Switch;
 
@@ -23,7 +22,7 @@ public class SettingActivity extends AppCompatActivity {
         getSupportActionBar().hide(); // hide the title bar
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN); //enable full screen
-        setContentView(R.layout.activity_setting);
+        setContentView(R.layout.activity_home_extra_setting);
 
         SharedPreferences prefs = getSharedPreferences(Constants.KEY_QUIZ_SOUND, MODE_PRIVATE);
         quizSound = prefs.getBoolean(Constants.KEY_QUIZ_SOUND, true);

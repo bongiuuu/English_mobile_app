@@ -31,16 +31,16 @@
             android:name=".home.notification.NotificationDetailActivity"
             android:exported="true" />
         <activity
-            android:name=".home.notification.MainNotificationActivity"
+            android:name=".home.notification.NotificationActivity"
+            android:exported="true" />
+        <activity
+            android:name=".home.contribute.ContributeDetailActivity"
             android:exported="true" />
         <activity
             android:name=".home.contribute.ContributeActivity"
             android:exported="true" />
         <activity
-            android:name=".home.contribute.ChooseTopicActivity"
-            android:exported="true" />
-        <activity
-            android:name=".home.vocabulary.VocabulariesActivity"
+            android:name=".home.vocabulary.VocabularyDetailActivity"
             android:exported="true" />
         <activity
             android:name=".home.quiz.QuizzesActivity"

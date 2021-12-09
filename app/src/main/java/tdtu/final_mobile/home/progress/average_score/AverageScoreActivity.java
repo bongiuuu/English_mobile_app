@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.Window;
@@ -15,7 +14,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import tdtu.final_mobile.R;
-import tdtu.final_mobile.home.progress.ProgressActivity;
 
 public class AverageScoreActivity extends AppCompatActivity {
     private ImageButton iBtnBack;
@@ -27,7 +25,7 @@ public class AverageScoreActivity extends AppCompatActivity {
         getSupportActionBar().hide(); // hide the title bar
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN); //enable full screen
-        setContentView(R.layout.activity_average_score);
+        setContentView(R.layout.activity_home_activity_progress_average_score);
 
         iBtnBack = findViewById(R.id.iBtnBack);
         iBtnBack.setOnClickListener(view -> {

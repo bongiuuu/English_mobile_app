@@ -1,35 +1,26 @@
 package tdtu.final_mobile.home.vocabulary;
 
-import android.media.MediaPlayer;
 import android.util.Log;
 import android.view.View;
-
-import androidx.recyclerview.widget.LinearLayoutManager;
 
 import java.util.ArrayList;
 
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-import tdtu.final_mobile.R;
-import tdtu.final_mobile.data.FakeDataVocab;
-import tdtu.final_mobile.data.Quiz;
-import tdtu.final_mobile.data.QuizCate;
 import tdtu.final_mobile.data.Vocab;
-import tdtu.final_mobile.databinding.ActivityVocabulariesBinding;
-import tdtu.final_mobile.home.contribute.ChooseTopicActivity;
-import tdtu.final_mobile.home.quiz.QuizAdapter;
+import tdtu.final_mobile.databinding.ActivityHomeActionVocabularyDetailBinding;
 import tdtu.final_mobile.presentation.BaseActivity;
 import tdtu.final_mobile.utils.ViewAnimation;
 
-public class VocabulariesActivity extends BaseActivity {
-    private ActivityVocabulariesBinding binding;
+public class VocabularyDetailActivity extends BaseActivity {
+    private ActivityHomeActionVocabularyDetailBinding binding;
     private ArrayList<Vocab> vocabs = new ArrayList<>();
     private int currentPosition = 0;
 
     @Override
     public View layoutId() {
-        binding = ActivityVocabulariesBinding.inflate(getLayoutInflater());
+        binding = ActivityHomeActionVocabularyDetailBinding.inflate(getLayoutInflater());
         return binding.getRoot();
     }
 

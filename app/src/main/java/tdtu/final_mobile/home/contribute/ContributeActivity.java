@@ -1,91 +1,68 @@
 package tdtu.final_mobile.home.contribute;
 
-import android.annotation.SuppressLint;
+import androidx.recyclerview.widget.LinearLayoutManager;
+
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.util.Log;
 import android.view.View;
-import android.widget.RadioGroup;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-import tdtu.final_mobile.R;
-import tdtu.final_mobile.data.Quiz;
-import tdtu.final_mobile.databinding.ActivityContributeBinding;
+import tdtu.final_mobile.data.QuizCate;
+import tdtu.final_mobile.databinding.ActivityHomeActivityContributeBinding;
+import tdtu.final_mobile.home.quiz.QuizAdapter;
 import tdtu.final_mobile.presentation.BaseActivity;
+import tdtu.final_mobile.presentation.click_control.OnClickQuiz;
+import tdtu.final_mobile.utils.Constants;
 
-public class ContributeActivity extends BaseActivity {
-    private ActivityContributeBinding binding;
-    private final Quiz quiz = new Quiz();
+public class ContributeActivity extends BaseActivity implements OnClickQuiz {
 
-    @SuppressLint("NonConstantResourceId")
+    ActivityHomeActivityContributeBinding binding;
+    private int userId = 1;
     @Override
     protected void doBusiness() {
-        quiz.setCorrectAnswer(1);
+        SharedPreferences prefs = getSharedPreferences(Constants.KEY_USER_NAME, MODE_PRIVATE);
+        userId = prefs.getInt(Constants.KEY_USER_ID, 1);
+        Call<ArrayList<QuizCate>> call = apiInterface.getQuizCates(userId);
+        call.enqueue(new Callback<ArrayList<QuizCate>>() {
+            @Override
+            public void onResponse(Call<ArrayList<QuizCate>> call, Response<ArrayList<QuizCate>> response) {
+
+                Log.d("TAG",response.code()+"");
+                ArrayList<QuizCate> quizzes = response.body();
+                QuizAdapter quizAdapter = new QuizAdapter(quizzes, ContributeActivity.this);
+                quizAdapter.setOnQuizTopicClickAction(ContributeActivity.this);
+                binding.rvTopic.setAdapter(quizAdapter);
+
+                LinearLayoutManager linearLayoutManager = new LinearLayoutManager(ContributeActivity.this, LinearLayoutManager.VERTICAL, false);
+                binding.rvTopic.setLayoutManager(linearLayoutManager);
+            }
+
+            @Override
+            public void onFailure(Call<ArrayList<QuizCate>> call, Throwable t) {
+                call.cancel();
+            }
+        });
 
         binding.iBtnBack.setOnClickListener(view -> {
             onBackPressed();
-        });
-
-        binding.btnApprove.setOnClickListener(v -> {
-
-            int id = getIntent().getIntExtra("id", 1);
-
-            if (binding.edtAnswerA.getText().toString().trim().equals("") || binding.edtAnswerB.getText().toString().trim().equals("") || binding.edtAnswerC.getText().toString().trim().equals("") || binding.edtAnswerD.getText().toString().trim().equals("")) {
-                Toast.makeText(ContributeActivity.this, getString(R.string.not_enough_infor), Toast.LENGTH_SHORT).show();
-                return;
-            }
-
-            quiz.setQuestion(binding.edtQuestion.getText().toString());
-            quiz.setAnswerA(binding.edtAnswerA.getText().toString());
-            quiz.setAnswerB(binding.edtAnswerB.getText().toString());
-            quiz.setAnswerC(binding.edtAnswerC.getText().toString());
-            quiz.setAnswerD(binding.edtAnswerD.getText().toString());
-            quiz.setQuizCatesId(id);
-            createANewQuiz(quiz);
-
-        });
-
-        binding.rdAnswer.setOnCheckedChangeListener((group, checkedId) -> {
-            switch (checkedId) {
-                case R.id.radioButtonA:
-                    quiz.setCorrectAnswer(1);
-                    break;
-                case R.id.radioButtonB:
-                    quiz.setCorrectAnswer(2);
-                    break;
-                case R.id.radioButtonC:
-                    quiz.setCorrectAnswer(3);
-                    break;
-                case R.id.radioButtonD:
-                    quiz.setCorrectAnswer(4);
-                    break;
-            }
         });
     }
 
     @Override
     protected View layoutId() {
-        binding = ActivityContributeBinding.inflate(getLayoutInflater());
+        binding = ActivityHomeActivityContributeBinding.inflate(getLayoutInflater());
         return binding.getRoot();
     }
 
-    public void createANewQuiz(Quiz quiz) {
-        Call<Quiz> call = apiInterface.createQuiz(quiz);
-        call.enqueue(new Callback<Quiz>() {
-            @Override
-            public void onResponse(Call<Quiz> call, Response<Quiz> response) {
-                if (response.isSuccessful()) {
-                    onBackPressed();
-                }
-            }
-
-            @Override
-            public void onFailure(Call<Quiz> call, Throwable t) {
-                call.cancel();
-            }
-        });
+    @Override
+    public void OnQuizTopicClick(int position) {
+        Intent doQuizIntent = new Intent(ContributeActivity.this, ContributeDetailActivity.class);
+        doQuizIntent.putExtra("id",position);
+        startActivity(doQuizIntent);
     }
 }

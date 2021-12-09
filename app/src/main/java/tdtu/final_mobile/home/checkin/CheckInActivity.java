@@ -1,13 +1,9 @@
 package tdtu.final_mobile.home.checkin;
 
-import android.content.Intent;
 import android.content.SharedPreferences;
-import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 
@@ -16,15 +12,13 @@ import retrofit2.Callback;
 import retrofit2.Response;
 import tdtu.final_mobile.R;
 import tdtu.final_mobile.data.request.CheckIn;
-import tdtu.final_mobile.databinding.ActivityCheckinBinding;
-import tdtu.final_mobile.home.HomeActivity;
-import tdtu.final_mobile.login_register.MainActivity;
+import tdtu.final_mobile.databinding.ActivityHomeActionCheckinBinding;
 import tdtu.final_mobile.presentation.BaseActivity;
 import tdtu.final_mobile.utils.Constants;
 
 public class CheckInActivity extends BaseActivity {
 
-    private ActivityCheckinBinding binding;
+    private ActivityHomeActionCheckinBinding binding;
     private ArrayList<ImageView> imageViews = new ArrayList<>();
     private int userId = 0;
 
@@ -40,7 +34,7 @@ public class CheckInActivity extends BaseActivity {
 
     @Override
     protected View layoutId() {
-        binding = ActivityCheckinBinding.inflate(getLayoutInflater());
+        binding = ActivityHomeActionCheckinBinding.inflate(getLayoutInflater());
         return binding.getRoot();
     }
 

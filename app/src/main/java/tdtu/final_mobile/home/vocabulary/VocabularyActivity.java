@@ -12,13 +12,13 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 import tdtu.final_mobile.data.QuizCate;
-import tdtu.final_mobile.databinding.ActivityVocabularyBinding;
+import tdtu.final_mobile.databinding.ActivityHomeActionVocabularyBinding;
 import tdtu.final_mobile.home.quiz.QuizAdapter;
 import tdtu.final_mobile.presentation.BaseActivity;
 import tdtu.final_mobile.presentation.click_control.OnClickQuiz;
 
 public class VocabularyActivity extends BaseActivity implements OnClickQuiz {
-    ActivityVocabularyBinding binding;
+    ActivityHomeActionVocabularyBinding binding;
 
     @Override
     protected void doBusiness() {
@@ -50,13 +50,13 @@ public class VocabularyActivity extends BaseActivity implements OnClickQuiz {
 
     @Override
     protected View layoutId() {
-        binding = ActivityVocabularyBinding.inflate(getLayoutInflater());
+        binding = ActivityHomeActionVocabularyBinding.inflate(getLayoutInflater());
         return binding.getRoot();
     }
 
     @Override
     public void OnQuizTopicClick(int id) {
-        Intent learnVocabularyIntent = new Intent(VocabularyActivity.this, VocabulariesActivity.class);
+        Intent learnVocabularyIntent = new Intent(VocabularyActivity.this, VocabularyDetailActivity.class);
         learnVocabularyIntent.putExtra("id", id);
         startActivity(learnVocabularyIntent);
     }

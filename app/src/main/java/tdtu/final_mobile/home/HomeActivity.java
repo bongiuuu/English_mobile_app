@@ -13,7 +13,6 @@ import android.view.WindowManager;
 import android.widget.ImageButton;
 
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 
 import tdtu.final_mobile.home.action.Action;
@@ -22,15 +21,14 @@ import tdtu.final_mobile.home.activity.Activity;
 import tdtu.final_mobile.home.activity.ActivityAdapter;
 import tdtu.final_mobile.R;
 import tdtu.final_mobile.home.checkin.CheckInActivity;
-import tdtu.final_mobile.home.contribute.ChooseTopicActivity;
+import tdtu.final_mobile.home.contribute.ContributeActivity;
 import tdtu.final_mobile.home.extra.ExtraActivity;
-import tdtu.final_mobile.home.notification.MainNotificationActivity;
+import tdtu.final_mobile.home.notification.NotificationActivity;
 import tdtu.final_mobile.home.progress.ProgressActivity;
 import tdtu.final_mobile.home.quiz.QuizActivity;
 import tdtu.final_mobile.home.vocabulary.VocabularyActivity;
 import tdtu.final_mobile.presentation.click_control.OnClickActivity;
 import tdtu.final_mobile.presentation.click_control.OnClickAction;
-import tdtu.final_mobile.utils.Constants;
 
 public class HomeActivity extends AppCompatActivity implements OnClickAction, OnClickActivity {
     public static final String LOG_TAG = "icon1";
@@ -106,7 +104,7 @@ public class HomeActivity extends AppCompatActivity implements OnClickAction, On
             Intent progressIntent = new Intent(HomeActivity.this, ProgressActivity.class);
             startActivity(progressIntent);
         } else {
-            Intent contributeIntent = new Intent(HomeActivity.this, ChooseTopicActivity.class);
+            Intent contributeIntent = new Intent(HomeActivity.this, ContributeActivity.class);
             startActivity(contributeIntent);
         }
     }
@@ -118,7 +116,7 @@ public class HomeActivity extends AppCompatActivity implements OnClickAction, On
                 startActivity(extraIntent);
                 break;
             case R.id.iBtnNotification:
-                Intent notificationIntent = new Intent(view.getContext(), MainNotificationActivity.class);
+                Intent notificationIntent = new Intent(view.getContext(), NotificationActivity.class);
                 startActivity(notificationIntent);
                 break;
         }

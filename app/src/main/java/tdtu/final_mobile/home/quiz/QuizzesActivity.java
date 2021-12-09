@@ -1,7 +1,5 @@
 package tdtu.final_mobile.home.quiz;
 
-import androidx.cardview.widget.CardView;
-
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -10,8 +8,8 @@ import android.media.MediaPlayer;
 import android.os.Handler;
 import android.util.Log;
 import android.view.View;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
+
+import androidx.cardview.widget.CardView;
 
 import java.util.ArrayList;
 
@@ -20,13 +18,13 @@ import retrofit2.Callback;
 import retrofit2.Response;
 import tdtu.final_mobile.R;
 import tdtu.final_mobile.data.Quiz;
-import tdtu.final_mobile.databinding.ActivityQuizzesBinding;
+import tdtu.final_mobile.databinding.ActivityHomeActivityQuizDetailBinding;
 import tdtu.final_mobile.presentation.BaseActivity;
 import tdtu.final_mobile.utils.Constants;
 import tdtu.final_mobile.utils.ViewAnimation;
 
 public class QuizzesActivity extends BaseActivity {
-    private ActivityQuizzesBinding binding;
+    private ActivityHomeActivityQuizDetailBinding binding;
     private ArrayList<Quiz> quizzes = new ArrayList<>();
     private int currentPosition = 0;
     private int correctAnswerPosition = 1;
@@ -35,7 +33,7 @@ public class QuizzesActivity extends BaseActivity {
 
     @Override
     protected View layoutId() {
-        binding = ActivityQuizzesBinding.inflate(getLayoutInflater());
+        binding = ActivityHomeActivityQuizDetailBinding.inflate(getLayoutInflater());
         return binding.getRoot();
     }
 
