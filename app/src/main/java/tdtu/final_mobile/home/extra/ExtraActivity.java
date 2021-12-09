@@ -1,8 +1,8 @@
 package tdtu.final_mobile.home.extra;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -15,39 +15,31 @@ import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.common.api.GoogleApiClient;
 
 import tdtu.final_mobile.R;
+import tdtu.final_mobile.databinding.ActivityHomeExtraBinding;
+import tdtu.final_mobile.presentation.BaseActivity;
 
-public class ExtraActivity extends AppCompatActivity  {
+public class ExtraActivity extends BaseActivity {
+    private ActivityHomeExtraBinding binding;
+
     private GoogleSignInClient mGoogleSignInClient;
     GoogleApiClient mGoogleApiClient;
     boolean mSignInClicked;
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        requestWindowFeature(Window.FEATURE_NO_TITLE); //will hide the title
-        getSupportActionBar().hide(); // hide the title bar
-        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
-                WindowManager.LayoutParams.FLAG_FULLSCREEN); //enable full screen
-        setContentView(R.layout.activity_home_extra);
 
-        ImageButton iBtnBack = findViewById(R.id.iBtnBack);
-        iBtnBack.setOnClickListener(view -> {
+    @Override
+    protected void doBusiness() {
+        binding.iBtnBack.setOnClickListener(view -> {
             onBackPressed();
         });
 
-        CardView cvMe = findViewById(R.id.cvMe);
-        CardView cvSetting = findViewById(R.id.cvSettings);
-        CardView cvAboutUs = findViewById(R.id.cvAboutUs);
-        CardView cvLogout = findViewById(R.id.cvLogout);
+        binding.cvMe.setOnClickListener(this::onClick);
+        binding.cvSettings.setOnClickListener(this::onClick);
+        binding.cvAboutUs.setOnClickListener(this::onClick);
+    }
 
-        cvMe.setOnClickListener(this::onClick);
-        cvSetting.setOnClickListener(this::onClick);
-        cvAboutUs.setOnClickListener(this::onClick);
-
-        cvAboutUs.setOnClickListener(v -> {
-
-        });
-
-
+    @Override
+    protected View layoutId() {
+        binding = ActivityHomeExtraBinding.inflate(getLayoutInflater());
+        return binding.getRoot();
     }
 
     private void signOut() {
@@ -57,6 +49,7 @@ public class ExtraActivity extends AppCompatActivity  {
                 });
     }
 
+    @SuppressLint("NonConstantResourceId")
     public void onClick(View view){
         switch (view.getId()){
             case R.id.cvMe:
@@ -72,7 +65,6 @@ public class ExtraActivity extends AppCompatActivity  {
                 startActivity(aboutUsIntent);
                 break;
             case R.id.cvLogout:
-
                 break;
         }
     }
