@@ -49,9 +49,11 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cvQuestion"
-        android:layout_width="380dp"
+        android:layout_width="match_parent"
         android:layout_height="170dp"
         android:layout_marginTop="35dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
         app:cardBackgroundColor="@color/dark_item"
         app:cardCornerRadius="20dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -59,18 +61,20 @@
         app:layout_constraintTop_toTopOf="@id/pbQuiz">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="380dp"
+            android:layout_width="match_parent"
             android:layout_height="170dp"
             android:orientation="vertical">
 
             <TextView
                 android:id="@+id/tvQuestion"
-                android:layout_width="350dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/avenir"
                 android:gravity="left"
                 tools:text="@string/this_is_an_example_question_for_demo"
                 android:textColor="@color/white"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
                 android:textSize="25sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -80,11 +84,14 @@
                 app:layout_constraintVertical_bias="0.11" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
+
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cvAnswerA"
-        android:layout_width="@dimen/answer_cv_width"
+        android:layout_width="match_parent"
+        android:layout_marginStart="25dp"
+        android:layout_marginEnd="25dp"
         android:layout_height="50dp"
         android:layout_marginTop="25dp"
         app:cardBackgroundColor="@color/dark_item"
@@ -94,13 +101,15 @@
         app:layout_constraintTop_toBottomOf="@id/cvQuestion">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="@dimen/answer_cv_width"
+            android:layout_width="match_parent"
             android:layout_height="50dp"
             android:orientation="vertical">
 
             <TextView
                 android:id="@+id/tvAnswerA"
-                android:layout_width="@dimen/answer_width"
+                android:layout_width="match_parent"
+                android:layout_marginStart="25dp"
+                android:layout_marginEnd="25dp"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/avenir"
                 android:gravity="left"
@@ -114,11 +123,14 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
+
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cvAnswerB"
-        android:layout_width="@dimen/answer_cv_width"
+        android:layout_width="match_parent"
+        android:layout_marginStart="25dp"
+        android:layout_marginEnd="25dp"
         android:layout_height="50dp"
         android:layout_marginTop="10dp"
         app:cardBackgroundColor="@color/dark_item"
@@ -128,13 +140,15 @@
         app:layout_constraintTop_toBottomOf="@id/cvAnswerA">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="@dimen/answer_cv_width"
+            android:layout_width="match_parent"
             android:layout_height="50dp"
             android:orientation="vertical">
 
             <TextView
                 android:id="@+id/tvAnswerB"
-                android:layout_width="@dimen/answer_width"
+                android:layout_width="match_parent"
+                android:layout_marginStart="25dp"
+                android:layout_marginEnd="25dp"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/avenir"
                 android:gravity="left"
@@ -152,7 +166,9 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cvAnswerC"
-        android:layout_width="@dimen/answer_cv_width"
+        android:layout_width="match_parent"
+        android:layout_marginStart="25dp"
+        android:layout_marginEnd="25dp"
         android:layout_height="50dp"
         android:layout_marginTop="10dp"
         app:cardBackgroundColor="@color/dark_item"
@@ -162,13 +178,15 @@
         app:layout_constraintTop_toBottomOf="@id/cvAnswerB">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="@dimen/answer_cv_width"
+            android:layout_width="match_parent"
             android:layout_height="50dp"
             android:orientation="vertical">
 
             <TextView
                 android:id="@+id/tvAnswerC"
-                android:layout_width="@dimen/answer_width"
+                android:layout_width="match_parent"
+                android:layout_marginStart="25dp"
+                android:layout_marginEnd="25dp"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/avenir"
                 android:gravity="left"
@@ -182,11 +200,14 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
+
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cvAnswerD"
-        android:layout_width="@dimen/answer_cv_width"
+        android:layout_width="match_parent"
+        android:layout_marginStart="25dp"
+        android:layout_marginEnd="25dp"
         android:layout_height="50dp"
         android:layout_marginTop="10dp"
         app:cardBackgroundColor="@color/dark_item"
@@ -196,13 +217,15 @@
         app:layout_constraintTop_toBottomOf="@id/cvAnswerC">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="@dimen/answer_cv_width"
+            android:layout_width="match_parent"
             android:layout_height="50dp"
             android:orientation="vertical">
 
             <TextView
                 android:id="@+id/tvAnswerD"
-                android:layout_width="@dimen/answer_width"
+                android:layout_width="match_parent"
+                android:layout_marginStart="25dp"
+                android:layout_marginEnd="25dp"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/avenir"
                 android:gravity="left"
@@ -216,6 +239,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
+
     </androidx.cardview.widget.CardView>
 
     <ProgressBar

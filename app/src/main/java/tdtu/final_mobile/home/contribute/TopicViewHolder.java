@@ -12,7 +12,7 @@ import tdtu.final_mobile.R;
 import tdtu.final_mobile.presentation.click_control.OnClickContribute;
 
 public class TopicViewHolder extends RecyclerView.ViewHolder {
-    ImageView ivCircle;
+    CardView cvCircle;
     TextView tvNumber;
     TextView tvTopicName;
     TextView tvVietnameseName;
@@ -20,7 +20,7 @@ public class TopicViewHolder extends RecyclerView.ViewHolder {
 
     public TopicViewHolder(@NonNull View itemView, OnClickContribute onClickContribute){
         super(itemView);
-        this.ivCircle = itemView.findViewById(R.id.ivCircle);
+        this.cvCircle = itemView.findViewById(R.id.cvCircle);
         this.tvNumber = itemView.findViewById(R.id.tvNumber);
         this.tvTopicName = itemView.findViewById(R.id.tvTopicName);
         this.tvVietnameseName = itemView.findViewById(R.id.tvVietnameseName);

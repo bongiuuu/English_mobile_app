@@ -47,7 +47,21 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="500dp"
-            android:orientation="vertical"/>
+            android:orientation="vertical">
+
+
+            <Switch
+                android:id="@+id/sQuizSound"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="30dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
     </androidx.cardview.widget.CardView>
 
     <androidx.appcompat.widget.AppCompatButton

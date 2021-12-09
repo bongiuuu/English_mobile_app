@@ -39,7 +39,7 @@ public class TopicAdapter extends RecyclerView.Adapter<TopicViewHolder> {
     public void onBindViewHolder(@NonNull TopicViewHolder holder, int position) {
         holder.tvNumber.setText(topics.get(position).getNumber() + "");
         holder.tvNumber.setTextColor(topics.get(position).getLetterColor());
-        holder.ivCircle.setBackgroundColor(topics.get(position).getCircleColor());
+        holder.cvCircle.setBackgroundColor(topics.get(position).getCircleColor());
         holder.tvTopicName.setText(topics.get(position).getTopicName());
         holder.tvTopicName.setTextColor(topics.get(position).getLetterColor());
         holder.tvVietnameseName.setText(topics.get(position).getVietnameseName());

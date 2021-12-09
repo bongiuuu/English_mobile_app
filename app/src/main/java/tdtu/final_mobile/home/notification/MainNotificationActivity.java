@@ -6,6 +6,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ImageButton;
@@ -13,46 +15,66 @@ import android.widget.ImageButton;
 import java.util.ArrayList;
 import java.util.List;
 
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 import tdtu.final_mobile.R;
+import tdtu.final_mobile.data.QuizCate;
+import tdtu.final_mobile.databinding.ActivityMainNotificationBinding;
+import tdtu.final_mobile.databinding.ActivityQuizBinding;
+import tdtu.final_mobile.home.quiz.QuizActivity;
+import tdtu.final_mobile.home.quiz.QuizAdapter;
 import tdtu.final_mobile.home.vocabulary.VocabularyAdapter;
+import tdtu.final_mobile.presentation.BaseActivity;
 import tdtu.final_mobile.presentation.click_control.OnClickNotification;
 
-public class MainNotificationActivity extends AppCompatActivity implements OnClickNotification {
+public class MainNotificationActivity extends BaseActivity implements OnClickNotification {
+    private ActivityMainNotificationBinding binding;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        requestWindowFeature(Window.FEATURE_NO_TITLE); //will hide the title
-        getSupportActionBar().hide(); // hide the title bar
-        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
-                WindowManager.LayoutParams.FLAG_FULLSCREEN); //enable full screen
-        setContentView(R.layout.activity_main_notification);
+    protected void doBusiness() {
+        Call<ArrayList<Notification>> call = apiInterface.getNotifications();
+        call.enqueue(new Callback<ArrayList<Notification>>() {
+            @Override
+            public void onResponse(Call<ArrayList<Notification>> call, Response<ArrayList<Notification>> response) {
 
-        ImageButton iBtnBack = findViewById(R.id.iBtnBack);
-        iBtnBack.setOnClickListener(view -> {
-            onBackPressed();
+                Log.d("TAG",response.code()+"");
+                ArrayList<Notification> notifications = response.body();
+                NotificationAdapter notificationAdapter = new NotificationAdapter(notifications, MainNotificationActivity.this);
+                notificationAdapter.setNotificationClickAction(MainNotificationActivity.this);
+                binding.rvNotification.setAdapter(notificationAdapter);
+
+                LinearLayoutManager linearLayoutManager = new LinearLayoutManager(MainNotificationActivity.this, LinearLayoutManager.VERTICAL, false);
+                binding.rvNotification.setLayoutManager(linearLayoutManager);
+            }
+
+            @Override
+            public void onFailure(Call<ArrayList<Notification>> call, Throwable t) {
+                call.cancel();
+            }
         });
-
-        List<Notification> notifications = getNotificationList();
-        RecyclerView recyclerView = findViewById(R.id.rvNotification);
-        NotificationAdapter notificationAdapter = new NotificationAdapter(notifications, this);
-        notificationAdapter.setNotificationClickAction(this);
-        recyclerView.setAdapter(notificationAdapter);
-
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
-        recyclerView.setLayoutManager(linearLayoutManager);
     }
 
-    private List<Notification> getNotificationList(){
-        List<Notification> notifications = new ArrayList<>();
-
-        String[] notificationTitleList = {"Notification 1", "Notification 2", "Notification 3", "Notification 4", "Notification 5", "Notification 6", "Notification 7"};
-        String[] notificationContentList = {"Content 1", "Content 2", "Content 3", "Content 4", "Content 5", "Content 6", "Content 7"};
-        for (int i = notificationTitleList.length - 1; i >= 0; i--){
-            notifications.add(new Notification(notificationTitleList[i], notificationContentList[i]));
-        }
-        return notifications;
+    @Override
+    protected View layoutId() {
+        binding = ActivityMainNotificationBinding.inflate(getLayoutInflater());
+        return binding.getRoot();
     }
+
+//    @Override
+//    protected void onCreate(Bundle savedInstanceState) {
+//        super.onCreate(savedInstanceState);
+//        requestWindowFeature(Window.FEATURE_NO_TITLE); //will hide the title
+//        getSupportActionBar().hide(); // hide the title bar
+//        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+//                WindowManager.LayoutParams.FLAG_FULLSCREEN); //enable full screen
+//        setContentView(R.layout.activity_main_notification);
+//
+//        ImageButton iBtnBack = findViewById(R.id.iBtnBack);
+//        iBtnBack.setOnClickListener(view -> {
+//            onBackPressed();
+//        });
+//    }
 
     @Override
     public void OnNotificationClick(int position) {

@@ -12,7 +12,7 @@ import tdtu.final_mobile.R;
 import tdtu.final_mobile.presentation.click_control.OnClickQuiz;
 
 public class QuizViewHolder extends RecyclerView.ViewHolder {
-    ImageView ivCircle;
+    CardView cvCircle;
     TextView tvNumber;
     TextView tvQuizTopic;
     TextView tvVietnameseName;
@@ -20,10 +20,10 @@ public class QuizViewHolder extends RecyclerView.ViewHolder {
 
     public QuizViewHolder(@NonNull View itemView, OnClickQuiz onClickQuiz) {
         super(itemView);
-        this.ivCircle = itemView.findViewById(R.id.ivCircle);
+        this.cvCircle = itemView.findViewById(R.id.cvCircle);
         this.tvNumber = itemView.findViewById(R.id.tvNumber);
-        this.tvQuizTopic = itemView.findViewById(R.id.tvQuizTopic);
+        this.tvQuizTopic = itemView.findViewById(R.id.tvTopicName);
         this.tvVietnameseName = itemView.findViewById(R.id.tvVietnameseName);
-        this.cvQuiz = itemView.findViewById(R.id.cvQuiz);
+        this.cvQuiz = itemView.findViewById(R.id.cvTopic);
     }
 }

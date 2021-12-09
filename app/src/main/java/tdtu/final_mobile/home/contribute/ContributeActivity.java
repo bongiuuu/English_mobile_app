@@ -17,8 +17,6 @@ import tdtu.final_mobile.databinding.ActivityContributeBinding;
 import tdtu.final_mobile.presentation.BaseActivity;
 
 public class ContributeActivity extends BaseActivity {
-
-
     private ActivityContributeBinding binding;
     private final Quiz quiz = new Quiz();
 

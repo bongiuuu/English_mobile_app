@@ -29,7 +29,6 @@ import tdtu.final_mobile.utils.Constants;
 
 public class QuizActivity extends BaseActivity implements OnClickQuiz {
 
-
     ActivityQuizBinding binding;
     private int userId = 1;
     @Override
@@ -71,7 +70,7 @@ public class QuizActivity extends BaseActivity implements OnClickQuiz {
     @Override
     public void OnQuizTopicClick(int quizCateId) {
         Intent doQuizIntent = new Intent(QuizActivity.this, QuizzesActivity.class);
-        doQuizIntent.putExtra("id",quizCateId);
+        doQuizIntent.putExtra("id", quizCateId);
         startActivity(doQuizIntent);
     }
 }

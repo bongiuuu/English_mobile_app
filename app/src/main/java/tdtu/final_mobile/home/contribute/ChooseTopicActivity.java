@@ -33,7 +33,6 @@ import tdtu.final_mobile.utils.Constants;
 
 public class ChooseTopicActivity extends BaseActivity implements OnClickQuiz {
 
-
     ActivityChooseTopicBinding binding;
     private int userId = 1;
     @Override

@@ -1,5 +1,6 @@
 package tdtu.final_mobile.home.vocabulary;
 
+import android.media.MediaPlayer;
 import android.util.Log;
 import android.view.View;
 
@@ -10,6 +11,7 @@ import java.util.ArrayList;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
+import tdtu.final_mobile.R;
 import tdtu.final_mobile.data.FakeDataVocab;
 import tdtu.final_mobile.data.Quiz;
 import tdtu.final_mobile.data.QuizCate;

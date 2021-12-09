@@ -13,7 +13,7 @@ import tdtu.final_mobile.presentation.click_control.OnClickAction;
 import tdtu.final_mobile.presentation.click_control.OnClickVocabulary;
 
 public class VocabularyViewHolder extends RecyclerView.ViewHolder {
-    ImageView ivCircle;
+    CardView cvCircle;
     TextView tvNumber;
     TextView tvVocabularyName;
     TextView tvVietnameseName;
@@ -21,10 +21,10 @@ public class VocabularyViewHolder extends RecyclerView.ViewHolder {
 
     public VocabularyViewHolder(@NonNull View itemView, OnClickVocabulary onClickVocabulary){
         super(itemView);
-        this.ivCircle = itemView.findViewById(R.id.ivCircle);
+        this.cvCircle = itemView.findViewById(R.id.cvCircle);
         this.tvNumber = itemView.findViewById(R.id.tvNumber);
-        this.tvVocabularyName = itemView.findViewById(R.id.tvVocabularyName);
+        this.tvVocabularyName = itemView.findViewById(R.id.tvTopicName);
         this.tvVietnameseName = itemView.findViewById(R.id.tvVietnameseName);
-        this.cvVocabulary = itemView.findViewById(R.id.cvVocabulary);
+        this.cvVocabulary = itemView.findViewById(R.id.cvTopic);
     }
 }

@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import tdtu.final_mobile.R;
 
 public class ScoreTopicViewHolder extends RecyclerView.ViewHolder {
-    ImageView ivCircle;
+    CardView cvCircle;
     TextView tvNumber;
     TextView tvScored;
     TextView tvTopicName;
@@ -20,7 +20,7 @@ public class ScoreTopicViewHolder extends RecyclerView.ViewHolder {
 
     public ScoreTopicViewHolder(@NonNull View itemView) {
         super(itemView);
-        this.ivCircle = itemView.findViewById(R.id.ivCircle);
+        this.cvCircle = itemView.findViewById(R.id.cvCircle);
         this.tvNumber = itemView.findViewById(R.id.tvNumber);
         this.tvTopicName = itemView.findViewById(R.id.tvTopicName);
         this.tvVietnameseName = itemView.findViewById(R.id.tvVietnameseName);

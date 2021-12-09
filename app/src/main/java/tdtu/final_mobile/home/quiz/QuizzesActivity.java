@@ -5,6 +5,8 @@ import androidx.cardview.widget.CardView;
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.SharedPreferences;
+import android.media.MediaPlayer;
 import android.os.Handler;
 import android.util.Log;
 import android.view.View;
@@ -20,6 +22,7 @@ import tdtu.final_mobile.R;
 import tdtu.final_mobile.data.Quiz;
 import tdtu.final_mobile.databinding.ActivityQuizzesBinding;
 import tdtu.final_mobile.presentation.BaseActivity;
+import tdtu.final_mobile.utils.Constants;
 import tdtu.final_mobile.utils.ViewAnimation;
 
 public class QuizzesActivity extends BaseActivity {
@@ -28,6 +31,8 @@ public class QuizzesActivity extends BaseActivity {
     private int currentPosition = 0;
     private int correctAnswerPosition = 1;
     private int currentScore = 0;
+    private boolean quizSound = true;
+
     @Override
     protected View layoutId() {
         binding = ActivityQuizzesBinding.inflate(getLayoutInflater());
@@ -37,6 +42,7 @@ public class QuizzesActivity extends BaseActivity {
     @Override
     protected void doBusiness() {
         fetchData();
+
         setOnClickAnswerButton();
     }
 
@@ -83,6 +89,9 @@ public class QuizzesActivity extends BaseActivity {
                 call.cancel();
             }
         });
+
+        SharedPreferences prefs = getSharedPreferences(Constants.KEY_QUIZ_SOUND, MODE_PRIVATE);
+        quizSound = prefs.getBoolean(Constants.KEY_QUIZ_SOUND, true);
     }
 
     @SuppressLint("SetTextI18n")
@@ -157,8 +166,18 @@ public class QuizzesActivity extends BaseActivity {
     private void checkTheAnswer(CardView cardView, int answerPosition) {
 
         if (answerPosition == correctAnswerPosition) {
-            currentScore = currentScore + 10;
+            currentScore = currentScore + 20;
             binding.tvScore.setText(getString(R.string.plus)+currentScore);
+            if (quizSound){
+                MediaPlayer correctRing = MediaPlayer.create(this, R.raw.correct);
+                correctRing.start();
+            }
+        }
+        else {
+            if (quizSound){
+                MediaPlayer incorrectRing = MediaPlayer.create(this, R.raw.incorrect);
+                incorrectRing.start();
+            }
         }
         ViewAnimation.doBlinkAnimation(cardView);
         final Handler handler = new Handler();

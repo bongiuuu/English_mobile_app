@@ -13,7 +13,6 @@ import java.util.List;
 
 import tdtu.final_mobile.R;
 import tdtu.final_mobile.presentation.click_control.OnClickNotification;
-import tdtu.final_mobile.presentation.click_control.OnClickVocabulary;
 
 public class NotificationAdapter extends RecyclerView.Adapter<NotificationViewHolder> {
     final List<Notification> notifications;
@@ -38,7 +37,7 @@ public class NotificationAdapter extends RecyclerView.Adapter<NotificationViewHo
 
     @Override
     public void onBindViewHolder(@NonNull NotificationViewHolder holder, int position) {
-        holder.tvNotificationTitle.setText(notifications.get(position).getNotificationTitle());
+        holder.tvNotificationTitle.setText(notifications.get(position).getTitle());
         holder.cvNotification.setOnClickListener(v -> {
             onClickNotification.OnNotificationClick(position);
         });
@@ -53,7 +52,7 @@ public class NotificationAdapter extends RecyclerView.Adapter<NotificationViewHo
         int itemPosition = recyclerView.getChildLayoutPosition(itemView);
         Notification notification = this.notifications.get(itemPosition);
 
-        Toast.makeText(this.context, notification.getNotificationTitle(), Toast.LENGTH_SHORT).show();
+        Toast.makeText(this.context, notification.getTitle(), Toast.LENGTH_SHORT).show();
     }
 
     void setNotificationClickAction(OnClickNotification onClickNotification){

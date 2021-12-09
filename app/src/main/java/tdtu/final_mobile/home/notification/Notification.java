@@ -1,27 +1,27 @@
 package tdtu.final_mobile.home.notification;
 
 public class Notification {
-    String notificationTitle;
-    String notificationContent;
+    String title;
+    String description;
 
-    public String getNotificationTitle() {
-        return notificationTitle;
+    public String getTitle() {
+        return title;
     }
 
-    public void setNotificationTitle(String notificationTitle) {
-        this.notificationTitle = notificationTitle;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
-    public String getNotificationContent() {
-        return notificationContent;
+    public String getDescription() {
+        return description;
     }
 
-    public void setNotificationContent(String notificationContent) {
-        this.notificationContent = notificationContent;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
-    public Notification(String notificationTitle, String notificationContent) {
-        this.notificationTitle = notificationTitle;
-        this.notificationContent = notificationContent;
+    public Notification(String title, String description) {
+        this.title = title;
+        this.description = description;
     }
 }

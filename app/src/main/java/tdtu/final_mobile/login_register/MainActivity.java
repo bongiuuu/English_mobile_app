@@ -2,60 +2,30 @@ package tdtu.final_mobile.login_register;
 
 import static android.content.ContentValues.TAG;
 
-import androidx.activity.result.ActivityResult;
-import androidx.activity.result.ActivityResultCallback;
-import androidx.activity.result.ActivityResultLauncher;
-import androidx.activity.result.contract.ActivityResultContracts;
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.app.Activity;
-import android.app.Notification;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.ImageButton;
-import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
-import com.google.android.gms.common.SignInButton;
 import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.tasks.Task;
-
-import org.json.JSONObject;
-
-import java.util.Calendar;
 
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-import tdtu.final_mobile.data.request.CheckIn;
+import tdtu.final_mobile.R;
 import tdtu.final_mobile.data.response.BaseResponse;
 import tdtu.final_mobile.data.response.User;
 import tdtu.final_mobile.databinding.ActivityMainBinding;
-import tdtu.final_mobile.databinding.ActivityRegisterBinding;
 import tdtu.final_mobile.home.HomeActivity;
-import tdtu.final_mobile.home.contribute.ChooseTopicActivity;
-import tdtu.final_mobile.home.contribute.ContributeActivity;
-import tdtu.final_mobile.home.extra.MeActivity;
-import tdtu.final_mobile.home.notification.MainNotificationActivity;
-import tdtu.final_mobile.home.notification.NotificationDetailActivity;
-import tdtu.final_mobile.home.progress.ProgressActivity;
-import tdtu.final_mobile.home.progress.already_known.AlreadyKnownActivity;
-import tdtu.final_mobile.home.progress.average_score.AverageScoreActivity;
-import tdtu.final_mobile.home.quiz.QuizActivity;
-import tdtu.final_mobile.R;
-import tdtu.final_mobile.home.quiz.QuizzesActivity;
-import tdtu.final_mobile.home.vocabulary.VocabulariesActivity;
 import tdtu.final_mobile.presentation.BaseActivity;
 import tdtu.final_mobile.utils.Constants;
 
@@ -73,10 +43,6 @@ public class MainActivity extends BaseActivity {
                 .build();
 
         mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
-
-        SignInButton signInButton = findViewById(R.id.iBtnGoogleLogin);
-        signInButton.setSize(SignInButton.SIZE_STANDARD);
-        signInButton.setColorScheme(SignInButton.COLOR_LIGHT);
 
         binding.btnLogin.setOnClickListener(v -> {
 

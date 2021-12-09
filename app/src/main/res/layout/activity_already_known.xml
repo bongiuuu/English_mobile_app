@@ -35,7 +35,7 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvAlreadyKnown"
-        android:layout_width="400dp"
+        android:layout_width="match_parent"
         android:layout_height="520dp"
         android:layout_marginTop="140dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -43,7 +43,9 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.cardview.widget.CardView
-        android:layout_width="380dp"
+        android:layout_width="match_parent"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
         android:layout_height="50dp"
         app:cardCornerRadius="40dp"
         app:cardBackgroundColor="@color/dark_item"
@@ -54,15 +56,16 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="match_parent"
             android:orientation="vertical">
 
 
             <EditText
                 android:id="@+id/edtFindWord"
-                android:layout_width="300dp"
+                android:layout_width="match_parent"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="60dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="24dp"
                 android:inputType="textPersonName"
                 android:hint="@string/find_a_word"
                 android:background="@android:color/transparent"

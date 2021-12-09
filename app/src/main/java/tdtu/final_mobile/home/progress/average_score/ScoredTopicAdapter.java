@@ -39,7 +39,7 @@ public class ScoredTopicAdapter extends RecyclerView.Adapter<ScoreTopicViewHolde
 
         holder.tvNumber.setText(scoredTopic.getNumber() + "");
         holder.tvNumber.setTextColor(scoredTopic.getLetterColor());
-        holder.ivCircle.setBackgroundColor(scoredTopic.getCircleColor());
+        holder.cvCircle.setCardBackgroundColor(scoredTopic.getCircleColor());
         holder.tvTopicName.setText(scoredTopic.getTopicName());
         holder.tvTopicName.setTextColor(scoredTopic.getLetterColor());
         holder.tvVietnameseName.setText(scoredTopic.getVietnameseName());

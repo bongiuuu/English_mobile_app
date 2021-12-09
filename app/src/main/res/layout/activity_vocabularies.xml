@@ -36,9 +36,11 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cvVocab"
-        android:layout_width="380dp"
+        android:layout_width="match_parent"
         android:layout_height="380dp"
         android:layout_marginTop="150dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
         app:cardBackgroundColor="@color/dark_item"
         app:cardCornerRadius="50dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -46,16 +48,18 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="380dp"
+            android:layout_width="match_parent"
             android:layout_height="380dp"
             android:orientation="vertical">
 
             <TextView
                 android:id="@+id/tvEnglishWord"
-                android:layout_width="360dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/avenir"
-                android:gravity="center"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:gravity="center_horizontal"
                 android:text="@string/english"
                 android:textColor="@color/activity_1"
                 android:textSize="40sp"
@@ -68,18 +72,20 @@
 
             <TextView
                 android:id="@+id/tvVietnameseWord"
-                android:layout_width="360dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="3dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
                 android:fontFamily="@font/avenir"
-                android:gravity="center"
+                android:gravity="center_horizontal"
                 android:text="@string/vietnamese"
                 android:textColor="@color/white"
                 android:textSize="30sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@id/tvEnglishWord"
+                app:layout_constraintTop_toBottomOf="@id/tvEnglishWord"
                 app:layout_constraintVertical_bias="0.472" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>

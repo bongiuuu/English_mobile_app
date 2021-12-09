@@ -1,16 +1,12 @@
 package tdtu.final_mobile.network;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.http.Body;
-import retrofit2.http.Field;
-import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
 import retrofit2.http.Path;
-import retrofit2.http.Query;
 import tdtu.final_mobile.data.Quiz;
 import tdtu.final_mobile.data.QuizCate;
 import tdtu.final_mobile.data.Vocab;
@@ -18,6 +14,8 @@ import tdtu.final_mobile.data.request.CheckIn;
 import tdtu.final_mobile.data.response.BaseResponse;
 import tdtu.final_mobile.data.response.MultipleResource;
 import tdtu.final_mobile.data.response.User;
+import tdtu.final_mobile.home.notification.Notification;
+import tdtu.final_mobile.home.vocabulary.Vocabulary;
 
 public interface APIService {
 
@@ -53,4 +51,7 @@ public interface APIService {
 
     @GET("vocabulary/cates/{cateId}")
     Call<ArrayList<Vocab>> getVocabularyFromCateId(@Path("cateId") int id);
+
+    @GET("users/notifications")
+    Call<ArrayList<Notification>> getNotifications();
 }

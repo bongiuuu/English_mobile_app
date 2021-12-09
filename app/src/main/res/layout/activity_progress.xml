@@ -35,7 +35,9 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cvAlreadyKnown"
-        android:layout_width="380dp"
+        android:layout_width="match_parent"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
         android:layout_height="100dp"
         android:layout_marginTop="28dp"
         app:cardBackgroundColor="@color/dark_item"
@@ -46,7 +48,7 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="100dp"
+            android:layout_height="match_parent"
             android:orientation="vertical">
 
             <ImageView
@@ -106,7 +108,9 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cvAverageScore"
-        android:layout_width="380dp"
+        android:layout_width="match_parent"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
         android:layout_height="100dp"
         app:cardCornerRadius="10dp"
         app:cardBackgroundColor="@color/dark_item"
@@ -117,7 +121,7 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="100dp"
+            android:layout_height="match_parent"
             android:orientation="vertical">
 
             <ImageView
@@ -172,17 +176,16 @@
                 app:srcCompat="@drawable/next"
                 tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
         </androidx.constraintlayout.widget.ConstraintLayout>
+
     </androidx.cardview.widget.CardView>
 
     <ImageView
-        android:layout_width="400dp"
+        android:layout_width="match_parent"
         android:layout_height="200dp"
         android:layout_marginTop="220dp"
         android:src="@drawable/progress_pic"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.454"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cvAverageScore" />
+        app:layout_constraintStart_toStartOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -147,63 +147,6 @@
         app:layout_constraintTop_toBottomOf="@+id/cvReEnterPassword"
         tools:ignore="TouchTargetSizeCheck" />
 
-    <View
-        android:id="@+id/horizontalLine1"
-        android:layout_width="135dp"
-        android:layout_height="1dp"
-        android:layout_marginStart="56dp"
-        android:layout_marginTop="200dp"
-        android:background="@color/orange_line"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cvPassword" />
-
-    <View
-        android:id="@+id/horizontalLine2"
-        android:layout_width="135dp"
-        android:layout_height="1dp"
-        android:layout_marginTop="200dp"
-        android:layout_marginEnd="56dp"
-        android:background="@color/orange_line"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cvPassword" />
-
-    <TextView
-        android:id="@+id/tvOr"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="191dp"
-        android:text="@string/or"
-        android:textColor="@color/orange_line"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cvPassword" />
-
-    <ImageButton
-        android:id="@+id/iBtnGoogleLogin"
-        android:layout_width="200dp"
-        android:layout_height="70dp"
-        android:layout_marginStart="17dp"
-        android:layout_marginTop="30dp"
-        android:background="@android:color/transparent"
-        android:scaleType="fitCenter"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/horizontalLine1"
-        app:srcCompat="@drawable/google_login"
-        tools:ignore="SpeakableTextPresentCheck" />
-
-    <ImageButton
-        android:id="@+id/iBtnFacebookLogin"
-        android:layout_width="200dp"
-        android:layout_height="70dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginEnd="17dp"
-        android:background="@android:color/transparent"
-        android:scaleType="fitCenter"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/horizontalLine2"
-        app:srcCompat="@drawable/facebook_login"
-        tools:ignore="SpeakableTextPresentCheck" />
-
     <ImageButton
         android:id="@+id/iBtnBack"
         android:layout_width="20dp"

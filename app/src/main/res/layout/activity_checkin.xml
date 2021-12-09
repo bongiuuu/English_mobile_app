@@ -33,7 +33,7 @@
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="300dp"
+        android:layout_width="match_parent"
         android:layout_height="300dp"
         android:layout_marginBottom="100dp"
         android:src="@drawable/checkin"
@@ -42,168 +42,187 @@
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <TextView
-        android:id="@+id/tvMonday"
-        android:layout_width="wrap_content"
+    <com.google.android.flexbox.FlexboxLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="60dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="30dp"
-        android:fontFamily="@font/avenir"
-        android:text="@string/monday"
-        android:textColor="@color/white"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toStartOf="@+id/tvTuesday"
-        app:layout_constraintTop_toBottomOf="@+id/ivMonday" />
-
-    <ImageView
-        android:id="@+id/ivMonday"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:layout_marginTop="40dp"
-        android:layout_marginEnd="25dp"
-        app:layout_constraintEnd_toStartOf="@+id/ivTuesday"
-        app:layout_constraintTop_toBottomOf="@+id/ivThisWeek"
-        app:srcCompat="@drawable/date_miss" />
-
-    <TextView
-        android:id="@+id/tvTuesday"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="29dp"
-        android:fontFamily="@font/avenir"
-        android:text="@string/tuesday"
-        android:textColor="@color/white"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toStartOf="@+id/tvWednesday"
-        app:layout_constraintTop_toBottomOf="@+id/ivTuesday" />
-
-    <ImageView
-        android:id="@+id/ivTuesday"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:layout_marginTop="40dp"
-        android:layout_marginEnd="25dp"
-        app:layout_constraintEnd_toStartOf="@+id/ivWednesday"
-        app:layout_constraintTop_toBottomOf="@+id/ivThisWeek"
-        app:srcCompat="@drawable/date_miss" />
-
-    <TextView
-        android:id="@+id/tvWednesday"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="32dp"
-        android:fontFamily="@font/avenir"
-        android:text="@string/wednesday"
-        android:textColor="@color/white"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toStartOf="@+id/tvThursday"
-        app:layout_constraintTop_toBottomOf="@+id/ivWednesday" />
-
-    <ImageView
-        android:id="@+id/ivWednesday"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:layout_marginTop="40dp"
-        android:layout_marginEnd="25dp"
-        app:layout_constraintEnd_toStartOf="@+id/ivThursday"
-        app:layout_constraintTop_toBottomOf="@+id/ivThisWeek"
-        app:srcCompat="@drawable/date_miss" />
-
-    <TextView
-        android:id="@+id/tvThursday"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="84dp"
-        android:fontFamily="@font/avenir"
-        android:text="@string/tuesday"
-        android:textColor="@color/white"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="@+id/ivThisWeek"
-        app:layout_constraintTop_toBottomOf="@+id/ivThursday" />
-
-    <ImageView
-        android:id="@+id/ivThursday"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:layout_marginStart="27dp"
-        android:layout_marginTop="40dp"
-        app:layout_constraintStart_toEndOf="@+id/tvWednesday"
-        app:layout_constraintTop_toBottomOf="@+id/ivThisWeek"
-        app:srcCompat="@drawable/date_miss" />
-
-    <TextView
-        android:id="@+id/tvFriday"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="33dp"
-        android:layout_marginTop="10dp"
-        android:fontFamily="@font/avenir"
-        android:text="@string/friday"
-        android:textColor="@color/white"
-        android:textSize="20sp"
-        app:layout_constraintStart_toEndOf="@+id/tvThursday"
-        app:layout_constraintTop_toBottomOf="@+id/ivFriday" />
-
-    <ImageView
-        android:id="@+id/ivFriday"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:layout_marginStart="25dp"
-        android:layout_marginTop="40dp"
-        app:layout_constraintStart_toEndOf="@+id/ivThursday"
-        app:layout_constraintTop_toBottomOf="@+id/ivThisWeek"
-        app:srcCompat="@drawable/date_miss" />
-
-    <TextView
-        android:id="@+id/tvSaturday"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="34dp"
-        android:layout_marginTop="10dp"
-        android:fontFamily="@font/avenir"
-        android:text="@string/saturday"
-        android:textColor="@color/white"
-        android:textSize="20sp"
-        app:layout_constraintStart_toEndOf="@+id/tvFriday"
-        app:layout_constraintTop_toBottomOf="@+id/ivSaturday" />
-
-    <ImageView
-        android:id="@+id/ivSaturday"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:layout_marginStart="25dp"
-        android:layout_marginTop="40dp"
-        app:layout_constraintStart_toEndOf="@+id/ivFriday"
-        app:layout_constraintTop_toBottomOf="@+id/ivThisWeek"
-        app:srcCompat="@drawable/date_miss" />
-
-    <TextView
-        android:id="@+id/tvSunday"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="60dp"
-        android:fontFamily="@font/avenir"
-        android:text="@string/saturday"
-        android:textColor="@color/white"
-        android:textSize="20sp"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginEnd="50dp"
+        android:orientation="horizontal"
+        app:justifyContent="space_between"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/tvSaturday"
-        app:layout_constraintTop_toBottomOf="@+id/ivSunday" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ivThisWeek">
 
-    <ImageView
-        android:id="@+id/ivSunday"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:layout_marginStart="25dp"
-        android:layout_marginTop="40dp"
-        app:layout_constraintStart_toEndOf="@+id/ivSaturday"
-        app:layout_constraintTop_toBottomOf="@+id/ivThisWeek"
-        app:srcCompat="@drawable/date_miss" />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/ivMonday"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                app:srcCompat="@drawable/date_miss" />
+
+            <TextView
+                android:id="@+id/tvMonday"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_gravity="center_horizontal"
+                android:fontFamily="@font/avenir"
+                android:text="@string/monday"
+                android:textColor="@color/white"
+                android:textSize="20sp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/ivTuesday"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                app:srcCompat="@drawable/date_miss" />
+
+            <TextView
+                android:id="@+id/tvTuesday"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_gravity="center_horizontal"
+                android:fontFamily="@font/avenir"
+                android:text="@string/tuesday"
+                android:textColor="@color/white"
+                android:textSize="20sp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/ivWednesday"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                app:srcCompat="@drawable/date_miss" />
+
+            <TextView
+                android:id="@+id/tvWednesday"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_gravity="center_horizontal"
+                android:fontFamily="@font/avenir"
+                android:text="@string/wednesday"
+                android:textColor="@color/white"
+                android:textSize="20sp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/ivThursday"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                app:srcCompat="@drawable/date_miss" />
+
+            <TextView
+                android:id="@+id/tvThursday"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_gravity="center_horizontal"
+                android:fontFamily="@font/avenir"
+                android:text="@string/tuesday"
+                android:textColor="@color/white"
+                android:textSize="20sp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/ivFriday"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                app:srcCompat="@drawable/date_miss" />
+
+            <TextView
+                android:id="@+id/tvFriday"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_gravity="center_horizontal"
+                android:fontFamily="@font/avenir"
+                android:text="@string/friday"
+                android:textColor="@color/white"
+                android:textSize="20sp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/ivSaturday"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                app:srcCompat="@drawable/date_miss" />
+
+            <TextView
+                android:id="@+id/tvSaturday"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_gravity="center_horizontal"
+                android:fontFamily="@font/avenir"
+                android:text="@string/saturday"
+                android:textColor="@color/white"
+                android:textSize="20sp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/ivSunday"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                app:srcCompat="@drawable/date_miss" />
+
+            <TextView
+                android:id="@+id/tvSunday"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_gravity="center_horizontal"
+                android:fontFamily="@font/avenir"
+                android:text="@string/saturday"
+                android:textColor="@color/white"
+                android:textSize="20sp"/>
+
+        </LinearLayout>
+
+    </com.google.android.flexbox.FlexboxLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
