@@ -28,7 +28,7 @@ import tdtu.final_mobile.databinding.ActivityMainBinding;
 import tdtu.final_mobile.home.HomeActivity;
 import tdtu.final_mobile.presentation.BaseActivity;
 import tdtu.final_mobile.utils.Constants;
-
+import com.onesignal.OneSignal;
 public class MainActivity extends BaseActivity {
 
     ActivityMainBinding binding;
@@ -45,7 +45,6 @@ public class MainActivity extends BaseActivity {
         mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
 
         binding.btnLogin.setOnClickListener(v -> {
-
             if (binding.edtUsername.getText().toString().trim().isEmpty()) {
                 showToast("Validation Username");
                 return;
@@ -163,6 +162,8 @@ public class MainActivity extends BaseActivity {
         SharedPreferences.Editor editor = getSharedPreferences(Constants.KEY_USER_NAME, MODE_PRIVATE).edit();
         editor.putInt(Constants.KEY_USER_ID, userId);
         editor.apply();
+
+        OneSignal.sendTag("user_id", userId+"");
     }
 
 }
