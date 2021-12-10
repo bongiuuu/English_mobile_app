@@ -16,6 +16,8 @@ import com.google.android.gms.common.api.GoogleApiClient;
 
 import tdtu.final_mobile.R;
 import tdtu.final_mobile.databinding.ActivityHomeExtraBinding;
+import tdtu.final_mobile.home.HomeActivity;
+import tdtu.final_mobile.login_register.MainActivity;
 import tdtu.final_mobile.presentation.BaseActivity;
 
 public class ExtraActivity extends BaseActivity {
@@ -65,6 +67,8 @@ public class ExtraActivity extends BaseActivity {
                 startActivity(aboutUsIntent);
                 break;
             case R.id.cvLogout:
+                Intent mainIntent = new Intent(view.getContext(), MainActivity.class);
+                startActivity(mainIntent);
                 break;
         }
     }

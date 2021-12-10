@@ -7,6 +7,8 @@ public class QuizCate {
 
     private int id;
     private String title;
+    int letterColors;
+    int circleColors;
 
     public int getId() {
         return id;
@@ -30,5 +32,21 @@ public class QuizCate {
 
     public void setSubTitle(String subTitle) {
         this.subTitle = subTitle;
+    }
+
+    public int getLetterColors() {
+        return letterColors;
+    }
+
+    public void setLetterColors(int letterColors) {
+        this.letterColors = letterColors;
+    }
+
+    public int getCircleColors() {
+        return circleColors;
+    }
+
+    public void setCircleColors(int circleColors) {
+        this.circleColors = circleColors;
     }
 }

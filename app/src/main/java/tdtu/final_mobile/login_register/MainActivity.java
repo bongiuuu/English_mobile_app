@@ -17,6 +17,7 @@ import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.tasks.Task;
+import com.onesignal.OneSignal;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -28,7 +29,7 @@ import tdtu.final_mobile.databinding.ActivityMainBinding;
 import tdtu.final_mobile.home.HomeActivity;
 import tdtu.final_mobile.presentation.BaseActivity;
 import tdtu.final_mobile.utils.Constants;
-import com.onesignal.OneSignal;
+
 public class MainActivity extends BaseActivity {
 
     ActivityMainBinding binding;
@@ -45,6 +46,7 @@ public class MainActivity extends BaseActivity {
         mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
 
         binding.btnLogin.setOnClickListener(v -> {
+
             if (binding.edtUsername.getText().toString().trim().isEmpty()) {
                 showToast("Validation Username");
                 return;
@@ -66,6 +68,7 @@ public class MainActivity extends BaseActivity {
         });
 
         binding.btnRegister.setOnClickListener(v -> {
+//            Intent registerIntent = new Intent(this, RegisterActivity.class);
             Intent registerIntent = new Intent(this, RegisterActivity.class);
             startActivity(registerIntent);
         });
@@ -162,7 +165,7 @@ public class MainActivity extends BaseActivity {
         SharedPreferences.Editor editor = getSharedPreferences(Constants.KEY_USER_NAME, MODE_PRIVATE).edit();
         editor.putInt(Constants.KEY_USER_ID, userId);
         editor.apply();
-
+        OneSignal.setEmail("test@domain.com");
         OneSignal.sendTag("user_id", userId+"");
     }
 

@@ -15,7 +15,6 @@ import tdtu.final_mobile.data.response.BaseResponse;
 import tdtu.final_mobile.data.response.MultipleResource;
 import tdtu.final_mobile.data.response.User;
 import tdtu.final_mobile.home.notification.Notification;
-import tdtu.final_mobile.home.vocabulary.Vocabulary;
 
 public interface APIService {
 

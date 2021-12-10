@@ -1,6 +1,7 @@
 package tdtu.final_mobile.home.vocabulary;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.util.Log;
 import android.view.View;
 
@@ -13,6 +14,7 @@ import retrofit2.Callback;
 import retrofit2.Response;
 import tdtu.final_mobile.data.QuizCate;
 import tdtu.final_mobile.databinding.ActivityHomeActionVocabularyBinding;
+import tdtu.final_mobile.databinding.CustomTopicLayoutBinding;
 import tdtu.final_mobile.home.quiz.QuizAdapter;
 import tdtu.final_mobile.presentation.BaseActivity;
 import tdtu.final_mobile.presentation.click_control.OnClickQuiz;
@@ -26,7 +28,6 @@ public class VocabularyActivity extends BaseActivity implements OnClickQuiz {
         call.enqueue(new Callback<ArrayList<QuizCate>>() {
             @Override
             public void onResponse(Call<ArrayList<QuizCate>> call, Response<ArrayList<QuizCate>> response) {
-
                 Log.d("TAG",response.code() + "");
                 ArrayList<QuizCate> quizzes = response.body();
                 QuizAdapter quizAdapter = new QuizAdapter(quizzes, VocabularyActivity.this);

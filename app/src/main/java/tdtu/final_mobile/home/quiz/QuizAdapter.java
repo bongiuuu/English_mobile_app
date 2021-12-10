@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 
@@ -35,42 +36,45 @@ public class QuizAdapter extends RecyclerView.Adapter<QuizViewHolder> {
     public QuizViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View recyclerViewItem = layoutInflater.inflate(R.layout.custom_topic_layout, parent, false);
 
-        recyclerViewItem.setOnClickListener(v -> handleRecyclerItemClick((RecyclerView)parent, v));
+//        recyclerViewItem.setOnClickListener(v -> handleRecyclerItemClick((RecyclerView)parent, v));
         return new QuizViewHolder(recyclerViewItem, onClickQuiz);
     }
 
     @Override
     public void onBindViewHolder(@NonNull QuizViewHolder holder, int position) {
-//        int greenLetter = Color.rgb(0, 135, 73);
-//        int greenCircle = Color.rgb(35, 254, 163);
-//        int orangeLetter = Color.rgb(225, 84, 35);
-//        int orangeCircle = Color.rgb(255, 226, 149);
-//        int pinkLetter = Color.rgb(146, 116, 237);
-//        int pinkCircle = Color.rgb(236, 183, 233);
-//        int blueLetter = Color.rgb(72, 169, 226);
-//        int blueCircle = Color.rgb(164, 194, 227);
-//        int yellowLetter = Color.rgb(185, 145, 48);
-//        int yellowCircle = Color.rgb(255, 253, 84);
-//
-//        int[] letterColors = {greenLetter, orangeLetter, pinkLetter, blueLetter, yellowLetter};
-//        int[] circleColors = {greenCircle, orangeCircle, pinkCircle, blueCircle, yellowCircle};
-//        int loop = 0;
-//
-//        for (int i = 0; i < quizzes.size(); i++) {
-//            if (i < 5) {
-//                holder.cvCircle.setCardBackgroundColor(circleColors[i]);
-//                holder.tvQuizTopic.setTextColor(letterColors[i]);
-//            } else {
-//                if (i % 5 == 0) {
-//                    loop++;
-//                }
-//                holder.cvCircle.setCardBackgroundColor(circleColors[i - 5 * loop]);
-//                holder.tvQuizTopic.setTextColor(letterColors[i - 5 * loop]);
-//            }
-//        }
+        int greenLetter = Color.rgb(0, 135, 73);
+        int greenCircle = Color.rgb(35, 254, 163);
+        int orangeLetter = Color.rgb(225, 84, 35);
+        int orangeCircle = Color.rgb(255, 226, 149);
+        int pinkLetter = Color.rgb(146, 116, 237);
+        int pinkCircle = Color.rgb(236, 183, 233);
+        int blueLetter = Color.rgb(72, 169, 226);
+        int blueCircle = Color.rgb(164, 194, 227);
+        int yellowLetter = Color.rgb(185, 145, 48);
+        int yellowCircle = Color.rgb(255, 253, 84);
+
+        int[] letterColors = {greenLetter, orangeLetter, pinkLetter, blueLetter, yellowLetter};
+        int[] circleColors = {greenCircle, orangeCircle, pinkCircle, blueCircle, yellowCircle};
+        int loop = 0;
+
+        for (int i = 0; i < quizzes.size(); i++) {
+            if (i < 5) {
+                quizzes.get(i).setLetterColors(letterColors[i]);
+                quizzes.get(i).setCircleColors(circleColors[i]);
+            } else {
+                if (i % 5 == 0) {
+                    loop++;
+                }
+                quizzes.get(i).setLetterColors(letterColors[i - 5 * loop]);
+                quizzes.get(i).setCircleColors(circleColors[i - 5 * loop]);
+            }
+        }
 
         holder.tvNumber.setText(position + 1 +"");
+        holder.tvNumber.setTextColor(quizzes.get(position).getLetterColors());
         holder.tvQuizTopic.setText(quizzes.get(position).getTitle());
+        holder.cvCircle.setCardBackgroundColor(quizzes.get(position).getCircleColors());
+        holder.tvQuizTopic.setTextColor(quizzes.get(position).getLetterColors());
         holder.tvVietnameseName.setText(quizzes.get(position).getSubTitle());
         holder.cvQuiz.setOnClickListener(v -> {
             onClickQuiz.OnQuizTopicClick(quizzes.get(position).getId());
