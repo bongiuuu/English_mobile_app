@@ -92,6 +92,7 @@ public class MainActivity extends BaseActivity {
                         saveUserId(res.getData().getId());
                         Intent loginIntent = new Intent(MainActivity.this, HomeActivity.class);
                         startActivity(loginIntent);
+                        finish();
                     }
                 } else {
                     Toast.makeText(MainActivity.this, getString(R.string.response_fail), Toast.LENGTH_LONG).show();
