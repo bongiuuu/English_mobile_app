@@ -9,14 +9,10 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import java.util.Arrays;
 import java.util.List;
-import java.util.Random;
 
 import tdtu.final_mobile.R;
-import tdtu.final_mobile.data.Quiz;
 import tdtu.final_mobile.data.QuizCate;
-import tdtu.final_mobile.home.progress.average_score.ScoredTopic;
 import tdtu.final_mobile.presentation.click_control.OnClickQuiz;
 
 public class QuizAdapter extends RecyclerView.Adapter<QuizViewHolder> {

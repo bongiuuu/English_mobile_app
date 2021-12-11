@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background_color"
-    tools:context=".home.progress.already_known.AlreadyKnownActivity">
+    tools:context=".home.favorite_vocab.FavoriteVocabActivity">
 
     <ImageButton
         android:id="@+id/iBtnBack"
@@ -25,7 +25,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
-        android:text="@string/already_known"
+        android:text="@string/favorite_vocab"
         android:fontFamily="@font/avenir"
         android:textColor="@color/white"
         android:textSize="30sp"

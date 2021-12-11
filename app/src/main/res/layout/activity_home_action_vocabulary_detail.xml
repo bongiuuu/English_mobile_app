@@ -34,6 +34,19 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <ImageButton
+        android:id="@+id/iBtnFavorite"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginEnd="25dp"
+        android:layout_marginTop="30dp"
+        android:background="@android:color/transparent"
+        android:scaleType="fitCenter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/empty_star"
+        tools:ignore="SpeakableTextPresentCheck" />
+
     <androidx.cardview.widget.CardView
         android:id="@+id/cvVocab"
         android:layout_width="match_parent"

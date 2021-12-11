@@ -1,4 +1,4 @@
-package tdtu.final_mobile.home.progress.already_known;
+package tdtu.final_mobile.home.favorite_vocab;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -14,7 +14,7 @@ import java.util.List;
 
 import tdtu.final_mobile.R;
 
-public class AlreadyKnownActivity extends AppCompatActivity {
+public class FavoriteVocabActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,7 +23,7 @@ public class AlreadyKnownActivity extends AppCompatActivity {
         getSupportActionBar().hide(); // hide the title bar
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN); //enable full screen
-        setContentView(R.layout.activity_home_activity_progress_already_known);
+        setContentView(R.layout.activity_home_activity_favorite_vocab);
 
         ImageButton iBtnBack = findViewById(R.id.iBtnBack);
         iBtnBack.setOnClickListener(view -> {

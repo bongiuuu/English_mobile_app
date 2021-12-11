@@ -1,4 +1,4 @@
-package tdtu.final_mobile.home.progress.already_known;
+package tdtu.final_mobile.home.favorite_vocab;
 
 import android.view.View;
 import android.widget.TextView;

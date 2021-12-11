@@ -24,7 +24,7 @@ import tdtu.final_mobile.home.checkin.CheckInActivity;
 import tdtu.final_mobile.home.contribute.ContributeActivity;
 import tdtu.final_mobile.home.extra.ExtraActivity;
 import tdtu.final_mobile.home.notification.NotificationActivity;
-import tdtu.final_mobile.home.progress.ProgressActivity;
+import tdtu.final_mobile.home.favorite_vocab.FavoriteVocabActivity;
 import tdtu.final_mobile.home.quiz.QuizActivity;
 import tdtu.final_mobile.home.vocabulary.VocabularyActivity;
 import tdtu.final_mobile.presentation.click_control.OnClickActivity;
@@ -71,7 +71,7 @@ public class HomeActivity extends AppCompatActivity implements OnClickAction, On
         List<Activity> activities = new ArrayList<>();
         int[] colors = {Color.rgb(35, 254, 163), Color.rgb(255, 84, 35), Color.rgb(255, 176, 241)};
         activities.add(new Activity("Quizz", "icon1", colors[0]));
-        activities.add(new Activity("Progress", "icon2", colors[1]));
+        activities.add(new Activity("Favorite Vocab", "icon2", colors[1]));
         activities.add(new Activity("Contribute Multiple choices Q&A", "icon3", colors[2]));
         return activities;
     }
@@ -101,7 +101,7 @@ public class HomeActivity extends AppCompatActivity implements OnClickAction, On
             Intent quizIntent = new Intent(HomeActivity.this, QuizActivity.class);
             startActivity(quizIntent);
         } else if (position == 1){
-            Intent progressIntent = new Intent(HomeActivity.this, ProgressActivity.class);
+            Intent progressIntent = new Intent(HomeActivity.this, FavoriteVocabActivity.class);
             startActivity(progressIntent);
         } else {
             Intent contributeIntent = new Intent(HomeActivity.this, ContributeActivity.class);

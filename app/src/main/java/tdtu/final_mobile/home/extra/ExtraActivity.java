@@ -1,14 +1,8 @@
 package tdtu.final_mobile.home.extra;
 
-import androidx.cardview.widget.CardView;
-
 import android.annotation.SuppressLint;
 import android.content.Intent;
-import android.os.Bundle;
 import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
-import android.widget.ImageButton;
 
 import com.google.android.gms.auth.api.Auth;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
@@ -16,7 +10,6 @@ import com.google.android.gms.common.api.GoogleApiClient;
 
 import tdtu.final_mobile.R;
 import tdtu.final_mobile.databinding.ActivityHomeExtraBinding;
-import tdtu.final_mobile.home.HomeActivity;
 import tdtu.final_mobile.login_register.MainActivity;
 import tdtu.final_mobile.presentation.BaseActivity;
 

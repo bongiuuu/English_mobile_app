@@ -59,4 +59,5 @@
     <string name="yes">Yes</string>
     <string name="not_enough_infor">Thiếu thông tin</string>
     <string name="quiz_sound">Sound</string>
+    <string name="favorite_vocab">Favorite Vocab</string>
 </resources>
