@@ -101,8 +101,8 @@ public class HomeActivity extends AppCompatActivity implements OnClickAction, On
             Intent quizIntent = new Intent(HomeActivity.this, QuizActivity.class);
             startActivity(quizIntent);
         } else if (position == 1){
-            Intent progressIntent = new Intent(HomeActivity.this, FavoriteVocabActivity.class);
-            startActivity(progressIntent);
+            Intent favoriteVocabIntent = new Intent(HomeActivity.this, FavoriteVocabActivity.class);
+            startActivity(favoriteVocabIntent);
         } else {
             Intent contributeIntent = new Intent(HomeActivity.this, ContributeActivity.class);
             startActivity(contributeIntent);
