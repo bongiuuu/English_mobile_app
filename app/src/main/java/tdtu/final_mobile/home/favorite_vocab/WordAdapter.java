@@ -4,22 +4,28 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Filter;
+import android.widget.Filterable;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 import tdtu.final_mobile.R;
 
-public class WordAdapter extends RecyclerView.Adapter<WordViewHolder> {
+public class WordAdapter extends RecyclerView.Adapter<WordViewHolder> implements Filterable {
     private final List<Word> words;
     private final Context context;
     private final LayoutInflater layoutInflater;
+    private List<Word> wordsFull;
 
     public WordAdapter(List<Word> words, Context context){
         this.words = words;
+        this.wordsFull = new ArrayList<>(words);
         this.context = context;
         this.layoutInflater = LayoutInflater.from(context);
     }
@@ -52,4 +58,40 @@ public class WordAdapter extends RecyclerView.Adapter<WordViewHolder> {
 
         Toast.makeText(this.context, word.getEnglishWord(), Toast.LENGTH_SHORT).show();
     }
+
+
+    // FILTER HERE
+    @Override
+    public Filter getFilter() {
+        return exampleFilter;
+    }
+
+    private Filter exampleFilter = new Filter() {
+        @Override
+        protected FilterResults performFiltering(CharSequence charSequence) {
+            List<Word> filteredList = new ArrayList<>();
+
+            if (charSequence == null || charSequence.length() == 0){
+                filteredList.addAll(wordsFull);
+            } else {
+                String filterPattern = charSequence.toString().toLowerCase().trim();
+
+                for (Word word : wordsFull){
+                    if (word.getEnglishWord().toLowerCase().contains(filterPattern)){
+                        filteredList.add(word);
+                    }
+                }
+            }
+            FilterResults results = new FilterResults();
+            results.values = filteredList;
+            return results;
+        }
+
+        @Override
+        protected void publishResults(CharSequence charSequence, FilterResults filterResults) {
+            words.clear();
+            words.addAll((List) filterResults.values);
+            notifyDataSetChanged();
+        }
+    };
 }

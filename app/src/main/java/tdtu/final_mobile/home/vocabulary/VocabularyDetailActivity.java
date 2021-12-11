@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
+import tdtu.final_mobile.R;
 import tdtu.final_mobile.data.Vocab;
 import tdtu.final_mobile.databinding.ActivityHomeActionVocabularyDetailBinding;
 import tdtu.final_mobile.presentation.BaseActivity;
@@ -55,6 +56,7 @@ public class VocabularyDetailActivity extends BaseActivity {
                 Log.d("TAG",response.code()+"");
                 vocabs = response.body();
                 setupLogic();
+//                checkFavorite();
             }
 
             @Override
@@ -94,4 +96,17 @@ public class VocabularyDetailActivity extends BaseActivity {
         binding.tvEnglishWord.setText(vocabs.get(0).getEnglish());
         binding.tvVietnameseWord.setText(vocabs.get(0).getVietnamese());
     }
+
+//    public void checkFavorite() {
+//        binding.iBtnFavorite.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                if (binding.iBtnFavorite.isSelected()){
+//                    binding.iBtnFavorite.setImageResource(R.drawable.full_star);
+//                } else {
+//                    binding.iBtnFavorite.setImageResource(R.drawable.empty_star);
+//                }
+//            }
+//        });
+//    }
 }

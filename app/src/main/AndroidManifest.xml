@@ -3,8 +3,9 @@
     package="tdtu.final_mobile">
 
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:name=".MainApplication"
         android:allowBackup="true"
@@ -14,8 +15,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FinalMobile"
         android:usesCleartextTraffic="true">
-
-
+        <activity
+            android:name=".SplashActivity"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".home.extra.ExtraActivity"
             android:exported="true" />
@@ -47,9 +54,6 @@
             android:name=".home.quiz.QuizzesActivity"
             android:exported="true" />
         <activity
-            android:name=".home.progress.average_score.AverageScoreActivity"
-            android:exported="true" />
-        <activity
             android:name=".home.favorite_vocab.FavoriteVocabActivity"
             android:exported="true" />
         <activity
@@ -73,11 +77,11 @@
         <activity
             android:name=".login_register.MainActivity"
             android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.MAIN" />-->
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+<!--                <category android:name="android.intent.category.LAUNCHER" />-->
+<!--            </intent-filter>-->
         </activity>
     </application>
 
