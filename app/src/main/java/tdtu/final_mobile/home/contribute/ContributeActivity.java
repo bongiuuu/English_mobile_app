@@ -25,7 +25,7 @@ public class ContributeActivity extends BaseActivity implements OnClickQuiz {
     private int userId = 1;
     @Override
     protected void doBusiness() {
-        SharedPreferences prefs = getSharedPreferences(Constants.KEY_USER_NAME, MODE_PRIVATE);
+        SharedPreferences prefs = getSharedPreferences(Constants.KEY_USER_ID, MODE_PRIVATE);
         userId = prefs.getInt(Constants.KEY_USER_ID, 1);
         Call<ArrayList<QuizCate>> call = apiInterface.getQuizCates(userId);
         call.enqueue(new Callback<ArrayList<QuizCate>>() {

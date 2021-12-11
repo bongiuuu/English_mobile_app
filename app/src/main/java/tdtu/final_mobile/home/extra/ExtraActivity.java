@@ -2,6 +2,7 @@ package tdtu.final_mobile.home.extra;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.view.View;
 
 import com.google.android.gms.auth.api.Auth;
@@ -12,6 +13,7 @@ import tdtu.final_mobile.R;
 import tdtu.final_mobile.databinding.ActivityHomeExtraBinding;
 import tdtu.final_mobile.login_register.MainActivity;
 import tdtu.final_mobile.presentation.BaseActivity;
+import tdtu.final_mobile.utils.Constants;
 
 public class ExtraActivity extends BaseActivity {
     private ActivityHomeExtraBinding binding;
@@ -29,6 +31,7 @@ public class ExtraActivity extends BaseActivity {
         binding.cvMe.setOnClickListener(this::onClick);
         binding.cvSettings.setOnClickListener(this::onClick);
         binding.cvAboutUs.setOnClickListener(this::onClick);
+        binding.cvLogout.setOnClickListener(this::onClick);
     }
 
     @Override
@@ -60,7 +63,13 @@ public class ExtraActivity extends BaseActivity {
                 startActivity(aboutUsIntent);
                 break;
             case R.id.cvLogout:
+
+                SharedPreferences.Editor editor = getSharedPreferences(Constants.KEY_USER_ID, MODE_PRIVATE).edit();
+                editor.putInt(Constants.KEY_USER_ID, 0);
+                editor.apply();
+
                 Intent mainIntent = new Intent(view.getContext(), MainActivity.class);
+                mainIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 startActivity(mainIntent);
                 break;
         }

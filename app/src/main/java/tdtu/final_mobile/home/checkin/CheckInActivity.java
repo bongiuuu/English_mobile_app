@@ -24,7 +24,7 @@ public class CheckInActivity extends BaseActivity {
 
     @Override
     protected void doBusiness() {
-        SharedPreferences prefs = getSharedPreferences(Constants.KEY_USER_NAME, MODE_PRIVATE);
+        SharedPreferences prefs = getSharedPreferences(Constants.KEY_USER_ID, MODE_PRIVATE);
         userId = prefs.getInt(Constants.KEY_USER_ID, 1);
         doCheckIn();
         binding.iBtnBack.setOnClickListener(view -> {

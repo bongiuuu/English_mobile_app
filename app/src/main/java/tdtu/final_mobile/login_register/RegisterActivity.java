@@ -72,6 +72,7 @@ public class RegisterActivity extends BaseActivity {
     }
 
     private void validate() {
+
         if (binding.edtUsername.getText().toString().trim().isEmpty()) {
             showToast("Validation Username");
             return;
