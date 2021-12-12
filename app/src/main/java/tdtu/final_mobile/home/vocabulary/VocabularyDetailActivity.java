@@ -76,7 +76,7 @@ public class VocabularyDetailActivity extends BaseActivity {
                 vocabs = response.body();
                 for (int i = 0; i < vocabs.size(); i++) {
                     for (int i1 = 0; i1 < words.size(); i1++) {
-                        if (words.get(i1).getEnglishWord().equals(vocabs.get(i).getEnglish())) {
+                        if (words.get(i1).getEnglishWord().trim().equalsIgnoreCase(vocabs.get(i).getEnglish().trim())) {
                             vocabs.get(i).setFavor(true);
                         }
                     }
