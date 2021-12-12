@@ -1,5 +1,7 @@
 package tdtu.final_mobile.network;
 
+import com.google.gson.JsonElement;
+
 import java.util.ArrayList;
 
 import retrofit2.Call;
@@ -14,6 +16,7 @@ import tdtu.final_mobile.data.request.CheckIn;
 import tdtu.final_mobile.data.response.BaseResponse;
 import tdtu.final_mobile.data.response.MultipleResource;
 import tdtu.final_mobile.data.response.User;
+import tdtu.final_mobile.home.favorite_vocab.Word;
 import tdtu.final_mobile.home.notification.Notification;
 
 public interface APIService {
@@ -53,4 +56,13 @@ public interface APIService {
 
     @GET("users/notifications")
     Call<ArrayList<Notification>> getNotifications();
+
+    @GET("users/favor/{userId}")
+    Call<ArrayList<Word>> getFavorVocabs(@Path("userId") int id);
+
+    @POST("users/favors/add")
+    Call<JsonElement> addFavorVocab(@Body Vocab word);
+
+    @POST("users/favors/remove")
+    Call<JsonElement> removeFavorVocab(@Body Vocab word);
 }
