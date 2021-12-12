@@ -67,11 +67,12 @@ public class VocabularyDetailActivity extends BaseActivity {
 
     private void fetchData() {
         int id = getIntent().getIntExtra("id", 1);
+        binding.loading.setVisibility(View.VISIBLE);
         Call<ArrayList<Vocab>> call = apiInterface.getVocabularyFromCateId(id);
         call.enqueue(new Callback<ArrayList<Vocab>>() {
             @Override
             public void onResponse(Call<ArrayList<Vocab>> call, Response<ArrayList<Vocab>> response) {
-
+                binding.loading.setVisibility(View.INVISIBLE);
                 Log.d("TAG", response.code() + "");
                 vocabs = response.body();
                 for (int i = 0; i < vocabs.size(); i++) {
@@ -87,6 +88,7 @@ public class VocabularyDetailActivity extends BaseActivity {
 
             @Override
             public void onFailure(Call<ArrayList<Vocab>> call, Throwable t) {
+                binding.loading.setVisibility(View.INVISIBLE);
                 call.cancel();
             }
         });

@@ -25,9 +25,11 @@ public class VocabularyActivity extends BaseActivity implements OnClickQuiz {
     @Override
     protected void doBusiness() {
         Call<ArrayList<QuizCate>> call = apiInterface.getAllVocabularyCates();
+        binding.loading.setVisibility(View.VISIBLE);
         call.enqueue(new Callback<ArrayList<QuizCate>>() {
             @Override
             public void onResponse(Call<ArrayList<QuizCate>> call, Response<ArrayList<QuizCate>> response) {
+                binding.loading.setVisibility(View.INVISIBLE);
                 Log.d("TAG",response.code() + "");
                 ArrayList<QuizCate> quizzes = response.body();
                 QuizAdapter quizAdapter = new QuizAdapter(quizzes, VocabularyActivity.this);
@@ -40,6 +42,7 @@ public class VocabularyActivity extends BaseActivity implements OnClickQuiz {
 
             @Override
             public void onFailure(Call<ArrayList<QuizCate>> call, Throwable t) {
+                binding.loading.setVisibility(View.INVISIBLE);
                 call.cancel();
             }
         });
