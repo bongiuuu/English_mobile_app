@@ -17,6 +17,7 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.regex.Pattern;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -73,6 +74,11 @@ public class RegisterActivity extends BaseActivity {
 
     private void validate() {
 
+        if (isValid(binding.edtUsername.getText().toString().trim())){
+            showToast("Email is invalid");
+            return;
+        }
+
         if (binding.edtUsername.getText().toString().trim().isEmpty()) {
             showToast("Validation Username");
             return;
@@ -91,6 +97,19 @@ public class RegisterActivity extends BaseActivity {
         if (binding.edtPassword.getText().toString().trim().length() < 6) {
             showToast("Password length");
         }
+    }
+
+    public static boolean isValid(String email)
+    {
+        String emailRegex = "^[a-zA-Z0-9_+&*-]+(?:\\."+
+                "[a-zA-Z0-9_+&*-]+)*@" +
+                "(?:[a-zA-Z0-9-]+\\.)+[a-z" +
+                "A-Z]{2,7}$";
+
+        Pattern pat = Pattern.compile(emailRegex);
+        if (email == null)
+            return false;
+        return pat.matcher(email).matches();
     }
 
     private void registerAccount() {
