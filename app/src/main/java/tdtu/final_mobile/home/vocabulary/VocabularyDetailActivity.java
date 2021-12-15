@@ -169,16 +169,22 @@ public class VocabularyDetailActivity extends BaseActivity {
 
     private void addFavorVocab() {
         // Call Api to update favor
+//        if(currentVocab == null) return;
+//        currentVocab.setEnglish(currentVocab.getEnglish().trim());
+
+        binding.loading.setVisibility(View.VISIBLE);
         Call<JsonElement> call = apiInterface.addFavorVocab(currentVocab);
         call.enqueue(new Callback<JsonElement>() {
             @Override
             public void onResponse(Call<JsonElement> call, Response<JsonElement> response) {
                 Log.d("TAG", response.code() + "");
+                binding.loading.setVisibility(View.INVISIBLE);
             }
 
             @Override
             public void onFailure(Call<JsonElement> call, Throwable t) {
                 call.cancel();
+                binding.loading.setVisibility(View.INVISIBLE);
             }
         });
     }
@@ -186,15 +192,18 @@ public class VocabularyDetailActivity extends BaseActivity {
     private void removeFavorVocab() {
         // Call Api to update favor
         Call<JsonElement> call = apiInterface.removeFavorVocab(currentVocab);
+        binding.loading.setVisibility(View.VISIBLE);
         call.enqueue(new Callback<JsonElement>() {
             @Override
             public void onResponse(Call<JsonElement> call, Response<JsonElement> response) {
                 Log.d("TAG", response.code() + "");
+                binding.loading.setVisibility(View.INVISIBLE);
             }
 
             @Override
             public void onFailure(Call<JsonElement> call, Throwable t) {
                 call.cancel();
+                binding.loading.setVisibility(View.INVISIBLE);
             }
         });
     }

@@ -25,7 +25,8 @@ public class PracticeActivity extends BaseActivity {
     @Override
     public void doBusiness() {
         FirebaseApp.initializeApp(this);
-        binding.tvName.setOnClickListener(v -> testFireBase());
+//        binding.tvName.setOnClickListener(v -> testFireBase());
+        testFireBase();
 //        Call<MultipleResource> call = apiInterface.doGetListResources();
 //        call.enqueue(new Callback<MultipleResource>() {
 //            @Override

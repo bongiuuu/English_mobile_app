@@ -11,6 +11,7 @@ import android.os.Handler;
 import tdtu.final_mobile.R;
 import tdtu.final_mobile.home.HomeActivity;
 import tdtu.final_mobile.login_register.MainActivity;
+import tdtu.final_mobile.presentation.PracticeActivity;
 import tdtu.final_mobile.utils.Constants;
 
 public class SplashActivity extends Activity {
