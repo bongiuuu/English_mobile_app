@@ -156,7 +156,7 @@ public class QuizzesActivity extends BaseActivity {
         });
 
         binding.cvAnswerD.setOnClickListener(v -> {
-            checkTheAnswer(binding.cvAnswerC, 4);
+            checkTheAnswer(binding.cvAnswerD, 4);
         });
     }
 

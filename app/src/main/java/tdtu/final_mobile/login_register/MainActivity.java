@@ -166,7 +166,7 @@ public class MainActivity extends BaseActivity {
         SharedPreferences.Editor editor = getSharedPreferences(Constants.KEY_USER_ID, MODE_PRIVATE).edit();
         editor.putInt(Constants.KEY_USER_ID, userId);
         editor.apply();
-        OneSignal.setEmail("test@domain.com");
+//        OneSignal.setEmail("test@domain.com");
         OneSignal.sendTag("user_id", userId+"");
     }
 
