@@ -27,10 +27,11 @@ public class QuizActivity extends BaseActivity implements OnClickQuiz {
         SharedPreferences prefs = getSharedPreferences(Constants.KEY_USER_ID, MODE_PRIVATE);
         userId = prefs.getInt(Constants.KEY_USER_ID, 1);
         Call<ArrayList<QuizCate>> call = apiInterface.getQuizCates(userId);
+        binding.loading.setVisibility(View.VISIBLE);
         call.enqueue(new Callback<ArrayList<QuizCate>>() {
             @Override
             public void onResponse(Call<ArrayList<QuizCate>> call, Response<ArrayList<QuizCate>> response) {
-
+                binding.loading.setVisibility(View.INVISIBLE);
                 Log.d("TAG",response.code()+"");
                 ArrayList<QuizCate> quizzes = response.body();
                 QuizAdapter quizAdapter = new QuizAdapter(quizzes,QuizActivity.this);
@@ -44,6 +45,7 @@ public class QuizActivity extends BaseActivity implements OnClickQuiz {
             @Override
             public void onFailure(Call<ArrayList<QuizCate>> call, Throwable t) {
                 call.cancel();
+                binding.loading.setVisibility(View.INVISIBLE);
             }
         });
 

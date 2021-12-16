@@ -56,10 +56,11 @@ public class FavoriteVocabActivity extends BaseActivity {
         SharedPreferences prefs = getSharedPreferences(Constants.KEY_USER_ID, MODE_PRIVATE);
         userId = prefs.getInt(Constants.KEY_USER_ID, 1);
         Call<ArrayList<Word>> call = apiInterface.getFavorVocabs(userId);
+        binding.loading.setVisibility(View.VISIBLE);
         call.enqueue(new Callback<ArrayList<Word>>() {
             @Override
             public void onResponse(Call<ArrayList<Word>> call, Response<ArrayList<Word>> response) {
-
+                binding.loading.setVisibility(View.INVISIBLE);
                 Log.d("TAG",response.code()+"");
                 ArrayList<Word> words = response.body();
                 WordAdapter wordAdapter = new WordAdapter(words, FavoriteVocabActivity.this);
@@ -72,6 +73,7 @@ public class FavoriteVocabActivity extends BaseActivity {
             @Override
             public void onFailure(Call<ArrayList<Word>> call, Throwable t) {
                 call.cancel();
+                binding.loading.setVisibility(View.INVISIBLE);
             }
         });
     }

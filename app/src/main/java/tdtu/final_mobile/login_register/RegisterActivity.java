@@ -122,10 +122,11 @@ public class RegisterActivity extends BaseActivity {
     private void registerAccount() {
         User user = new User(binding.edtUsername.getText().toString(), binding.edtUsername.getText().toString(), binding.edtPassword.getText().toString());
         Call<BaseResponse<User>> call = apiInterface.createUser(user);
+        binding.loading.setVisibility(View.VISIBLE);
         call.enqueue(new Callback<BaseResponse<User>>() {
             @Override
             public void onResponse(Call<BaseResponse<User>> call, Response<BaseResponse<User>> response) {
-
+                binding.loading.setVisibility(View.INVISIBLE);
                 if (response.isSuccessful()) {
                     BaseResponse<User> res = response.body();
                     if (res != null && res.getStatus() == 200) {
@@ -148,6 +149,7 @@ public class RegisterActivity extends BaseActivity {
             @Override
             public void onFailure(Call<BaseResponse<User>> call, Throwable t) {
                 call.cancel();
+                binding.loading.setVisibility(View.INVISIBLE);
             }
         });
     }

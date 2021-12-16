@@ -64,9 +64,11 @@ public class QuizzesActivity extends BaseActivity {
     private void fetchData() {
         int id = getIntent().getIntExtra("id",1);
         Call<ArrayList<Quiz>> call = apiInterface.getQuizs(id);
+        binding.loading.setVisibility(View.VISIBLE);
         call.enqueue(new Callback<ArrayList<Quiz>>() {
             @Override
             public void onResponse(Call<ArrayList<Quiz>> call, Response<ArrayList<Quiz>> response) {
+                binding.loading.setVisibility(View.INVISIBLE);
                 if (response.isSuccessful()) {
                     quizzes = response.body();
                     assert quizzes != null;
@@ -85,6 +87,7 @@ public class QuizzesActivity extends BaseActivity {
             @Override
             public void onFailure(Call<ArrayList<Quiz>> call, Throwable t) {
                 call.cancel();
+                binding.loading.setVisibility(View.INVISIBLE);
             }
         });
 

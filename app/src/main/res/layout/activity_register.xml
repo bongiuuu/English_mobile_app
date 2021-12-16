@@ -54,6 +54,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
 
+
         </androidx.constraintlayout.widget.ConstraintLayout>
     </com.google.android.material.card.MaterialCardView>
 
@@ -75,7 +76,18 @@
             android:layout_height="50dp"
             android:background="@color/background_color"
             android:orientation="vertical">
-
+            <ProgressBar
+                android:visibility="invisible"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:id="@+id/loading"
+                android:layout_centerInParent="true"
+                style="?android:attr/progressBarStyleLarge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                />
             <EditText
                 android:inputType="textPassword"
                 android:id="@+id/edtPassword"
@@ -161,6 +173,8 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/back"
         tools:ignore="SpeakableTextPresentCheck" />
+
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
