@@ -99,6 +99,7 @@ public class MainActivity extends BaseActivity {
                         saveUserId(res.getData().getId());
                         Intent loginIntent = new Intent(MainActivity.this, HomeActivity.class);
                         startActivity(loginIntent);
+                        overridePendingTransition(R.anim.enter_trans, R.anim.exit_trans);
                         finish();
                     }
                 } else {

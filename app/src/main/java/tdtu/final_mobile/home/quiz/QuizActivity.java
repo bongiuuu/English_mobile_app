@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
+import tdtu.final_mobile.R;
 import tdtu.final_mobile.data.QuizCate;
 import tdtu.final_mobile.databinding.ActivityHomeActivityQuizBinding;
 import tdtu.final_mobile.presentation.BaseActivity;
@@ -65,5 +66,6 @@ public class QuizActivity extends BaseActivity implements OnClickQuiz {
         Intent doQuizIntent = new Intent(QuizActivity.this, QuizzesActivity.class);
         doQuizIntent.putExtra("id", quizCateId);
         startActivity(doQuizIntent);
+        overridePendingTransition(R.anim.enter_trans, R.anim.exit_trans);
     }
 }

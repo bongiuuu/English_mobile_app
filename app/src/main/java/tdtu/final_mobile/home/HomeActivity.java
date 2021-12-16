@@ -89,9 +89,11 @@ public class HomeActivity extends AppCompatActivity implements OnClickAction, On
         if (position == 0){
             Intent vocabularyIntent = new Intent(HomeActivity.this, VocabularyActivity.class);
             startActivity(vocabularyIntent);
+            overridePendingTransition(R.anim.enter_trans, R.anim.exit_trans);
         } else {
             Intent checkinIntent = new Intent(HomeActivity.this, CheckInActivity.class);
             startActivity(checkinIntent);
+            overridePendingTransition(R.anim.enter_trans, R.anim.exit_trans);
         }
     }
 
@@ -100,12 +102,15 @@ public class HomeActivity extends AppCompatActivity implements OnClickAction, On
         if (position == 0){
             Intent quizIntent = new Intent(HomeActivity.this, QuizActivity.class);
             startActivity(quizIntent);
+            overridePendingTransition(R.anim.enter_trans, R.anim.exit_trans);
         } else if (position == 1){
             Intent favoriteVocabIntent = new Intent(HomeActivity.this, FavoriteVocabActivity.class);
             startActivity(favoriteVocabIntent);
+            overridePendingTransition(R.anim.enter_trans, R.anim.exit_trans);
         } else {
             Intent contributeIntent = new Intent(HomeActivity.this, ContributeActivity.class);
             startActivity(contributeIntent);
+            overridePendingTransition(R.anim.enter_trans, R.anim.exit_trans);
         }
     }
 

@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
+import tdtu.final_mobile.R;
 import tdtu.final_mobile.data.QuizCate;
 import tdtu.final_mobile.databinding.ActivityHomeActionVocabularyBinding;
 import tdtu.final_mobile.databinding.CustomTopicLayoutBinding;
@@ -63,5 +64,6 @@ public class VocabularyActivity extends BaseActivity implements OnClickQuiz {
         Intent learnVocabularyIntent = new Intent(VocabularyActivity.this, VocabularyDetailActivity.class);
         learnVocabularyIntent.putExtra("id", id);
         startActivity(learnVocabularyIntent);
+        overridePendingTransition(R.anim.enter_trans, R.anim.exit_trans);
     }
 }
