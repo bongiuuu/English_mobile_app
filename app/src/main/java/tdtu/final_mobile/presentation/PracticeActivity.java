@@ -10,7 +10,11 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import org.json.JSONObject;
+
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -69,18 +73,17 @@ public class PracticeActivity extends BaseActivity {
     }
 
     public void testFireBase() {
-        FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference testRef = database.getReference("message");
-        testRef.setValue("Test");
+//        FirebaseDatabase database = FirebaseDatabase.getInstance();
+//        DatabaseReference testRef = database.getReference("name");
 
-        // Read from the database
-        testRef.addValueEventListener(new ValueEventListener() {
+        DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference();
+        DatabaseReference playersRef = rootRef.child("name").child("cat");
+
+        playersRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                // This method is called once with the initial value and again
-                // whenever data at this location is updated.
-                String value = dataSnapshot.getValue(String.class);
-                binding.tvName.setText(value);
+                String lat = dataSnapshot.getValue(String.class);
+                binding.tvName.setText(lat);
             }
 
             @Override
