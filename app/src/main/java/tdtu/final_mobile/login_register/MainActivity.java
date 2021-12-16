@@ -33,7 +33,7 @@ import tdtu.final_mobile.utils.Constants;
 public class MainActivity extends BaseActivity {
 
     ActivityMainBinding binding;
-    private GoogleSignInClient mGoogleSignInClient;
+    public static GoogleSignInClient mGoogleSignInClient;
     private static final int RC_SIGN_IN = 9001;
 
     @Override
@@ -44,6 +44,13 @@ public class MainActivity extends BaseActivity {
                 .build();
 
         mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
+
+//        GoogleSignInOptions gso = new GoogleSignInOptions.
+//                Builder(GoogleSignInOptions.DEFAULT_SIGN_IN).
+//                build();
+//
+//        GoogleSignInClient googleSignInClient=GoogleSignIn.getClient(context,gso);
+
 
         binding.btnLogin.setOnClickListener(v -> {
 
@@ -109,11 +116,12 @@ public class MainActivity extends BaseActivity {
     @Override
     public void onStart() {
         super.onStart();
-//        GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(this);
-//        if (account != null) {
-//            Intent loginIntent = new Intent(MainActivity.this, HomeActivity.class);
-//            startActivity(loginIntent);
-//        }
+        GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(this);
+        if (account != null) {
+            Log.d("hailpt","Login");
+        } else {
+            Log.d("hailpt","Not Login");
+        }
     }
 
     ActivityResultLauncher<Intent> someActivityResultLauncher = registerForActivityResult(

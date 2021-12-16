@@ -1,5 +1,7 @@
 package tdtu.final_mobile.home.extra;
 
+import static tdtu.final_mobile.login_register.MainActivity.mGoogleSignInClient;
+
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -18,9 +20,6 @@ import tdtu.final_mobile.utils.Constants;
 public class ExtraActivity extends BaseActivity {
     private ActivityHomeExtraBinding binding;
 
-    private GoogleSignInClient mGoogleSignInClient;
-    GoogleApiClient mGoogleApiClient;
-    boolean mSignInClicked;
 
     @Override
     protected void doBusiness() {
@@ -40,16 +39,9 @@ public class ExtraActivity extends BaseActivity {
         return binding.getRoot();
     }
 
-    private void signOut() {
-        Auth.GoogleSignInApi.signOut(mGoogleApiClient).setResultCallback(
-                status -> {
-
-                });
-    }
-
     @SuppressLint("NonConstantResourceId")
-    public void onClick(View view){
-        switch (view.getId()){
+    public void onClick(View view) {
+        switch (view.getId()) {
             case R.id.cvMe:
                 Intent meIntent = new Intent(view.getContext(), MeActivity.class);
                 startActivity(meIntent);
@@ -71,6 +63,9 @@ public class ExtraActivity extends BaseActivity {
                 Intent mainIntent = new Intent(view.getContext(), MainActivity.class);
                 mainIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 startActivity(mainIntent);
+                if (mGoogleSignInClient != null) {
+                    mGoogleSignInClient.signOut();
+                }
                 break;
         }
     }
