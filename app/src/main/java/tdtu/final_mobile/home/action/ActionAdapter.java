@@ -5,7 +5,6 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -64,7 +63,6 @@ public class ActionAdapter extends RecyclerView.Adapter<ActionViewHolder> {
     private void handleRecyclerItemClick(RecyclerView recyclerView, View itemView) {
         int itemPosition = recyclerView.getChildLayoutPosition(itemView);
         Action action  = this.actions.get(itemPosition);
-        Toast.makeText(this.context, action.getActionName(), Toast.LENGTH_SHORT).show();
         onClickAction.OnActionClick(itemPosition);
     }
 

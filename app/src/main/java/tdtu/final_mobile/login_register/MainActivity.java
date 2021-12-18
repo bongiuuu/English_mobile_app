@@ -114,16 +114,16 @@ public class MainActivity extends BaseActivity {
         });
     }
 
-    @Override
-    public void onStart() {
-        super.onStart();
-        GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(this);
-        if (account != null) {
-            Log.d("hailpt","Login");
-        } else {
-            Log.d("hailpt","Not Login");
-        }
-    }
+//    @Override
+//    public void onStart() {
+//        super.onStart();
+//        GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(this);
+//        if (account != null) {
+//            Log.d("hailpt","Login");
+//        } else {
+//            Log.d("hailpt","Not Login");
+//        }
+//    }
 
     ActivityResultLauncher<Intent> someActivityResultLauncher = registerForActivityResult(
             new ActivityResultContracts.StartActivityForResult(),

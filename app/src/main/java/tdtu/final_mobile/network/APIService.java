@@ -14,15 +14,11 @@ import tdtu.final_mobile.data.QuizCate;
 import tdtu.final_mobile.data.Vocab;
 import tdtu.final_mobile.data.request.CheckIn;
 import tdtu.final_mobile.data.response.BaseResponse;
-import tdtu.final_mobile.data.response.MultipleResource;
 import tdtu.final_mobile.data.response.User;
 import tdtu.final_mobile.home.favorite_vocab.Word;
 import tdtu.final_mobile.home.notification.Notification;
 
 public interface APIService {
-
-    @GET("unknown")
-    Call<MultipleResource> doGetListResources();
 
     @POST("users/register")
     Call<BaseResponse<User>> createUser(@Body User user);

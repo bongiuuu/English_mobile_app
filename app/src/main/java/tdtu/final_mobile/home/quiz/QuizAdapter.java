@@ -86,7 +86,6 @@ public class QuizAdapter extends RecyclerView.Adapter<QuizViewHolder> {
         int itemPosition = recyclerView.getChildLayoutPosition(itemView);
         QuizCate quiz  = this.quizzes.get(itemPosition);
 
-//        Toast.makeText(this.context, quiz.getQuizTopic(), Toast.LENGTH_SHORT).show();
     }
 
     public void setOnQuizTopicClickAction(OnClickQuiz onClickQuiz){

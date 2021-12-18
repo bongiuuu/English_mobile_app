@@ -56,7 +56,6 @@ public class WordAdapter extends RecyclerView.Adapter<WordViewHolder> implements
         int itemPosition = recyclerView.getChildLayoutPosition(itemView);
         Word word  = this.words.get(itemPosition);
 
-        Toast.makeText(this.context, word.getEnglishWord(), Toast.LENGTH_SHORT).show();
     }
 
 

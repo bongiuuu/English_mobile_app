@@ -1,6 +1,5 @@
 package tdtu.final_mobile.presentation;
 
-import android.util.Log;
 import android.view.View;
 
 import com.google.firebase.FirebaseApp;
@@ -10,19 +9,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-import org.json.JSONObject;
-
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
-import tdtu.final_mobile.data.response.MultipleResource;
 import tdtu.final_mobile.databinding.ActivityPracticeBinding;
-import tdtu.final_mobile.network.APIClient;
-import tdtu.final_mobile.network.APIService;
 
 public class PracticeActivity extends BaseActivity {
     private ActivityPracticeBinding binding;

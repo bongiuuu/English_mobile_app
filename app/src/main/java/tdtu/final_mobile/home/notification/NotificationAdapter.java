@@ -52,7 +52,6 @@ public class NotificationAdapter extends RecyclerView.Adapter<NotificationViewHo
         int itemPosition = recyclerView.getChildLayoutPosition(itemView);
         Notification notification = this.notifications.get(itemPosition);
 
-        Toast.makeText(this.context, notification.getTitle(), Toast.LENGTH_SHORT).show();
     }
 
     void setNotificationClickAction(OnClickNotification onClickNotification){

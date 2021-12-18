@@ -1,40 +1,24 @@
 package tdtu.final_mobile.login_register;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.onesignal.OneSignal;
 
 import org.json.JSONObject;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.regex.Pattern;
 
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-import tdtu.final_mobile.R;
-import tdtu.final_mobile.SplashActivity;
 import tdtu.final_mobile.data.response.BaseResponse;
-import tdtu.final_mobile.data.response.MultipleResource;
 import tdtu.final_mobile.data.response.User;
-import tdtu.final_mobile.databinding.ActivityPracticeBinding;
 import tdtu.final_mobile.databinding.ActivityRegisterBinding;
 import tdtu.final_mobile.home.HomeActivity;
 import tdtu.final_mobile.presentation.BaseActivity;
-import tdtu.final_mobile.presentation.PracticeActivity;
 import tdtu.final_mobile.utils.Constants;
 
 public class RegisterActivity extends BaseActivity {

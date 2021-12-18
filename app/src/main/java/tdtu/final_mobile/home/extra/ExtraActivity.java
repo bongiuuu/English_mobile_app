@@ -7,10 +7,6 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.view.View;
 
-import com.google.android.gms.auth.api.Auth;
-import com.google.android.gms.auth.api.signin.GoogleSignInClient;
-import com.google.android.gms.common.api.GoogleApiClient;
-
 import tdtu.final_mobile.R;
 import tdtu.final_mobile.databinding.ActivityHomeExtraBinding;
 import tdtu.final_mobile.login_register.MainActivity;
